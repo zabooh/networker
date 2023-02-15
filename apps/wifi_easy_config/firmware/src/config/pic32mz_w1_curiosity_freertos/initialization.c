@@ -144,6 +144,10 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Forward declaration of MAC initialization data */
+const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACPIC32INTInitData;
+
+
 // <editor-fold defaultstate="collapsed" desc="DRV_MEMORY Instance 0 Initialization Data">
 
 static uint8_t gDrvMemory0EraseBuffer[NVM_ERASE_BUFFER_SIZE] CACHE_ALIGN;
@@ -177,6 +181,13 @@ const DRV_MEMORY_INIT drvMemory0InitData =
 };
 
 // </editor-fold>
+/* Forward declaration of MIIM initialization data */
+static const DRV_MIIM_INIT drvMiimInitData;
+
+
+/* Forward declaration of PHY initialization data */
+const DRV_ETHPHY_INIT tcpipPhyInitData_LAN8740;
+
 static CRYPT_RNG_CTX wdrvRngCtx;
 static const WDRV_PIC32MZW_SYS_INIT wdrvPIC32MZW1InitData = {
     .pCryptRngCtx  = &wdrvRngCtx,
@@ -207,6 +218,25 @@ static const DRV_BA414E_INIT_DATA ba414eInitData =
 };
   
  
+
+/*** ETH MAC Initialization Data ***/
+const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACPIC32INTInitData =
+{ 
+    .nTxDescriptors         = TCPIP_EMAC_TX_DESCRIPTORS,
+    .rxBuffSize             = TCPIP_EMAC_RX_BUFF_SIZE,
+    .nRxDescriptors         = TCPIP_EMAC_RX_DESCRIPTORS,
+    .nRxDedicatedBuffers    = TCPIP_EMAC_RX_DEDICATED_BUFFERS,
+    .nRxInitBuffers         = TCPIP_EMAC_RX_INIT_BUFFERS,
+    .rxLowThreshold         = TCPIP_EMAC_RX_LOW_THRESHOLD,
+    .rxLowFill              = TCPIP_EMAC_RX_LOW_FILL,
+    .linkInitDelay          = TCPIP_INTMAC_PHY_LINK_INIT_DELAY,
+    .ethFlags               = TCPIP_EMAC_ETH_OPEN_FLAGS,
+    .ethModuleId            = TCPIP_INTMAC_MODULE_ID,
+    .pPhyBase               = &DRV_ETHPHY_OBJECT_BASE_Default,
+    .pPhyInit               = &tcpipPhyInitData_LAN8740,
+};
+
+
 
 
 // <editor-fold defaultstate="collapsed" desc="TCP/IP Stack Initialization Data">
@@ -386,6 +416,20 @@ const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] 
         .startFlags = TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX0,
         .pMacObject = &TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0,
     },
+    /*** Network Configuration Index 1 ***/
+    {
+        .interface = TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX1,
+        .hostName = TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX1,
+        .macAddr = TCPIP_NETWORK_DEFAULT_MAC_ADDR_IDX1,
+        .ipAddr = TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX1,
+        .ipMask = TCPIP_NETWORK_DEFAULT_IP_MASK_IDX1,
+        .gateway = TCPIP_NETWORK_DEFAULT_GATEWAY_IDX1,
+        .priDNS = TCPIP_NETWORK_DEFAULT_DNS_IDX1,
+        .secondDNS = TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX1,
+        .powerMode = TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX1,
+        .startFlags = TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX1,
+        .pMacObject = &TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX1,
+    },
 };
 
 const size_t TCPIP_HOSTS_CONFIGURATION_SIZE = sizeof (TCPIP_HOSTS_CONFIGURATION) / sizeof (*TCPIP_HOSTS_CONFIGURATION);
@@ -409,6 +453,7 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules
+    {TCPIP_MODULE_MAC_PIC32INT,     &tcpipMACPIC32INTInitData},     // TCPIP_MODULE_MAC_PIC32INT
 
 };
 
@@ -448,6 +493,29 @@ SYS_MODULE_OBJ TCPIP_STACK_Init(void)
     return TCPIP_STACK_Initialize(0, &tcpipInit.moduleInit);
 }
 // </editor-fold>
+
+/* MIIM Driver Configuration */
+static const DRV_MIIM_INIT drvMiimInitData =
+{
+	.ethphyId = DRV_MIIM_ETH_MODULE_ID,
+};
+
+
+    
+    
+
+/*** ETH PHY Initialization Data ***/
+const DRV_ETHPHY_INIT tcpipPhyInitData_LAN8740 =
+{    
+    .ethphyId               = TCPIP_INTMAC_MODULE_ID,
+    .phyAddress             = TCPIP_INTMAC_PHY_ADDRESS,
+    .phyFlags               = TCPIP_INTMAC_PHY_CONFIG_FLAGS,
+    .pPhyObject             = &DRV_ETHPHY_OBJECT_LAN8740,
+    .resetFunction          = 0,
+    .pMiimObject            = &DRV_MIIM_OBJECT_BASE_Default,
+    .pMiimInit              = &drvMiimInitData,
+    .miimIndex              = DRV_MIIM_DRIVER_INDEX,
+};
 
 // <editor-fold defaultstate="collapsed" desc="File System Initialization Data">
 
@@ -656,6 +724,10 @@ void SYS_Initialize ( void* data )
 
 
     sysObj.drvMemory0 = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
+
+
+    /* Initialize the MIIM Driver */
+    sysObj.drvMiim = DRV_MIIM_Initialize( DRV_MIIM_INDEX_0, (const SYS_MODULE_INIT *) &drvMiimInitData );
 
     /* Initialize the PIC32MZW1 Driver */
     CRYPT_RNG_Initialize(&wdrvRngCtx);

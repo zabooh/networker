@@ -164,6 +164,23 @@ extern "C" {
 #define DRV_MEMORY_PRIORITY_IDX0             1
 #define DRV_MEMORY_RTOS_DELAY_IDX0                         10
 
+
+
+/*** MIIM Driver Configuration ***/
+#define DRV_MIIM_ETH_MODULE_ID              _ETH_BASE_ADDRESS
+#define DRV_MIIM_INSTANCES_NUMBER           1
+#define DRV_MIIM_INSTANCE_OPERATIONS        4
+#define DRV_MIIM_INSTANCE_CLIENTS           2
+#define DRV_MIIM_CLIENT_OP_PROTECTION   false
+#define DRV_MIIM_COMMANDS   false
+#define DRV_MIIM_DRIVER_OBJECT              DRV_MIIM_OBJECT_BASE_Default
+#define DRV_MIIM_DRIVER_INDEX               DRV_MIIM_INDEX_0              
+
+/* MIIM RTOS Configurations*/
+#define DRV_MIIM_RTOS_STACK_SIZE                1024
+#define DRV_MIIM_RTOS_TASK_PRIORITY             1
+
+
 /*** WiFi PIC32MZW1 Driver Configuration ***/
 #define WDRV_PIC32MZW1_DEVICE_USE_SYS_DEBUG
 #define WDRV_PIC32MZW_WPA3_PERSONAL_SUPPORT
@@ -228,6 +245,48 @@ extern "C" {
 #define SYS_WIFIPROV_NVMADDR        		0x900FF000
 #define SYS_WIFIPROV_SAVECONFIG        			true
 #define SYS_WIFIPROV_SOCKETPORT        		6666
+
+/*** TCPIP MAC Configuration ***/
+#define TCPIP_EMAC_TX_DESCRIPTORS				    8
+#define TCPIP_EMAC_RX_DESCRIPTORS				    8
+#define TCPIP_EMAC_RX_DEDICATED_BUFFERS				4
+#define TCPIP_EMAC_RX_INIT_BUFFERS				    0
+#define TCPIP_EMAC_RX_LOW_THRESHOLD				    1
+#define TCPIP_EMAC_RX_LOW_FILL				        2
+#define TCPIP_EMAC_MAX_FRAME		    			1536
+#define TCPIP_EMAC_LINK_MTU		    			    1500
+#define TCPIP_EMAC_RX_BUFF_SIZE		    			1536
+#define TCPIP_EMAC_RX_FRAGMENTS		    			1
+
+#define TCPIP_EMAC_RX_FILTERS                       \
+                                                    TCPIP_MAC_RX_FILTER_TYPE_BCAST_ACCEPT |\
+                                                    TCPIP_MAC_RX_FILTER_TYPE_MCAST_ACCEPT |\
+                                                    TCPIP_MAC_RX_FILTER_TYPE_UCAST_ACCEPT |\
+                                                    TCPIP_MAC_RX_FILTER_TYPE_RUNT_REJECT |\
+                                                    TCPIP_MAC_RX_FILTER_TYPE_CRC_ERROR_REJECT |\
+                                                    0
+#define TCPIP_EMAC_ETH_OPEN_FLAGS       			\
+                                                    TCPIP_ETH_OPEN_AUTO |\
+                                                    TCPIP_ETH_OPEN_FDUPLEX |\
+                                                    TCPIP_ETH_OPEN_HDUPLEX |\
+                                                    TCPIP_ETH_OPEN_100 |\
+                                                    TCPIP_ETH_OPEN_10 |\
+                                                    TCPIP_ETH_OPEN_MDIX_AUTO |\
+                                                    TCPIP_ETH_OPEN_RMII |\
+                                                    0
+
+#define TCPIP_INTMAC_MODULE_ID		    			_ETH_BASE_ADDRESS
+#define TCPIP_INTMAC_PERIPHERAL_CLK  				100000000
+
+#define DRV_ETHMAC_INTERRUPT_SOURCE				_ETHERNET_VECTOR
+
+#define DRV_ETHMAC_INTERRUPT_MODE        			true
+
+#define TCPIP_EMAC_AUTO_FLOW_CONTROL_ENABLE        	true
+#define TCPIP_EMAC_FLOW_CONTROL_PAUSE_BYTES         3072
+#define TCPIP_EMAC_FLOW_CONTROL_FULL_WMARK          2
+#define TCPIP_EMAC_FLOW_CONTROL_EMPTY_WMARK         0
+
 
 
 /*** TCP Configuration ***/
@@ -314,6 +373,28 @@ extern "C" {
 
 	/*** tcpip_cmd Configuration ***/
 	#define TCPIP_STACK_COMMAND_ENABLE
+
+
+
+/* Network Configuration Index 1 */
+#define TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX1	"ETHMAC"
+#define TCPIP_IF_PIC32MZW_ETHMAC	
+
+#define TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX1				"MCHPBOARD_E"
+#define TCPIP_NETWORK_DEFAULT_MAC_ADDR_IDX1				0
+
+#define TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX1			"192.168.100.10"
+#define TCPIP_NETWORK_DEFAULT_IP_MASK_IDX1			"255.255.255.0"
+#define TCPIP_NETWORK_DEFAULT_GATEWAY_IDX1			"192.168.100.1"
+#define TCPIP_NETWORK_DEFAULT_DNS_IDX1				"192.168.100.1"
+#define TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX1			"0.0.0.0"
+#define TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX1			"full"
+#define TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX1			\
+													TCPIP_NETWORK_CONFIG_DHCP_CLIENT_ON |\
+													TCPIP_NETWORK_CONFIG_DNS_CLIENT_ON |\
+													TCPIP_NETWORK_CONFIG_IP_STATIC
+													
+#define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX1			DRV_ETHMAC_PIC32MACObject
 
 
 
@@ -471,6 +552,22 @@ extern "C" {
 #define TCPIP_UDP_EXTERN_PACKET_PROCESS   false
 
 
+                                                  
+#define TCPIP_INTMAC_PHY_CONFIG_FLAGS              	( 0 \
+                                                    | DRV_ETHPHY_CFG_AUTO \
+                                                    )
+
+#define TCPIP_INTMAC_PHY_LINK_INIT_DELAY  			500
+#define TCPIP_INTMAC_PHY_ADDRESS		    			0
+#define DRV_ETHPHY_INSTANCES_NUMBER					1
+#define DRV_ETHPHY_CLIENTS_NUMBER					1
+#define DRV_ETHPHY_INDEX		        			1
+#define DRV_ETHPHY_PERIPHERAL_ID					1
+#define DRV_ETHPHY_NEG_INIT_TMO		    			1
+#define DRV_ETHPHY_NEG_DONE_TMO		    			2000
+#define DRV_ETHPHY_RESET_CLR_TMO					500
+
+
 
 /*** wolfCrypt Library Configuration ***/
 #define MICROCHIP_PIC32
@@ -582,7 +679,7 @@ extern "C" {
 #define SYS_WIFI_RTOS_SIZE           		1024
 #define SYS_WIFI_RTOS_PRIORITY             1
 
-#define TCPIP_STACK_NETWORK_INTERAFCE_COUNT  	1
+#define TCPIP_STACK_NETWORK_INTERAFCE_COUNT  	2
 
 
 

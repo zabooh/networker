@@ -196,6 +196,24 @@ IntVectorRFTM0_Handler:
     nop
     portRESTORE_CONTEXT
     .end   IntVectorRFTM0_Handler
+    .extern  ETHERNET_Handler
+
+    .section   .vector_165,code, keep
+    .equ     __vector_dispatch_165, IntVectorETHERNET_Handler
+    .global  __vector_dispatch_165
+    .set     nomicromips
+    .set     noreorder
+    .set     nomips16
+    .set     noat
+    .ent  IntVectorETHERNET_Handler
+
+IntVectorETHERNET_Handler:
+    portSAVE_CONTEXT
+    la    s6,  ETHERNET_Handler
+    jalr  s6
+    nop
+    portRESTORE_CONTEXT
+    .end   IntVectorETHERNET_Handler
     .extern  CRYPTO1_Handler
 
     .section   .vector_166,code, keep

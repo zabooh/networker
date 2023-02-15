@@ -69,6 +69,7 @@ void UART1_TX_InterruptHandler( void );
 void WDRV_PIC32MZW_TasksRFSMCISR( void );
 void WDRV_PIC32MZW_TasksRFMACISR( void );
 void WDRV_PIC32MZW_TasksRFTimer0ISR( void );
+void ETHERNET_InterruptHandler( void );
 void DRV_BA414E_InterruptHandler( void );
 void DRV_BA414E_ErrorInterruptHandler( void );
 
@@ -115,6 +116,11 @@ void RFMAC_Handler (void)
 void RFTM0_Handler (void)
 {
     WDRV_PIC32MZW_TasksRFTimer0ISR();
+}
+
+void ETHERNET_Handler (void)
+{
+    ETHERNET_InterruptHandler();
 }
 
 void CRYPTO1_Handler (void)

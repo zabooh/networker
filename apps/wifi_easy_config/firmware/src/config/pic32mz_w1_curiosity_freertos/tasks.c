@@ -100,6 +100,16 @@ void _SYS_CMD_Tasks(  void *pvParameters  )
 }
 
 
+
+void _DRV_MIIM_Task(  void *pvParameters  )
+{
+    while(1)
+    {
+        DRV_MIIM_Tasks(sysObj.drvMiim);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
+    }
+}
+
 static void _WDRV_PIC32MZW1_Tasks(  void *pvParameters  )
 {
     while(1)
@@ -180,6 +190,15 @@ void SYS_Tasks ( void )
 
     /* Maintain Device Drivers */
     
+    xTaskCreate( _DRV_MIIM_Task,
+        "DRV_MIIM_Tasks",
+        DRV_MIIM_RTOS_STACK_SIZE,
+        (void*)NULL,
+        DRV_MIIM_RTOS_TASK_PRIORITY,
+        (TaskHandle_t*)NULL
+    );
+
+
     xTaskCreate( _WDRV_PIC32MZW1_Tasks,
         "WDRV_PIC32MZW1_Tasks",
         1024,

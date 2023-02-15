@@ -53,6 +53,7 @@
 #include "driver/ba414e/drv_ba414e.h"
 #include "bsp/bsp.h"
 #include "driver/memory/drv_memory.h"
+#include "driver/ethmac/drv_ethmac.h"
 #include "system/time/sys_time.h"
 #include "peripheral/nvm/plib_nvm.h"
 #include "peripheral/coretimer/plib_coretimer.h"
@@ -72,6 +73,7 @@
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/cache/plib_cache.h"
 #include "peripheral/evic/plib_evic.h"
+#include "driver/miim/drv_miim.h"
 #include "wolfssl/wolfcrypt/port/pic32/crypt_wolfcryptcb.h"
 #include "driver/wifi/pic32mzw1/include/wdrv_pic32mzw_api.h"
 #include "system/fs/sys_fs.h"
@@ -216,6 +218,8 @@ typedef struct
 
 
     SYS_MODULE_OBJ  tcpip;
+
+    SYS_MODULE_OBJ  drvMiim;
     SYS_MODULE_OBJ  sysDebug;
 
     SYS_MODULE_OBJ  drvWifiPIC32MZW1;
