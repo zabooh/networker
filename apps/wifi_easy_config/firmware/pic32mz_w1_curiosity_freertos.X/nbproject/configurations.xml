@@ -58,6 +58,132 @@
               </logicalFolder>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/miim/drv_miim.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="usb" displayName="usb" projectFiles="true">
+              <logicalFolder name="usbfs" displayName="usbfs" projectFiles="true">
+                <logicalFolder name="src" displayName="src" projectFiles="true">
+                  <logicalFolder name="templates" displayName="templates" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_Suspend_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_UOEMonitor_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LastEndpoint_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_SOFThreshold_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_SleepEntryGuard_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_SleepEntryGuard_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_AutomaticSuspend_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_PullUpPullDown_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_GEN_InterruptStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnHandshake_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_BDTFunctions_PIC32.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_VbusCharge_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_PingPongMode_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_StartOfFrames_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_BufferFreeze_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LastEndpoint_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnTxRx_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EP0LowSpeedConnect_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ERR_InterruptStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnStall_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_ASessionValid_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_InterruptStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_VbusCharge_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_TokenEP_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_SessionValid_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ModuleBusy_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LiveJState_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ERR_InterruptStatus_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ERR_Interrupt_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_SOFThreshold_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OpModeSelect_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_HostGeneratesReset_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_LineState_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_IDPinState_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_SessionValid_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_VbusPowerOnOff_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_TokenPID_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LiveSingleEndedZero_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EyePattern_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EP0NAKRetry_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LastDirection_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_TokenEP_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ResumeSignaling_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnRxEnableEnhanced_PIC32.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EP0LowSpeedConnect_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_BufferFreeze_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ALL_Interrupt_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OnChipTransceiver_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_Interrupt_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_InterruptStatus_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_TokenPID_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_FrameNumber_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_HostBusyWithToken_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_StopInIdle_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_GEN_InterruptStatus_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ModuleBusy_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_AutomaticSuspend_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_VbusDischarge_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_GEN_Interrupt_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_BDTBaseAddress_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnControlTransfer_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_HostGeneratesReset_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OpModeSelect_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ResumeSignaling_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_PacketTransfer_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_ASessionValid_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_VbusDischarge_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_NextTokenSpeed_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LastPingPong_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_Interrupt_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usbfs_registers.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_PullUpPullDown_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_LineState_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LastTransactionDetails_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LastDirection_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnStall_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_BDTFunctions_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_GEN_Interrupt_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_IDPinState_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EyePattern_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnTxRx_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ERR_Interrupt_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ActivityPending_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ModulePower_32Bit16Bit.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_BSessionEnd_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EP0NAKRetry_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LastPingPong_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_VbusPowerOnOff_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_StopInIdle_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_StartOfFrames_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_PacketTransfer_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_DeviceAddress_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LastTransactionDetails_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OnChipPullup_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LiveJState_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_SpeedControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_LiveSingleEndedZero_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ALL_Interrupt_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_DeviceAddress_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_BDTBaseAddress_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_HostBusyWithToken_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_NextTokenSpeed_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_Suspend_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_FrameNumber_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnControlTransfer_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ActivityPending_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnHandshake_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_EPnRxEnableEnhanced_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_OTG_BSessionEnd_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/templates/usb_ModulePower_Unsupported.h</itemPath>
+                  </logicalFolder>
+                  <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/plib_usbfs.h</itemPath>
+                  <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/usbfs_registers.h</itemPath>
+                  <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/drv_usbfs_local.h</itemPath>
+                  <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/drv_usbfs_variant_mapping.h</itemPath>
+                  <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/plib_usbfs_header.h</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/drv_usbfs.h</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/drv_usb.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/drv_usb_external_dependencies.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f3" displayName="wifi" projectFiles="true">
               <logicalFolder name="f1" displayName="pic32mzw1" projectFiles="true">
                 <logicalFolder name="f1" displayName="include" projectFiles="true">
@@ -264,6 +390,8 @@
             </logicalFolder>
             <logicalFolder name="f9" displayName="console" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/sys_console.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_usb_cdc.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_usb_cdc_definitions.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="debug" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/debug/sys_debug.h</itemPath>
@@ -303,6 +431,24 @@
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/system_media.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/sys_time_h2_adapter.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/sys_random_h2_adapter.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="usb" displayName="usb" projectFiles="true">
+            <logicalFolder name="src" displayName="src" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_mapping.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_external_dependencies.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_function_driver.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_cdc_local.h</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_common.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_host_client_driver.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_chapter_9.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_device.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_hub.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_host_hub_interface.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_host.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_device_cdc.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_cdc.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/device.h</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/user.h</itemPath>
@@ -545,6 +691,14 @@
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
+            <logicalFolder name="usb" displayName="usb" projectFiles="true">
+              <logicalFolder name="usbfs" displayName="usbfs" projectFiles="true">
+                <logicalFolder name="src" displayName="src" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/drv_usbfs_device.c</itemPath>
+                  <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/usb/usbfs/src/drv_usbfs.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
             <logicalFolder name="f3" displayName="wifi" projectFiles="true">
               <logicalFolder name="f1" displayName="pic32mzw1" projectFiles="true">
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/driver/wifi/pic32mzw1/drv_pic32mzw1_crypto.c</itemPath>
@@ -638,9 +792,9 @@
             <logicalFolder name="f3" displayName="console" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_uart.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_uart_definitions.h</itemPath>
-              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_uart.c</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console.c</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_usb_cdc.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="debug" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/debug/src/sys_debug_local.h</itemPath>
@@ -675,6 +829,13 @@
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/sys_time_h2_adapter.c</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/sys_random_h2_adapter.c</itemPath>
           </logicalFolder>
+          <logicalFolder name="usb" displayName="usb" projectFiles="true">
+            <logicalFolder name="src" displayName="src" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device.c</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_cdc.c</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_cdc_acm.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/tasks.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/initialization.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/interrupts.c</itemPath>
@@ -682,6 +843,7 @@
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/exceptions.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/freertos_hooks.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/pmu_init.c</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb_device_init_data.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
@@ -1081,7 +1243,6 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -1112,7 +1273,6 @@
         <property key="additional-options-chop-files" value="false"/>
       </C32-AR>
       <C32-AS>
-        <property key="appendMe" value=""/>
         <property key="assembler-symbols" value=""/>
         <property key="enable-symbols" value="true"/>
         <property key="exclude-floating-point-library" value="false"/>
@@ -1142,7 +1302,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -1182,7 +1341,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -1330,7 +1488,8 @@
         <property key="UART2" value="true"/>
         <property key="UART3" value="true"/>
         <property key="communication.activationmode" value="nohv"/>
-        <property key="communication.interface" value=""/>
+        <property key="communication.interface"
+                  value="${communication.interface.default}"/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
@@ -1483,6 +1642,91 @@
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value="3.25"/>
       </pk4hybrid>
+      <snap>
+        <property key="ADC" value="true"/>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="CAN1" value="true"/>
+        <property key="CANFD2" value="true"/>
+        <property key="CHANGE NOTICE A" value="true"/>
+        <property key="CHANGE NOTICE B" value="true"/>
+        <property key="CHANGE NOTICE C" value="true"/>
+        <property key="CHANGE NOTICE K" value="true"/>
+        <property key="CLOCK CONTROL LVDCON" value="true"/>
+        <property key="DMA" value="true"/>
+        <property key="ETHERNET CONTROLLER" value="true"/>
+        <property key="Freeze All Other Peripherals" value="true"/>
+        <property key="I2C 1" value="true"/>
+        <property key="I2C 2" value="true"/>
+        <property key="INPUT CAPTURE 1" value="true"/>
+        <property key="INPUT CAPTURE 2" value="true"/>
+        <property key="INPUT CAPTURE 3" value="true"/>
+        <property key="INPUT CAPTURE 4" value="true"/>
+        <property key="INTERRUPT CONTROL" value="true"/>
+        <property key="OUTPUT COMPARE 1" value="true"/>
+        <property key="OUTPUT COMPARE 2" value="true"/>
+        <property key="OUTPUT COMPARE 3" value="true"/>
+        <property key="OUTPUT COMPARE 4" value="true"/>
+        <property key="REAL TIME CLOCK" value="true"/>
+        <property key="REFERENCE CLOCK 1" value="true"/>
+        <property key="SPI/I2S 1" value="true"/>
+        <property key="SPI/I2S 2" value="true"/>
+        <property key="TIMER1" value="true"/>
+        <property key="TIMER2" value="true"/>
+        <property key="TIMER3" value="true"/>
+        <property key="TIMER4" value="true"/>
+        <property key="TIMER5" value="true"/>
+        <property key="TIMER6" value="true"/>
+        <property key="TIMER7" value="true"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
+        <property key="UART1" value="true"/>
+        <property key="UART2" value="true"/>
+        <property key="UART3" value="true"/>
+        <property key="communication.interface"
+                  value="${communication.interface.default}"/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="10000000-100fffff"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+      </snap>
     </conf>
   </confs>
 </configurationDescriptor>

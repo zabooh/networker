@@ -59,14 +59,15 @@
 // Section: RTOS "Tasks" Routine
 // *****************************************************************************
 // *****************************************************************************
-
-void _DRV_BA414E_Tasks(  void *pvParameters  )
+void _SYS_CONSOLE_0_Tasks(  void *pvParameters  )
 {
     while(1)
     {
-        DRV_BA414E_Tasks(sysObj.ba414e);
+        SYS_CONSOLE_Tasks(SYS_CONSOLE_INDEX_0);
+        vTaskDelay(10 / portTICK_PERIOD_MS);
     }
 }
+
 
 /* Handle for the APP_Tasks. */
 TaskHandle_t xAPP_Tasks;
@@ -79,6 +80,47 @@ void _APP_Tasks(  void *pvParameters  )
         vTaskDelay(4000 / portTICK_PERIOD_MS);
     }
 }
+
+
+void _DRV_MIIM_Task(  void *pvParameters  )
+{
+    while(1)
+    {
+        DRV_MIIM_Tasks(sysObj.drvMiim);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
+    }
+}
+
+
+void _SYS_FS_Tasks(  void *pvParameters  )
+{
+    while(1)
+    {
+        SYS_FS_Tasks();
+        vTaskDelay(10 / portTICK_PERIOD_MS);
+    }
+}
+
+
+
+void _DRV_BA414E_Tasks(  void *pvParameters  )
+{
+    while(1)
+    {
+        DRV_BA414E_Tasks(sysObj.ba414e);
+    }
+}
+
+void _USB_DEVICE_Tasks(  void *pvParameters  )
+{
+    while(1)
+    {
+                /* USB Device layer tasks routine */
+        USB_DEVICE_Tasks(sysObj.usbDevObject0);
+        vTaskDelay(10 / portTICK_PERIOD_MS);
+    }
+}
+
 
 
 void _TCPIP_STACK_Task(  void *pvParameters  )
@@ -100,16 +142,6 @@ void _SYS_CMD_Tasks(  void *pvParameters  )
 }
 
 
-
-void _DRV_MIIM_Task(  void *pvParameters  )
-{
-    while(1)
-    {
-        DRV_MIIM_Tasks(sysObj.drvMiim);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
-    }
-}
-
 static void _WDRV_PIC32MZW1_Tasks(  void *pvParameters  )
 {
     while(1)
@@ -126,17 +158,6 @@ static void _WDRV_PIC32MZW1_Tasks(  void *pvParameters  )
         }
     }
 }
-
-
-void _SYS_FS_Tasks(  void *pvParameters  )
-{
-    while(1)
-    {
-        SYS_FS_Tasks();
-        vTaskDelay(10 / portTICK_PERIOD_MS);
-    }
-}
-
 
 void _SYS_WIFI_Task(  void *pvParameters  )
 {
@@ -166,16 +187,13 @@ void _SYS_WIFI_Task(  void *pvParameters  )
 void SYS_Tasks ( void )
 {
     /* Maintain system services */
-    
-
-    xTaskCreate( _SYS_CMD_Tasks,
-        "SYS_CMD_TASKS",
-        SYS_CMD_RTOS_STACK_SIZE,
+        xTaskCreate( _SYS_CONSOLE_0_Tasks,
+        "SYS_CONSOLE_0_TASKS",
+        SYS_CONSOLE_RTOS_STACK_SIZE_IDX0,
         (void*)NULL,
-        SYS_CMD_RTOS_TASK_PRIORITY,
+        SYS_CONSOLE_RTOS_TASK_PRIORITY_IDX0,
         (TaskHandle_t*)NULL
     );
-
 
 
     xTaskCreate( _SYS_FS_Tasks,
@@ -187,16 +205,26 @@ void SYS_Tasks ( void )
     );
 
 
+    xTaskCreate( _SYS_CMD_Tasks,
+        "SYS_CMD_TASKS",
+        SYS_CMD_RTOS_STACK_SIZE,
+        (void*)NULL,
+        SYS_CMD_RTOS_TASK_PRIORITY,
+        (TaskHandle_t*)NULL
+    );
+
+
+
 
     /* Maintain Device Drivers */
-    
-    xTaskCreate( _DRV_MIIM_Task,
+        xTaskCreate( _DRV_MIIM_Task,
         "DRV_MIIM_Tasks",
         DRV_MIIM_RTOS_STACK_SIZE,
         (void*)NULL,
         DRV_MIIM_RTOS_TASK_PRIORITY,
         (TaskHandle_t*)NULL
     );
+
 
 
     xTaskCreate( _WDRV_PIC32MZW1_Tasks,
@@ -217,6 +245,16 @@ void SYS_Tasks ( void )
         DRV_BA414E_RTOS_STACK_SIZE,
         (void*)NULL,
         DRV_BA414E_RTOS_TASK_PRIORITY,
+        (TaskHandle_t*)NULL
+    );
+
+
+    /* Create OS Thread for USB_DEVICE_Tasks. */
+    xTaskCreate( _USB_DEVICE_Tasks,
+        "USB_DEVICE_TASKS",
+        1024,
+        (void*)NULL,
+        1,
         (TaskHandle_t*)NULL
     );
 

@@ -5,13 +5,13 @@
     Microchip Technology Inc.
 
   File Name:
-    sys_console_uart_definitions.h
+    sys_console_usb_cdc_definitions.h
 
   Summary:
-    Console System Service local UART I/O device implementation.
+    Console System Service USB CDC device implementation.
 
   Description:
-    This file contains the definitions required by the UART console I/O device.
+    This file contains the definitions required by the USB CDC device.
 *******************************************************************************/
 
 //DOM-IGNORE-BEGIN
@@ -39,8 +39,8 @@
 *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef SYS_CONSOLE_UART_DEFINITIONS_H    /* Guard against multiple inclusion */
-#define SYS_CONSOLE_UART_DEFINITIONS_H
+#ifndef SYS_CONSOLE_USB_CDC_DEFINITIONS_H    /* Guard against multiple inclusion */
+#define SYS_CONSOLE_USB_CDC_DEFINITIONS_H
 
 /* ************************************************************************** */
 /* ************************************************************************** */
@@ -48,46 +48,48 @@
 /* ************************************************************************** */
 /* ************************************************************************** */
 
-#include "system/int/sys_int.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
-    extern "C" {
+extern "C" {
 
 #endif
 // DOM-IGNORE-END
 
-typedef size_t (*SYS_CONSOLE_UART_PLIB_READ)(uint8_t* pRdBuffer, const size_t size);
-typedef size_t (*SYS_CONSOLE_UART_PLIB_READ_COUNT_GET)(void);
-typedef size_t (*SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET)(void);
-typedef size_t (*SYS_CONSOLE_UART_PLIB_WRITE)(uint8_t* pWrBuffer, const size_t size );
-typedef size_t (*SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET)(void);
-typedef size_t (*SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET)(void);
-
 typedef struct
 {
-    SYS_CONSOLE_UART_PLIB_READ 							read;
-    SYS_CONSOLE_UART_PLIB_READ_COUNT_GET				readCountGet;
-    SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET	readFreeBufferCountGet;
-	SYS_CONSOLE_UART_PLIB_WRITE 						write;
-	SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET				writeCountGet;
-	SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET	writeFreeBufferCountGet;
-    
-} SYS_CONSOLE_UART_PLIB_INTERFACE;
-
-typedef struct
-{
-    const SYS_CONSOLE_UART_PLIB_INTERFACE* 				uartPLIB;
+    uint32_t		                    	cdcInstanceIndex;
 	
-} SYS_CONSOLE_UART_INIT_DATA;
+	/* SYS Console read buffer size */
+    uint32_t								consoleReadBufferSize;	
+	
+	/* SYS Console read buffer size */
+	uint32_t								consoleWriteBufferSize;
+	
+	/* SYS Console USB CDC Read Buffer */
+	uint8_t*								cdcReadBuffer;
+	
+	/* SYS Console USB CDC Write Buffer */
+	uint8_t*								cdcWriteBuffer;
+	
+    /* SYS Console read buffer */
+    uint8_t*                                consoleReadBuffer;
+
+    /* SYS Console Write buffer */
+    uint8_t*                                consoleWriteBuffer;
+
+} SYS_CONSOLE_USB_CDC_INIT_DATA;
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 
-    }
+}
 
 #endif
 // DOM-IGNORE-END
 
-#endif /* SYS_CONSOLE_UART_DEFINITIONS_H */
+#endif /* SYS_CONSOLE_USB_CDC_DEFINITIONS_H */

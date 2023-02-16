@@ -88,6 +88,24 @@ IntVectorFLASH_CONTROL_Handler:
     nop
     portRESTORE_CONTEXT
     .end   IntVectorFLASH_CONTROL_Handler
+    .extern  USB_Handler
+
+    .section   .vector_34,code, keep
+    .equ     __vector_dispatch_34, IntVectorUSB_Handler
+    .global  __vector_dispatch_34
+    .set     nomicromips
+    .set     noreorder
+    .set     nomips16
+    .set     noat
+    .ent  IntVectorUSB_Handler
+
+IntVectorUSB_Handler:
+    portSAVE_CONTEXT
+    la    s6,  USB_Handler
+    jalr  s6
+    nop
+    portRESTORE_CONTEXT
+    .end   IntVectorUSB_Handler
     .extern  UART1_FAULT_Handler
 
     .section   .vector_38,code, keep
