@@ -264,7 +264,7 @@ static SYS_WIFIPROV_STATUS SYS_WIFIPROV_ExecuteBlock
             case SYS_WIFIPROV_STATUS_MPFS_MOUNT:
             {
                 /* Mount the file system for webpage*/
-                if (SYS_FS_Mount("/dev/nvma1", TCPIP_HTTP_WEB_DIR, MPFS2, 0, NULL) == SYS_FS_RES_SUCCESS) 
+                if (SYS_FS_Mount("/dev/nvma1", TCPIP_HTTP_WEB_DIR, FAT, 0, NULL) == SYS_FS_RES_SUCCESS) 
                 {
                     wifiProvSrvcObj->status = SYS_WIFIPROV_STATUS_NVM_READ;
                 }

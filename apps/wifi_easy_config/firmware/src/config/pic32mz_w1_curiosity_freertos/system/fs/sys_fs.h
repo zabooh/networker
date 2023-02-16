@@ -665,8 +665,15 @@ typedef struct
     uint16_t    ftime;
     /* Attribute */
     uint8_t     fattrib;
-    /* Short file name (8.3 format) */
-    char        fname[13];
+    /* Alternate/Short file name (8.3 format) */
+    char        altname[13];
+    /* Primary/Long file name */
+    char        fname[SYS_FS_FILE_NAME_LEN + 1];
+
+    /* Retaining below members for portability.
+     * For FAT-FS lfname[0] will always be '\0'.
+     * Use fname instead
+    */
     /* Pointer to the LFN buffer */
     char       *lfname;
     /* Size of LFN buffer */

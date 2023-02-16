@@ -119,6 +119,11 @@ extern "C" {
 #define SYS_FS_STACK_SIZE                 1024
 #define SYS_FS_PRIORITY                   1
 
+#define SYS_FS_FAT_VERSION                "v0.14b"
+#define SYS_FS_FAT_READONLY               false
+#define SYS_FS_FAT_CODE_PAGE              437
+#define SYS_FS_FAT_MAX_SS                 SYS_FS_MEDIA_MAX_BLOCK_SIZE
+#define SYS_FS_FAT_ALIGNED_BUFFER_LEN     512
 
 
 
@@ -179,7 +184,7 @@ extern "C" {
 #define DRV_MEMORY_INDEX_0                   0
 #define DRV_MEMORY_CLIENTS_NUMBER_IDX0       1
 #define DRV_MEMORY_DEVICE_START_ADDRESS      0x90010000
-#define DRV_MEMORY_DEVICE_MEDIA_SIZE         64UL
+#define DRV_MEMORY_DEVICE_MEDIA_SIZE         128UL //   64UL
 #define DRV_MEMORY_DEVICE_MEDIA_SIZE_BYTES   (DRV_MEMORY_DEVICE_MEDIA_SIZE * 1024)
 #define DRV_MEMORY_DEVICE_PROGRAM_SIZE       1024
 #define DRV_MEMORY_DEVICE_ERASE_SIZE         4096
