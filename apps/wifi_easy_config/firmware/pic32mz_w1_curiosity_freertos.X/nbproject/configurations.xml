@@ -1121,6 +1121,20 @@
       <item path="../src/config/pic32mz_w1_curiosity_freertos/diskImage.c"
             ex="true"
             overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-CO>
+        </C32-CO>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
       </item>
       <item path="../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/common/sys_fs_shell.c"
             ex="false"
