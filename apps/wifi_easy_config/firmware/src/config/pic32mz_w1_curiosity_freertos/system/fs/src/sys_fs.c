@@ -44,7 +44,7 @@
 
 #include "system/fs/src/sys_fs_local.h"
 #include "system/fs/sys_fs_media_manager.h"
-
+#include "../../console/sys_console.h"
 // *****************************************************************************
 /* Registration table for each native file system
 
@@ -779,11 +779,14 @@ SYS_FS_HANDLE SYS_FS_FileOpen
     uint8_t *ptr = NULL;
     OSAL_RESULT osalResult = OSAL_RESULT_FALSE;
 
+    SYS_CONSOLE_PRINT("File Open:%s\n\r",fname);
+    
     /* Get the disk from the name, and also append the disk number prior to the
      * file name like this "0:file.txt" */
     if (SYS_FS_GetDisk(fname, &disk, pathWithDiskNo) == false)
     {
         /* "errorValue" contains the reason for failure. */
+        SYS_CONSOLE_PRINT("File Open:SYS_FS_HANDLE_INVALID 1\n\r");
         return SYS_FS_HANDLE_INVALID;
     }
 
@@ -792,6 +795,7 @@ SYS_FS_HANDLE SYS_FS_FileOpen
     if ((disk->fsType == MPFS2) && (attributes != SYS_FS_FILE_OPEN_READ))
     {
         errorValue = SYS_FS_ERROR_DENIED;
+        SYS_CONSOLE_PRINT("File Open:SYS_FS_HANDLE_INVALID 2\n\r");
         return SYS_FS_HANDLE_INVALID;
     }
 
@@ -800,6 +804,7 @@ SYS_FS_HANDLE SYS_FS_FileOpen
     if (osalResult != OSAL_RESULT_TRUE)
     {
         errorValue = SYS_FS_ERROR_DENIED;
+        SYS_CONSOLE_PRINT("File Open:SYS_FS_HANDLE_INVALID 3\n\r");
         return SYS_FS_HANDLE_INVALID;
     }
 
@@ -822,6 +827,7 @@ SYS_FS_HANDLE SYS_FS_FileOpen
     {
         /* Could not find a free file object. */
         errorValue = SYS_FS_ERROR_TOO_MANY_OPEN_FILES;
+        SYS_CONSOLE_PRINT("File Open:SYS_FS_HANDLE_INVALID 4\n\r");
         return SYS_FS_HANDLE_INVALID;
     }
 
@@ -849,6 +855,7 @@ SYS_FS_HANDLE SYS_FS_FileOpen
         errorValue = SYS_FS_ERROR_DENIED;
         /* Mark the file object as free. */
         fileObj->inUse = false;
+        SYS_CONSOLE_PRINT("File Open:SYS_FS_HANDLE_INVALID 5\n\r");
         return SYS_FS_HANDLE_INVALID;
     }
 
@@ -876,6 +883,10 @@ SYS_FS_HANDLE SYS_FS_FileOpen
         fileObj->inUse = false;
     }
 
+    SYS_CONSOLE_PRINT("File Open:Handle:%08x Status: %d\n\r",&fileObj,fileStatus);
+        
+    (fileStatus == 0) ? (SYS_CONSOLE_PRINT("fileStatus == 0\n\r")) : SYS_CONSOLE_PRINT("fileStatus != 0\n\r");
+    
     return (fileStatus == 0) ? ((SYS_FS_HANDLE)fileObj) : SYS_FS_HANDLE_INVALID;
 }
 
