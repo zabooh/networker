@@ -447,6 +447,7 @@
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_external_dependencies.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_function_driver.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_cdc_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_msd_local.h</itemPath>
             </logicalFolder>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_common.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_host_client_driver.h</itemPath>
@@ -457,6 +458,9 @@
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_host.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_device_cdc.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_cdc.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_device_msd.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/usb_msd.h</itemPath>
+            <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/scsi.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/device.h</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/user.h</itemPath>
@@ -851,6 +855,7 @@
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device.c</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_cdc.c</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_cdc_acm.c</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb/src/usb_device_msd.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/tasks.c</itemPath>
@@ -861,6 +866,7 @@
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/freertos_hooks.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/pmu_init.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb_device_init_data.c</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity_freertos/diskImage.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
@@ -1112,6 +1118,10 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
+      <item path="../src/config/pic32mz_w1_curiosity_freertos/diskImage.c"
+            ex="true"
+            overriding="false">
+      </item>
       <item path="../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/common/sys_fs_shell.c"
             ex="false"
             overriding="true">
@@ -1549,7 +1559,7 @@
       </item>
       <item path="../src/config/pic32mz_w1_curiosity_freertos/system/fs/src/sys_fs.c"
             ex="false"
-            overriding="true">
+            overriding="false">
         <C32>
           <property key="additional-warnings" value="true"/>
           <property key="addresss-attribute-use" value="false"/>
@@ -1694,7 +1704,7 @@
       </item>
       <item path="../src/config/pic32mz_w1_curiosity_freertos/system/fs/src/sys_fs_fat_interface.c"
             ex="false"
-            overriding="true">
+            overriding="false">
         <C32>
           <property key="additional-warnings" value="true"/>
           <property key="addresss-attribute-use" value="false"/>
@@ -1839,7 +1849,7 @@
       </item>
       <item path="../src/config/pic32mz_w1_curiosity_freertos/system/fs/src/sys_fs_media_manager.c"
             ex="false"
-            overriding="true">
+            overriding="false">
         <C32>
           <property key="additional-warnings" value="true"/>
           <property key="addresss-attribute-use" value="false"/>

@@ -161,6 +161,7 @@ static uint8_t gDrvMemory0EraseBuffer[NVM_ERASE_BUFFER_SIZE] CACHE_ALIGN;
 
 static DRV_MEMORY_CLIENT_OBJECT gDrvMemory0ClientObject[DRV_MEMORY_CLIENTS_NUMBER_IDX0];
 
+static DRV_MEMORY_BUFFER_OBJECT gDrvMemory0BufferObject[DRV_MEMORY_BUFFER_QUEUE_SIZE_IDX0];
 
 const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
     .Open               = DRV_NVM_Open,
@@ -179,11 +180,12 @@ const DRV_MEMORY_INIT drvMemory0InitData =
     .memDevIndex                = 0,
     .memoryDevice               = &drvMemory0DeviceAPI,
     .isMemDevInterruptEnabled   = true,
-    .memDevStatusPollUs         = 0,
     .isFsEnabled                = true,
     .deviceMediaType            = (uint8_t)SYS_FS_MEDIA_TYPE_NVM,
     .ewBuffer                   = &gDrvMemory0EraseBuffer[0],
     .clientObjPool              = (uintptr_t)&gDrvMemory0ClientObject[0],
+    .bufferObj                  = (uintptr_t)&gDrvMemory0BufferObject[0],
+    .queueSize                  = DRV_MEMORY_BUFFER_QUEUE_SIZE_IDX0,
     .nClientsMax                = DRV_MEMORY_CLIENTS_NUMBER_IDX0
 };
 

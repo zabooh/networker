@@ -50,6 +50,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "crypto/crypto.h"
+#include "usb/usb_device_msd.h"
+#include "usb/usb_msd.h"
 #include "bsp/bsp.h"
 #include "driver/memory/drv_memory.h"
 #include "system/time/sys_time.h"
@@ -71,9 +73,9 @@
 #include "usb/usb_device.h"
 #include "driver/ethmac/drv_ethmac.h"
 #include "peripheral/nvm/plib_nvm.h"
+#include "peripheral/uart/plib_uart3.h"
 #include "usb/usb_device_cdc.h"
 #include "usb/usb_cdc.h"
-#include "peripheral/uart/plib_uart3.h"
 #include "driver/memory/drv_memory_nvm.h"
 #include "peripheral/uart/plib_uart1.h"
 #include "driver/usb/usbfs/drv_usbfs.h"

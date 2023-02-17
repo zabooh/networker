@@ -79,7 +79,7 @@
 typedef uint32_t NVM_ERROR;
 
 #define NVM_START_ADDRESS              0x90010000
-#define NVM_MEDIA_SIZE                 64
+#define NVM_MEDIA_SIZE                 128
 #define NVM_ERASE_BUFFER_SIZE          4096
 
 

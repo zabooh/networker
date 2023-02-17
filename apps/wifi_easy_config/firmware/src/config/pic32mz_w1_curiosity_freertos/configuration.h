@@ -183,8 +183,9 @@ extern "C" {
 /* Memory Driver Instance 0 Configuration */
 #define DRV_MEMORY_INDEX_0                   0
 #define DRV_MEMORY_CLIENTS_NUMBER_IDX0       1
+#define DRV_MEMORY_BUFFER_QUEUE_SIZE_IDX0    1
 #define DRV_MEMORY_DEVICE_START_ADDRESS      0x90010000
-#define DRV_MEMORY_DEVICE_MEDIA_SIZE         128UL //   64UL
+#define DRV_MEMORY_DEVICE_MEDIA_SIZE         128UL
 #define DRV_MEMORY_DEVICE_MEDIA_SIZE_BYTES   (DRV_MEMORY_DEVICE_MEDIA_SIZE * 1024)
 #define DRV_MEMORY_DEVICE_PROGRAM_SIZE       1024
 #define DRV_MEMORY_DEVICE_ERASE_SIZE         4096
@@ -402,7 +403,7 @@ extern "C" {
 #define SYS_WIFIPROV_SOCKETPORT        		6666
 
 /* Number of Endpoints used */
-#define DRV_USBFS_ENDPOINTS_NUMBER                        4
+#define DRV_USBFS_ENDPOINTS_NUMBER                        5
 
 /* The USB Device Layer will not initialize the USB Driver */
 #define USB_DEVICE_DRIVER_INITIALIZE_EXPLICIT
@@ -412,6 +413,9 @@ extern "C" {
 
 /* EP0 size in bytes */
 #define USB_DEVICE_EP0_BUFFER_SIZE                          64
+
+/* Enable SOF Events */
+#define USB_DEVICE_SOF_EVENT_ENABLE
 
 
 /*** TCPIP MAC Configuration ***/
@@ -690,6 +694,17 @@ extern "C" {
 #define NO_ERROR_STRINGS
 #define NO_WOLFSSL_MEMORY
 // ---------- FUNCTIONAL CONFIGURATION END ----------
+
+/* Maximum instances of MSD function driver */
+#define USB_DEVICE_MSD_INSTANCES_NUMBER     1 
+
+#define USB_DEVICE_MSD_NUM_SECTOR_BUFFERS 1
+
+
+/* Number of Logical Units */
+#define USB_DEVICE_MSD_LUNS_NUMBER      1
+
+
 
 /* WIFI System Service Configuration Options */
 #define SYS_WIFI_DEVMODE        			SYS_WIFI_AP
