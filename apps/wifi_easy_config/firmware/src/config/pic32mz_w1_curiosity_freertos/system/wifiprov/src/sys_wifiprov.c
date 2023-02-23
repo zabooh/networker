@@ -256,6 +256,33 @@ static SYS_WIFIPROV_STATUS SYS_WIFIPROV_ExecuteBlock
 {
     SYS_WIFIPROV_OBJ *wifiProvSrvcObj = (SYS_WIFIPROV_OBJ *) object;
     uint8_t ret = SYS_WIFIPROV_OBJ_INVALID;
+
+    {
+        static SYS_WIFIPROV_STATUS state = SYS_WIFIPROV_STATUS_NONE;
+        if (state != wifiProvSrvcObj->status) {
+            switch (wifiProvSrvcObj->status) {
+                case SYS_WIFIPROV_STATUS_MPFS_MOUNT: SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS_MPFS_MOUNT\r\n");
+                    break;
+                case SYS_WIFIPROV_STATUS_NVM_READ: SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS_NVM_READ\r\n");
+                    break;
+                case SYS_WIFIPROV_STATUS_CONFIG_CHECK: SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS_CONFIG_CHECK\r\n");
+                    break;
+                case SYS_WIFIPROV_STATUS_NVM_ERASE: SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS_NVM_ERASE\r\n");
+                    break;
+                case SYS_WIFIPROV_STATUS_NVM_WRITE: SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS_NVM_WRITE\r\n");
+                    break;
+                case SYS_WIFIPROV_STATUS_WAITFORWRITE: SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS_WAITFORWRITE\r\n");
+                    break;
+                case SYS_WIFIPROV_STATUS_WAITFORREQ: SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS_WAITFORREQ\r\n");
+                    break;
+                case SYS_WIFIPROV_STATUS_NONE: SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS_NONE\r\n");
+                    break;
+                default: SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS Unknown\r\n");
+                    break;
+            }
+        }
+        state = wifiProvSrvcObj->status;
+    }    
     
     if (&g_wifiProvSrvcObj == (SYS_WIFIPROV_OBJ*) wifiProvSrvcObj)
     {
@@ -263,16 +290,27 @@ static SYS_WIFIPROV_STATUS SYS_WIFIPROV_ExecuteBlock
         {
             case SYS_WIFIPROV_STATUS_MPFS_MOUNT:
             {
+                vTaskDelay(2000 / portTICK_PERIOD_MS);
                 /* Mount the file system for webpage*/
-                if (SYS_FS_Mount("/dev/nvma1", TCPIP_HTTP_WEB_DIR, FAT, 0, NULL) == SYS_FS_RES_SUCCESS) 
-                {
+                extern MSD_APP_DATA msd_appData;
+                
+                if(msd_appData.state == MSD_APP_STATE_SERVICE_TASKS){
                     wifiProvSrvcObj->status = SYS_WIFIPROV_STATUS_NVM_READ;
+                    SYS_CONSOLE_PRINT("SYS_WIFIPROV_STATUS_NVM_READ\n");                    
                 }
+//                if (SYS_FS_Mount("/dev/nvma1", TCPIP_HTTP_WEB_DIR, FAT, 0, NULL) == SYS_FS_RES_SUCCESS) 
+//                {
+//                    wifiProvSrvcObj->status = SYS_WIFIPROV_STATUS_NVM_READ;
+//                    SYS_CONSOLE_PRINT("Flash mounted in Wifi prov moduler\n");
+//                }
+//                else{
+//                    SYS_CONSOLE_PRINT("Flash mount failed\n");
+//                }
                 break;
             }
            case SYS_WIFIPROV_STATUS_NVM_READ:
             {
-                /* Check if NVM flash performing any operation */
+                /* Check if NVM flash performing any operation */ 
                 if (!NVM_IsBusy()) 
                 {
                     /* Start the NVM Read Operation */

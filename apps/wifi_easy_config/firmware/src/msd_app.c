@@ -128,15 +128,13 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * pEventData, uintpt
 }
 
 static bool checkFSMount() {
-#if SYS_FS_AUTOMOUNT_ENABLE
-    return msd_appData.fsMounted;
-#else
-    if (SYS_FS_Mount(SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0, SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0, FAT, 0, NULL) != SYS_FS_RES_SUCCESS) {
-        return false;
-    } else {
+
+    if (SYS_FS_Mount(SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0, TCPIP_HTTP_WEB_DIR, FAT, 0, NULL) == SYS_FS_RES_SUCCESS) {
         return true;
+    } else {
+        return false;
     }
-#endif            
+
 }
 
 /*******************************************************************************
@@ -170,14 +168,43 @@ void MSD_APP_Initialize(void) {
 void MSD_APP_Tasks(void) {
     SYS_FS_FORMAT_PARAM opt;
 
+    {
+        static MSD_APP_STATES state = -1;
+        if (state != msd_appData.state) {
+            switch (msd_appData.state) {
+                case MSD_APP_STATE_INIT: SYS_CONSOLE_PRINT("MSD_APP_STATE_INIT\r\n");
+                    break;
+                case MSD_APP_STATE_CHECK_SWITCH: SYS_CONSOLE_PRINT("MSD_APP_STATE_CHECK_SWITCH\r\n");
+                    break;
+                case MSD_APP_STATE_CHECK_FS: SYS_CONSOLE_PRINT("MSD_APP_STATE_CHECK_FS\r\n");
+                    break;
+                case MSD_APP_STATE_MOUNT_FS: SYS_CONSOLE_PRINT("MSD_APP_STATE_MOUNT_FS\r\n");
+                    break;
+                case MSD_APP_STATE_CLEAR_DRIVE: SYS_CONSOLE_PRINT("MSD_APP_STATE_CLEAR_DRIVE\r\n");
+                    break;
+                case MSD_APP_STATE_ERROR: SYS_CONSOLE_PRINT("MSD_APP_STATE_ERROR\r\n");
+                    break;
+                case MSD_APP_CONNECT_USB: SYS_CONSOLE_PRINT("MSD_APP_CONNECT_USB\r\n");
+                    break;
+                case MSD_APP_STATE_SERVICE_TASKS: SYS_CONSOLE_PRINT("MSD_APP_STATE_SERVICE_TASKS\r\n");
+                    break;
+                default: SYS_CONSOLE_PRINT("MSD_APP_STATE Unknown\r\n");
+                    break;
+            }
+        }
+        state = msd_appData.state;
+    }
+
     /* Check the application's current state. */
     switch (msd_appData.state) {
             /* Application's initial state. */
         case MSD_APP_STATE_INIT:
         {
             bool appInitialized = true;
+            vTaskDelay(2000 / portTICK_PERIOD_MS);
             if (appInitialized) {
-                msd_appData.state = MSD_APP_STATE_MOUNT_FS;
+                SYS_CONSOLE_PRINT("MSD_APP_Tasks Started\r\n");
+                msd_appData.state = MSD_APP_STATE_MOUNT_FS; 
             }
             break;
         }
@@ -198,21 +225,23 @@ void MSD_APP_Tasks(void) {
         case MSD_APP_STATE_CHECK_SWITCH:
             if (SWITCH1_Get() == SWITCH1_STATE_PRESSED) {
                 msd_appData.state = MSD_APP_STATE_CLEAR_DRIVE;
+            } else {
+                msd_appData.state = MSD_APP_STATE_SERVICE_TASKS;
             }
-            msd_appData.state = MSD_APP_CONNECT_USB;
             break;
 
         case MSD_APP_STATE_CLEAR_DRIVE:
             opt.fmt = SYS_FS_FORMAT_FAT;
             opt.au_size = 0;
+            SYS_CONSOLE_PRINT("Start Format\r\n");
             if (SYS_FS_DriveFormat(SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0, &opt, (void *) work, SYS_FS_FAT_MAX_SS) != SYS_FS_RES_SUCCESS) {
                 /* Format of the disk failed. */
-                SYS_CONSOLE_PRINT(" Media Format failed\r\n");
+                SYS_CONSOLE_PRINT("Media Format failed\r\n");
                 msd_appData.state = MSD_APP_STATE_ERROR;
             } else {
                 SYS_FS_DriveLabelSet(SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0, "CUROSITY");
             }
-            msd_appData.state = MSD_APP_CONNECT_USB;
+            msd_appData.state = MSD_APP_STATE_SERVICE_TASKS;
             break;
 
         case MSD_APP_STATE_ERROR:
@@ -225,12 +254,12 @@ void MSD_APP_Tasks(void) {
                 /* Set the Event Handler. We will start receiving events after
                  * the handler is set */
                 USB_DEVICE_EventHandlerSet(msd_appData.usbDeviceHandle, APP_USBDeviceEventHandler, (uintptr_t) & msd_appData);
-
+                SYS_CONSOLE_PRINT("MSD Handle valid\r\n");
                 msd_appData.state = MSD_APP_STATE_SERVICE_TASKS;
                 break;
             } else {
                 SYS_CONSOLE_PRINT("Retrying USB Device Open\r\n");
-                //msd_appData.state = MSD_APP_STATE_ERROR;
+                msd_appData.state = MSD_APP_STATE_ERROR;
                 break;
             }
 

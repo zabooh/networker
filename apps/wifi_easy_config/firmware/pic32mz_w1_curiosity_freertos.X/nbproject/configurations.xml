@@ -1163,7 +1163,7 @@
       </item>
       <item path="../src/config/pic32mz_w1_curiosity_freertos/driver/memory/src/drv_memory.c"
             ex="false"
-            overriding="true">
+            overriding="false">
         <C32>
           <property key="additional-warnings" value="true"/>
           <property key="addresss-attribute-use" value="false"/>
@@ -1308,7 +1308,7 @@
       </item>
       <item path="../src/config/pic32mz_w1_curiosity_freertos/driver/sst26/src/drv_sst26.c"
             ex="false"
-            overriding="true">
+            overriding="false">
         <C32>
           <property key="additional-warnings" value="true"/>
           <property key="addresss-attribute-use" value="false"/>
@@ -2502,7 +2502,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../src/msd_app.c" ex="false" overriding="true">
+      <item path="../src/msd_app.c" ex="false" overriding="false">
         <C32>
           <property key="additional-warnings" value="true"/>
           <property key="addresss-attribute-use" value="false"/>

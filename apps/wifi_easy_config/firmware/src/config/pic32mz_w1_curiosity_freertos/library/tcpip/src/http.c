@@ -1463,7 +1463,7 @@ static bool TCPIP_HTTP_FileSend(HTTP_CONN* pHttpCon)
             pHttpCon->TxFile.EndOfCallBackFileFlag = true;
 
         case SM_PROCESS_DYN_VAR_CALLBACK:
-            SYS_CONSOLE_PRINT("CBID:%08x\n\r",pHttpCon->TxFile.dynVarCallBackID);
+//MR:            SYS_CONSOLE_PRINT("CBID:%08x\n\r",pHttpCon->TxFile.dynVarCallBackID);
             TCPIP_HTTP_Print(pHttpCon, pHttpCon->TxFile.dynVarCallBackID);
 
             if(pHttpCon->TxFile.EndOfCallBackFileFlag == true)
