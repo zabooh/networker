@@ -96,7 +96,7 @@
 #pragma config CLASSBDIS =         DISABLE
 #pragma config USBIDIO =         ON
 #pragma config VBUSIO =         ON
-#pragma config HSSPIEN =         OFF
+#pragma config HSSPIEN =         ON
 #pragma config SMCLR =      MCLR_NORM
 #pragma config USBDMTRIM =      0
 #pragma config USBDPTRIM =      0
@@ -157,27 +157,27 @@ const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACPIC32INTInitData;
 
 // <editor-fold defaultstate="collapsed" desc="DRV_MEMORY Instance 0 Initialization Data">
 
-static uint8_t gDrvMemory0EraseBuffer[NVM_ERASE_BUFFER_SIZE] CACHE_ALIGN;
+static uint8_t gDrvMemory0EraseBuffer[DRV_SST26_ERASE_BUFFER_SIZE] CACHE_ALIGN;
 
 static DRV_MEMORY_CLIENT_OBJECT gDrvMemory0ClientObject[DRV_MEMORY_CLIENTS_NUMBER_IDX0];
 
 static DRV_MEMORY_BUFFER_OBJECT gDrvMemory0BufferObject[DRV_MEMORY_BUFFER_QUEUE_SIZE_IDX0];
 
 const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
-    .Open               = DRV_NVM_Open,
-    .Close              = DRV_NVM_Close,
-    .Status             = DRV_NVM_Status,
-    .SectorErase        = DRV_NVM_SectorErase,
-    .Read               = DRV_NVM_Read,
-    .PageWrite          = DRV_NVM_PageWrite,
-    .EventHandlerSet    = (DRV_MEMORY_DEVICE_EVENT_HANDLER_SET)DRV_NVM_EventHandlerSet,
-    .GeometryGet        = (DRV_MEMORY_DEVICE_GEOMETRY_GET)DRV_NVM_GeometryGet,
-    .TransferStatusGet  = (DRV_MEMORY_DEVICE_TRANSFER_STATUS_GET)DRV_NVM_TransferStatusGet
+    .Open               = DRV_SST26_Open,
+    .Close              = DRV_SST26_Close,
+    .Status             = DRV_SST26_Status,
+    .SectorErase        = DRV_SST26_SectorErase,
+    .Read               = DRV_SST26_Read,
+    .PageWrite          = DRV_SST26_PageWrite,
+    .EventHandlerSet    = (DRV_MEMORY_DEVICE_EVENT_HANDLER_SET)DRV_SST26_EventHandlerSet,
+    .GeometryGet        = (DRV_MEMORY_DEVICE_GEOMETRY_GET)DRV_SST26_GeometryGet,
+    .TransferStatusGet  = (DRV_MEMORY_DEVICE_TRANSFER_STATUS_GET)DRV_SST26_TransferStatusGet
 };
 
 const DRV_MEMORY_INIT drvMemory0InitData =
 {
-    .memDevIndex                = 0,
+    .memDevIndex                = DRV_SST26_INDEX,
     .memoryDevice               = &drvMemory0DeviceAPI,
     .isMemDevInterruptEnabled   = true,
     .isFsEnabled                = true,
@@ -190,6 +190,23 @@ const DRV_MEMORY_INIT drvMemory0InitData =
 };
 
 // </editor-fold>
+// <editor-fold defaultstate="collapsed" desc="DRV_SST26 Initialization Data">
+
+const DRV_SST26_PLIB_INTERFACE drvSST26PlibAPI = {
+    .writeRead          = (DRV_SST26_PLIB_WRITE_READ)SPI1_WriteRead,
+    .write              = (DRV_SST26_PLIB_WRITE)SPI1_Write,
+    .read               = (DRV_SST26_PLIB_READ)SPI1_Read,
+    .isBusy             = (DRV_SST26_PLIB_IS_BUSY)SPI1_IsBusy,
+    .callbackRegister   = (DRV_SST26_PLIB_CALLBACK_REGISTER)SPI1_CallbackRegister,
+};
+
+const DRV_SST26_INIT drvSST26InitData =
+{
+    .sst26Plib      = &drvSST26PlibAPI,
+    .chipSelectPin  = DRV_SST26_CHIP_SELECT_PIN,
+};
+// </editor-fold>
+
 static CRYPT_RNG_CTX wdrvRngCtx;
 static const WDRV_PIC32MZW_SYS_INIT wdrvPIC32MZW1InitData = {
     .pCryptRngCtx  = &wdrvRngCtx,
@@ -297,7 +314,7 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 
 
 
-static const DRV_BA414E_INIT_DATA ba414eInitData = 
+ const DRV_BA414E_INIT_DATA ba414eInitData = 
 {
 };
   
@@ -761,6 +778,8 @@ void SYS_Initialize ( void* data )
 
 	BSP_Initialize();
     CORETIMER_Initialize();
+	SPI1_Initialize();
+
     NVM_Initialize();
 
 	UART3_Initialize();
@@ -773,6 +792,8 @@ void SYS_Initialize ( void* data )
     sysObj.drvMiim = DRV_MIIM_Initialize( DRV_MIIM_INDEX_0, (const SYS_MODULE_INIT *) &drvMiimInitData );
 
     sysObj.drvMemory0 = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
+
+    sysObj.drvSST26 = DRV_SST26_Initialize((SYS_MODULE_INDEX)DRV_SST26_INDEX, (SYS_MODULE_INIT *)&drvSST26InitData);
 
     /* Initialize the PIC32MZW1 Driver */
     CRYPT_RNG_Initialize(&wdrvRngCtx);
@@ -814,6 +835,7 @@ SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
     CRYPT_WCCB_Initialize();
 
     APP_Initialize();
+    MSD_APP_Initialize();
 
 
     EVIC_Initialize();

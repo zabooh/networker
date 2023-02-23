@@ -62,6 +62,15 @@
 // *****************************************************************************
 
 
+/*** Macros for GPIO_RA1 pin ***/
+#define GPIO_RA1_Set()               (LATASET = (1U<<1))
+#define GPIO_RA1_Clear()             (LATACLR = (1U<<1))
+#define GPIO_RA1_Toggle()            (LATAINV= (1U<<1))
+#define GPIO_RA1_OutputEnable()      (TRISACLR = (1U<<1))
+#define GPIO_RA1_InputEnable()       (TRISASET = (1U<<1))
+#define GPIO_RA1_Get()               ((PORTA >> 1) & 0x1U)
+#define GPIO_RA1_PIN                  GPIO_PIN_RA1
+
 
 // *****************************************************************************
 /* GPIO Port

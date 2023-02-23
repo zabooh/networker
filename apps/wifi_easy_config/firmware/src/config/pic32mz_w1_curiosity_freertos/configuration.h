@@ -57,7 +57,7 @@
 
 #include "user.h"
 #include "device.h"
-
+#include "system/console/sys_console.h"
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -184,16 +184,19 @@ extern "C" {
 #define DRV_MEMORY_INDEX_0                   0
 #define DRV_MEMORY_CLIENTS_NUMBER_IDX0       2
 #define DRV_MEMORY_BUFFER_QUEUE_SIZE_IDX0    1
-#define DRV_MEMORY_DEVICE_START_ADDRESS      0x90010000
-#define DRV_MEMORY_DEVICE_MEDIA_SIZE         128UL
-#define DRV_MEMORY_DEVICE_MEDIA_SIZE_BYTES   (DRV_MEMORY_DEVICE_MEDIA_SIZE * 1024)
-#define DRV_MEMORY_DEVICE_PROGRAM_SIZE       1024
-#define DRV_MEMORY_DEVICE_ERASE_SIZE         4096
 
 /* Memory Driver Instance 0 RTOS Configurations*/
 #define DRV_MEMORY_STACK_SIZE_IDX0           1024
 #define DRV_MEMORY_PRIORITY_IDX0             1
 #define DRV_MEMORY_RTOS_DELAY_IDX0                         10
+
+/* SST26 Driver Instance Configuration */
+#define DRV_SST26_INDEX                 0
+#define DRV_SST26_CLIENTS_NUMBER        1
+#define DRV_SST26_START_ADDRESS         0x0
+#define DRV_SST26_PAGE_SIZE             256
+#define DRV_SST26_ERASE_BUFFER_SIZE     4096
+#define DRV_SST26_CHIP_SELECT_PIN       SYS_PORT_PIN_RA1
 
 /*** WiFi PIC32MZW1 Driver Configuration ***/
 #define WDRV_PIC32MZW1_DEVICE_USE_SYS_DEBUG

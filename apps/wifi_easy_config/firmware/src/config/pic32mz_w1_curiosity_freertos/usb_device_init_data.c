@@ -60,11 +60,6 @@ uint8_t sectorBuffer[512 * USB_DEVICE_MSD_NUM_SECTOR_BUFFERS] USB_ALIGN;
  ***********************************************/
 USB_MSD_CBW msdCBW0 USB_ALIGN;
 USB_MSD_CSW msdCSW0 USB_ALIGN;
-/***************************************************************************
- * The USB Device MSD function driver will use this buffer to cache the data 
- * received from the USB Host before sending it to the media. 
- ****************************************************************************/
-uint8_t flashRowBackupBuffer [DRV_MEMORY_DEVICE_PROGRAM_SIZE] USB_ALIGN;
 
 
 /*******************************************
@@ -77,7 +72,7 @@ USB_DEVICE_MSD_MEDIA_INIT_DATA USB_ALIGN  msdMediaInit0[1] =
         DRV_MEMORY_INDEX_0,
         512,
         sectorBuffer,
-        flashRowBackupBuffer,
+        NULL,
         0,
         {
             0x00,    // peripheral device is connected, direct access block device

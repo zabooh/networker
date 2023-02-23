@@ -80,6 +80,16 @@ void _APP_Tasks(  void *pvParameters  )
         vTaskDelay(4000 / portTICK_PERIOD_MS);
     }
 }
+/* Handle for the MSD_APP_Tasks. */
+TaskHandle_t xMSD_APP_Tasks;
+
+void _MSD_APP_Tasks(  void *pvParameters  )
+{   
+    while(1)
+    {
+        MSD_APP_Tasks();
+    }
+}
 
 
 void _DRV_MIIM_Task(  void *pvParameters  )
@@ -164,7 +174,7 @@ static void _WDRV_PIC32MZW1_Tasks(  void *pvParameters  )
         if ((SYS_STATUS_ERROR == status) || (SYS_STATUS_UNINITIALIZED == status))
         {
             vTaskDelay(50 / portTICK_PERIOD_MS);
-        }
+    }
     }
 }
 
@@ -304,6 +314,14 @@ void SYS_Tasks ( void )
                 NULL,
                 1,
                 &xAPP_Tasks);
+
+    /* Create OS Thread for MSD_APP_Tasks. */
+    xTaskCreate((TaskFunction_t) _MSD_APP_Tasks,
+                "MSD_APP_Tasks",
+                1024,
+                NULL,
+                1,
+                &xMSD_APP_Tasks);
 
 
 

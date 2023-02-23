@@ -57,33 +57,68 @@
 */
 void GPIO_Initialize ( void )
 {
+    
+        /* Disable JTAG since at least one of its pins is configured for Non-JTAG function */
+    CFGCON0bits.JTAGEN = 0;
 
     /* PORTA Initialization */
-    ANSELACLR = 0x400U; /* Digital Mode Enable */
+    LATA = 0x2; /* Initial Latch Value */
+    TRISACLR = 0x2; /* Direction Control */
+    ANSELACLR = 0x400; /* Digital Mode Enable */
     /* PORTB Initialization */
+    ANSELBCLR = 0x200; /* Digital Mode Enable */
     /* PORTC Initialization */
     /* PORTK Initialization */
-    LATK = 0x0U; /* Initial Latch Value */
-    TRISKCLR = 0xaU; /* Direction Control */
-    ANSELKCLR = 0x8U; /* Digital Mode Enable */
+    LATK = 0x0; /* Initial Latch Value */
+    TRISKCLR = 0x8; /* Direction Control */
+    ANSELKCLR = 0x8; /* Digital Mode Enable */
 
     /* Unlock system for PPS configuration */
-    SYSKEY = 0x00000000U;
-    SYSKEY = 0xAA996655U;
-    SYSKEY = 0x556699AAU;
+    SYSKEY = 0x00000000;
+    SYSKEY = 0xAA996655;
+    SYSKEY = 0x556699AA;
 
-    CFGCON0bits.IOLOCK = 0U;
+    CFGCON0bits.IOLOCK = 0;
 
     /* PPS Input Remapping */
-    U3RXR = 10;
+    U2RXR = 5;
 
     /* PPS Output Remapping */
-    RPC14R = 1;
+    RPK7R = 2;
+    RPK1R = 5;
 
         /* Lock back the system after PPS configuration */
-    CFGCON0bits.IOLOCK = 1U;
+    CFGCON0bits.IOLOCK = 1;
 
-    SYSKEY = 0x00000000U;
+    SYSKEY = 0x00000000;
+
+//    /* PORTA Initialization */
+//    LATA = 0x2U; /* Initial Latch Value */
+//    TRISACLR = 0x2U; /* Direction Control */
+//    ANSELACLR = 0x400U; /* Digital Mode Enable */
+//    /* PORTB Initialization */
+//    /* PORTC Initialization */
+//    /* PORTK Initialization */
+//    LATK = 0x0U; /* Initial Latch Value */
+//    TRISKCLR = 0xaU; /* Direction Control */
+//
+//    /* Unlock system for PPS configuration */
+//    SYSKEY = 0x00000000U;
+//    SYSKEY = 0xAA996655U;
+//    SYSKEY = 0x556699AAU;
+//
+//    CFGCON0bits.IOLOCK = 0U;
+//
+//    /* PPS Input Remapping */
+//    U3RXR = 10;
+//
+//    /* PPS Output Remapping */
+//    RPC14R = 1;
+//
+//        /* Lock back the system after PPS configuration */
+//    CFGCON0bits.IOLOCK = 1U;
+//
+//    SYSKEY = 0x00000000U;
 
 }
 
