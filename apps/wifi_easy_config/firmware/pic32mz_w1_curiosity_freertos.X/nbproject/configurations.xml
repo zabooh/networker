@@ -350,9 +350,16 @@
           </logicalFolder>
           <logicalFolder name="f7" displayName="net_pres" projectFiles="true">
             <logicalFolder name="f1" displayName="pres" projectFiles="true">
+              <logicalFolder name="src" displayName="src" projectFiles="true">
+                <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/src/net_pres_local.h</itemPath>
+              </logicalFolder>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/net_pres.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/net_pres_socketapi.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/net_pres_socketapiconversion.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/net_pres_encryptionproviderapi.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/net_pres_certstore.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/net_pres_transportapi.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/net_pres_enc_glue.h</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f5" displayName="osal" projectFiles="true">
@@ -428,6 +435,13 @@
             <logicalFolder name="f3" displayName="int" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/int/sys_int_mapping.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f11" displayName="mqtt" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/mqtt/sys_mqtt.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/mqtt/sys_mqtt_paho.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f12" displayName="net" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/net/sys_net.h</itemPath>
             </logicalFolder>
             <logicalFolder name="ports" displayName="ports" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/ports/sys_ports.h</itemPath>
@@ -517,6 +531,17 @@
                 <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MZ/ISR_Support.h</itemPath>
               </logicalFolder>
             </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="paho.mqtt.embedded-c"
+                     displayName="paho.mqtt.embedded-c"
+                     projectFiles="true">
+        <logicalFolder name="MQTTClient-C"
+                       displayName="MQTTClient-C"
+                       projectFiles="true">
+          <logicalFolder name="Platforms" displayName="Platforms" projectFiles="true">
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/Platforms/MCHP_pic32mzw1.h</itemPath>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
@@ -657,6 +682,19 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/certs_test.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/rc2.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
+        <itemPath>../src/third_party/wolfssl/wolfssl/internal.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfio.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/callbacks.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/test.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/sniffer.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/error-ssl.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/sniffer_error.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/ocsp.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/ssl.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/crl.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/version.h</itemPath>
+      </logicalFolder>
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/msd_app.h</itemPath>
     </logicalFolder>
@@ -778,7 +816,17 @@
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/udp.c</itemPath>
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/dnss.c</itemPath>
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/sntp.c</itemPath>
+                <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/telnet.c</itemPath>
               </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="net_pres" displayName="net_pres" projectFiles="true">
+            <logicalFolder name="pres" displayName="pres" projectFiles="true">
+              <logicalFolder name="src" displayName="src" projectFiles="true">
+                <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/src/net_pres.c</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/net_pres_cert_store.c</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/net_pres/pres/net_pres_enc_glue.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f6" displayName="osal" projectFiles="true">
@@ -855,6 +903,13 @@
             <logicalFolder name="f4" displayName="int" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="f11" displayName="mqtt" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/mqtt/src/sys_mqtt.c</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/mqtt/src/sys_mqtt_paho.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f12" displayName="net" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/net/src/sys_net.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f10" displayName="reset" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/reset/sys_reset.c</itemPath>
             </logicalFolder>
@@ -913,6 +968,17 @@
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/timers.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/event_groups.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="paho.mqtt.embedded-c"
+                     displayName="paho.mqtt.embedded-c"
+                     projectFiles="true">
+        <logicalFolder name="MQTTClient-C"
+                       displayName="MQTTClient-C"
+                       projectFiles="true">
+          <logicalFolder name="Platforms" displayName="Platforms" projectFiles="true">
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/Platforms/MCHP_pic32mzw1.c</itemPath>
+          </logicalFolder>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="wolfcrypt" projectFiles="true">
@@ -1009,6 +1075,17 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha256.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha512.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rc2.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
+        <itemPath>../src/third_party/wolfssl/src/tls.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/tls13.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/wolfio.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/keys.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/sniffer.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/ocsp.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/crl.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/ssl.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/internal.c</itemPath>
       </logicalFolder>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
@@ -2648,13 +2725,14 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_w1_curiosity_freertos;../src/config/pic32mz_w1_curiosity_freertos/driver/wifi/pic32mzw1/include/;../src/config/pic32mz_w1_curiosity_freertos/library;../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src;../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/common;../src/config/pic32mz_w1_curiosity_freertos/system/fs/fat_fs/file_system;../src/config/pic32mz_w1_curiosity_freertos/system/fs/fat_fs/hardware_access;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MZ;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl"/>
+                  value="../src;../src/config/pic32mz_w1_curiosity_freertos;../src/config/pic32mz_w1_curiosity_freertos/driver/wifi/pic32mzw1/include/;../src/config/pic32mz_w1_curiosity_freertos/library;../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src;../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/common;../src/config/pic32mz_w1_curiosity_freertos/system/fs/fat_fs/file_system;../src/config/pic32mz_w1_curiosity_freertos/system/fs/fat_fs/hardware_access;../src/third_party/paho.mqtt.embedded-c;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/MPLAB/PIC32MZ;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -2678,6 +2756,7 @@
         <property key="additional-options-chop-files" value="false"/>
       </C32-AR>
       <C32-AS>
+        <property key="appendMe" value=""/>
         <property key="assembler-symbols" value=""/>
         <property key="enable-symbols" value="true"/>
         <property key="exclude-floating-point-library" value="false"/>
@@ -2707,6 +2786,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -2746,6 +2826,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>

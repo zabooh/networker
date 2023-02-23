@@ -64,6 +64,10 @@
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
 #include "driver/miim/drv_miim.h"
+#include "net_pres/pres/net_pres.h"
+#include "net_pres/pres/net_pres_encryptionproviderapi.h"
+#include "net_pres/pres/net_pres_transportapi.h"
+#include "net_pres/pres/net_pres_socketapi.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_fat_interface.h"
@@ -93,6 +97,7 @@
 #include "driver/wifi/pic32mzw1/include/wdrv_pic32mzw_api.h"
 #include "system/wifi/sys_wifi.h"
 #include "system/console/sys_console.h"
+#include "system/net/sys_net.h"
 //#include "system/console/src/sys_console_uart_definitions.h"
 #include "system/console/src/sys_console_usb_cdc_definitions.h"
 #include "FreeRTOS.h"
@@ -228,6 +233,8 @@ typedef struct
 
 
     SYS_MODULE_OBJ  drvMiim;
+    SYS_MODULE_OBJ  netPres;
+
 
     SYS_MODULE_OBJ  ba414e;
 
