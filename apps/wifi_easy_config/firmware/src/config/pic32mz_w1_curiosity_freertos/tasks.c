@@ -88,6 +88,7 @@ void _MSD_APP_Tasks(  void *pvParameters  )
     while(1)
     {
         MSD_APP_Tasks();
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -117,7 +118,7 @@ void _SYS_FS_Tasks(  void *pvParameters  )
     while(1)
     {
         SYS_FS_Tasks();
-        vTaskDelay(10 / portTICK_PERIOD_MS);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -128,6 +129,7 @@ void _DRV_BA414E_Tasks(  void *pvParameters  )
     while(1)
     {
         DRV_BA414E_Tasks(sysObj.ba414e);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -135,9 +137,9 @@ void _USB_DEVICE_Tasks(  void *pvParameters  )
 {
     while(1)
     {
-                /* USB Device layer tasks routine */
+        /* USB Device layer tasks routine */
         USB_DEVICE_Tasks(sysObj.usbDevObject0);
-        vTaskDelay(10 / portTICK_PERIOD_MS);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 

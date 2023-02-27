@@ -126,6 +126,10 @@
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
+         <string>sysNetPic32mzw1</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
          <string>sysWifiPic32mzw1</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
@@ -1596,51 +1600,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;NETWORK LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipIcmp&quot; x=&quot;580&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;TCP/IP STACK&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;30&quot; y=&quot;260&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;213&quot; y=&quot;113&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;21&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;810&quot; y=&quot;40&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;30&quot; y=&quot;140&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;lib_pahomqtt&quot; x=&quot;471&quot; y=&quot;36&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;lib_wolfssl&quot; x=&quot;63&quot; y=&quot;189&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;net_Pres&quot; x=&quot;254&quot; y=&quot;168&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipTelnet&quot; x=&quot;441&quot; y=&quot;59&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;DRIVER LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;System Configuration&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;System Configuration&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;FreeRTOS&quot; x=&quot;910&quot; y=&quot;34&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;727&quot; y=&quot;15&quot;/&gt;
@@ -1671,20 +1631,26 @@
         &lt;ElementPosition dnOrder=&quot;26&quot; id=&quot;usb_device_msd&quot; x=&quot;1034&quot; y=&quot;120&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;156&quot; canvasWidth=&quot;522&quot; dnOrder=&quot;7&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_default&quot; x=&quot;460&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;System Configuration&quot; x=&quot;304&quot; y=&quot;153&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;358&quot; y=&quot;12&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;330&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;stdio&quot; x=&quot;645&quot; y=&quot;122&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;sysWifiPic32mzw1&quot; x=&quot;211&quot; y=&quot;221&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;sysWifiProvPic32mzw1&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;uart3&quot; x=&quot;499&quot; y=&quot;97&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;sysNetPic32mzw1&quot; x=&quot;47&quot; y=&quot;114&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;sysWifiPic32mzw1&quot; x=&quot;211&quot; y=&quot;221&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sysWifiProvPic32mzw1&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;uart3&quot; x=&quot;499&quot; y=&quot;97&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;9&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;APPLICATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipDhcp&quot; x=&quot;170&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcps&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
@@ -1693,6 +1659,45 @@
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipHttp&quot; x=&quot;610&quot; y=&quot;120&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpipSntp&quot; x=&quot;600&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;lib_wolfssl&quot; x=&quot;63&quot; y=&quot;189&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;net_Pres&quot; x=&quot;254&quot; y=&quot;168&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipTelnet&quot; x=&quot;441&quot; y=&quot;59&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;291&quot; canvasWidth=&quot;727&quot; dnOrder=&quot;5&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;DRIVER LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;NETWORK LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipIcmp&quot; x=&quot;580&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;9&quot; id=&quot;TCP/IP STACK&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;30&quot; y=&quot;260&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;213&quot; y=&quot;113&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;21&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;320&quot; y=&quot;232&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;30&quot; y=&quot;140&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;lib_pahomqtt&quot; x=&quot;393&quot; y=&quot;164&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -8620,6 +8625,340 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_APPDEBUG_CFG_FLOW"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_APPDEBUG_CFG_FLOW&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_APPDEBUG_DATA_FLOW"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_APPDEBUG_DATA_FLOW&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_APPDEBUG_DBG_LEVEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_APPDEBUG_DBG_LEVEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_APPDEBUG_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_APPDEBUG_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_APPDEBUG_ERR_LEVEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_APPDEBUG_ERR_LEVEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_APPDEBUG_FUNC_LEVEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_APPDEBUG_FUNC_LEVEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_APPDEBUG_INFO_LEVEL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_APPDEBUG_INFO_LEVEL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_APPDEBUG_PRESTR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_APPDEBUG_PRESTR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_ENABLE_ALPN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_ENABLE_ALPN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_ENABLE_ALPN_PROTOCOL_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_ENABLE_ALPN_PROTOCOL_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_ENABLE_APP_CODE_GENERATION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_ENABLE_APP_CODE_GENERATION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_ENABLE_CLICMD"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_ENABLE_CLICMD&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_ENABLE_DEBUG"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_ENABLE_DEBUG&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_ENABLE_SNI"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_ENABLE_SNI&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_ENABLE_TLS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_ENABLE_TLS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_HOST_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_HOST_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX0"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX0&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_ENABLE_ALPN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_ENABLE_ALPN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_ENABLE_ALPN_PROTOCOL_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_ENABLE_ALPN_PROTOCOL_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_ENABLE_SNI"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_ENABLE_SNI&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_ENABLE_TLS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_ENABLE_TLS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_HOST_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_HOST_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_INTF"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_INTF&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;ETHERNET&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_IPPROT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_IPPROT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_PORT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_PORT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IDX1_RECONNECT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IDX1_RECONNECT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_INTF"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_INTF&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_IPPROT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_IPPROT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_PORT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_PORT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_RECONNECT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_RECONNECT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_SUPP_INTF"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_SUPP_INTF&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_SUPP_NO_OF_SOCKS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_SUPP_NO_OF_SOCKS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_TNGTLS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
+  &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_TNGTLS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/sysNetPic32mzw1&gt;
+&lt;/sysNetPic32mzw1&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysWifiPic32mzw1" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
       </entry>
@@ -12339,6 +12678,10 @@
          <hash>43c034e1349211dccf52a3f7d341bc0b21539a07aba529491c95c8875faf455d</hash>
       </entry>
       <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\atmel\atmel.h</file>
+         <hash>89097d159ddd99f3eed0ca307171d99c9224f906d4614bcbdc340f62b525ef9f</hash>
+      </entry>
+      <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\library\tcpip\src\http_net_private.h</file>
          <hash>00d7d01ef11c16f50a884eb439c025d8c08088edeccaae1061a31d26ecf0c4f7</hash>
       </entry>
@@ -12712,7 +13055,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\net_pres\pres\net_pres_enc_glue.c</file>
-         <hash>961f500dc1a54c59c4917f9e901cf73037bd522d3fce27d4cd2c04a9beb31532</hash>
+         <hash>a21f2d393e7d7d99b039263f1359b892f69ad3b019b10ab7ddf2b4f03013679a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\library\tcpip\src\tftps_private.h</file>
@@ -12925,6 +13268,10 @@
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\usb\usb_device_msd.h</file>
          <hash>3b8a62ad093b5897cb4331c111e0da500db8769bcc29d27885bd17ceacb9451f</hash>
+      </entry>
+      <entry>
+         <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\atmel\atmel.c</file>
+         <hash>80da3b27adb232973c60bb157eb5535afbbe654f330b122b9477947ad54d97ee</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_rng_u2242.c</file>
@@ -13284,7 +13631,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\net_pres\pres\net_pres_cert_store.c</file>
-         <hash>52c53d137ee4f282e755203a89cb211e29a5c9057b6d0d0f37bac79e17ae1ce8</hash>
+         <hash>9a2cffb6e7cd4e8956844f0f72235b9f6113f4f6c1df642b8cc4f1b11db60ba2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\include\wdrv_pic32mzw_api.h</file>
@@ -14144,7 +14491,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\definitions.h</file>
-         <hash>2e4fab2bdc3f0268b46f5bff24923f559bbbcd5328a2d00d21be9ba19b8647f7</hash>
+         <hash>49c230b24ee9a9c3c8a2ffb359d6ba2ce3201c6ba0f80e9a9a89017a5a055757</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_sha1_hw.h</file>
@@ -14276,7 +14623,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\initialization.c</file>
-         <hash>3f97342713416ce682d0c88698ac90ade8a4d336271b8e4d0b5881b8fbf5feef</hash>
+         <hash>836c48e2ac65e3c98dfbec819f39a436a30b728f79e92cf5f17b0748dcb32c2c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\rsa.h</file>
@@ -14397,6 +14744,10 @@
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\library\tcpip\ndp.h</file>
          <hash>e363890987a39f7571c98f470f1bde8e3a9c1eb9475e8b45b8edcd67b3851ebd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_w1_curiosity_freertos\system\net\src\sys_net.c</file>
+         <hash>533fdd29f3e861925a0826476e1e3816c7956e19fdba0b0302a9ab3fe1531034</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\peripheral\uart\plib_uart1.c</file>
@@ -14680,7 +15031,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\configuration.h</file>
-         <hash>93f8a3a27bbb78709991acf3d7ec4d7201846188f1c5fa4dd642a167feb2814d</hash>
+         <hash>1e45ecea2d30df1e782ec5d550ff459b08d6823afc58e7598d758fad0324d0c7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\driver\usb\usbfs\src\templates\usb_OTG_ASessionValid_Default.h</file>
@@ -14925,6 +15276,10 @@
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\library\tcpip\src\tcpip_heap_alloc.c</file>
          <hash>78a3d59fd1fc9c50dc84c26b76f6e8bc6b784a6713e55bed8f733e5a656afdc2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_w1_curiosity_freertos\system\net\sys_net.h</file>
+         <hash>d6105d3bfd86c846f6346a11db031c7f7ba25c8b2741cecca2545e4946d101db</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\library\tcpip\src\dhcpv6_manager.h</file>

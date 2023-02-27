@@ -831,6 +831,30 @@ const SYS_CONSOLE_INIT sysConsole0Init =
 // </editor-fold>
 
 
+const SYS_NET_Config g_sSysNetConfig0 =
+{
+	.mode = SYS_NET_INDEX0_MODE, 
+	.intf = SYS_NET_INDEX0_INTF,
+	.port = SYS_NET_INDEX0_PORT,
+	.enable_reconnect = SYS_NET_INDEX0_RECONNECT,
+	.enable_tls = SYS_NET_INDEX0_ENABLE_TLS,
+    .ip_prot = SYS_NET_INDEX0_IPPROT,
+	.host_name = SYS_NET_INDEX0_HOST_NAME,
+};
+
+const SYS_NET_Config g_sSysNetConfig1 =
+{
+	.mode = SYS_NET_INDEX1_MODE, 
+	.intf = SYS_NET_INDEX1_INTF,
+	.port = SYS_NET_INDEX1_PORT,
+	.enable_reconnect = SYS_NET_INDEX1_RECONNECT,
+	.enable_tls = SYS_NET_INDEX1_ENABLE_TLS,
+    .ip_prot = SYS_NET_INDEX0_IPPROT,
+	.host_name = SYS_NET_INDEX1_HOST_NAME,
+};
+
+
+
 const SYS_CMD_INIT sysCmdInit =
 {
     .moduleInit = {0},
@@ -936,6 +960,9 @@ void SYS_Initialize ( void* data )
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
     sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
+
+
+    SYS_NET_Initialize();
 
     SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
