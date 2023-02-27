@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Creating a binary file with the exact size of 70*512 = 35840 and content are just zero’s
-dd if=/dev/zero of=disk.img bs=512 count=256
+dd if=/dev/zero of=disk.img bs=512 count=8192
 
 # The standard Linux tool “mkfs” put’s into this zeroed file, a DOS file system with a FAT12
 mkfs.msdos -F 12 disk.img

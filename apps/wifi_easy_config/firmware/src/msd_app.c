@@ -165,6 +165,11 @@ void MSD_APP_Initialize(void) {
     See prototype in msd_app.h.
  */
 
+
+SYS_FS_HANDLE dirHandle;
+SYS_FS_FSTAT stat;
+SYS_FS_HANDLE fileHandle;
+            
 void MSD_APP_Tasks(void) {
     SYS_FS_FORMAT_PARAM opt;
 
@@ -178,7 +183,7 @@ void MSD_APP_Tasks(void) {
                     break;
                 case MSD_APP_STATE_CHECK_FS: SYS_CONSOLE_PRINT("MSD_APP_STATE_CHECK_FS\r\n");
                     break;
-                case MSD_APP_STATE_MOUNT_FS: SYS_CONSOLE_PRINT("MSD_APP_STATE_MOUNT_FS\r\n");
+                case MSD_APP_STATE_MOUNT_FS: SYS_CONSOLE_PRINT("MSD_APP_STATE_MOUNT_FS\r\n");   
                     break;
                 case MSD_APP_STATE_CLEAR_DRIVE: SYS_CONSOLE_PRINT("MSD_APP_STATE_CLEAR_DRIVE\r\n");
                     break;
@@ -219,7 +224,34 @@ void MSD_APP_Tasks(void) {
             if (SYS_FS_ERROR_NO_FILESYSTEM == SYS_FS_Error()) {
                 msd_appData.state = MSD_APP_STATE_CLEAR_DRIVE;
             }
-            msd_appData.state = MSD_APP_STATE_CHECK_SWITCH;
+
+            dirHandle = SYS_FS_DirOpen("/mnt/mchpSite1/");
+
+            if (dirHandle != SYS_FS_HANDLE_INVALID) {
+               SYS_CONSOLE_PRINT("FS:Directory open is successful\r\n");               
+            }
+            
+            LOG_Start();
+            do {                
+                LOG_log("Read Dir",0);
+                if (SYS_FS_DirRead(dirHandle, &stat) == SYS_FS_RES_FAILURE) {
+                    SYS_CONSOLE_PRINT("FS:Directory read failed\r\n");
+                } else {
+                    if(stat.fname[0] == '\0') break;
+                    SYS_CONSOLE_PRINT("FS:%s\n\r", stat.fname);             
+                }                
+            } while (1);
+            LOG_Stop();
+                    
+            fileHandle = SYS_FS_FileOpen("/mnt/mchpSite1/index.htm", (SYS_FS_FILE_OPEN_READ));
+            if (fileHandle != SYS_FS_HANDLE_INVALID) {
+                SYS_CONSOLE_PRINT("FS:File \"mnt/mchpSite1/index.htm\" open succeeded\r\n");
+            } else {
+                SYS_CONSOLE_PRINT("FS:File \"mnt/mchpSite1/index.htm\" open failed\r\n");
+            }
+            SYS_FS_FileClose(fileHandle);
+            
+            msd_appData.state = MSD_APP_STATE_CHECK_SWITCH;     
             break;
 
         case MSD_APP_STATE_CHECK_SWITCH:
