@@ -39,6 +39,40 @@
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
+#define CMD_MSG(x) (*pCmdIO->pCmdApi->msg)(cmdIoParam, x) 
+
+static void my_cmd_1(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+
+    CMD_MSG("My command: my_cmd_1\r\n");
+
+    if (argc > 1) {
+        char str[100];
+        snprintf(str, 100, "Parameter: %s\r\n", argv[1]);
+        CMD_MSG(str);
+    }
+}
+
+static void my_cmd_2(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+
+    CMD_MSG("My command: my_cmd_2\r\n");
+
+}
+
+const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
+    {"my_cmd_1", (SYS_CMD_FNC) my_cmd_1, ": my command 1"},
+    {"my_cmd_2", (SYS_CMD_FNC) my_cmd_2, ": my command 2"},
+};
+
+static bool MSD_CMDInit(void) {
+    bool ret = false;
+
+    if (!SYS_CMD_ADDGRP(msd_cmd_tbl, sizeof (msd_cmd_tbl) / sizeof (*msd_cmd_tbl), "msd_apps", ": Application Commands")) {
+        ret = true;
+    }
+    return ret;
+}
 
 // *****************************************************************************
 /* Application Data
@@ -152,6 +186,7 @@ void MSD_APP_Initialize(void) {
     /* Set device layer handle as invalid */
     msd_appData.usbDeviceHandle = USB_DEVICE_HANDLE_INVALID;
 
+    MSD_CMDInit();
     /* TODO: Initialize your application's state machine and other
      * parameters.
      */
