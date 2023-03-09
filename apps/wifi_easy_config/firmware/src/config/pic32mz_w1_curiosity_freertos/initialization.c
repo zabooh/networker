@@ -979,6 +979,8 @@ void SYS_Initialize ( void* data )
 
     SYS_NET_Initialize();
 
+    SYS_MQTT_Initialize();
+    
     SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
     sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);

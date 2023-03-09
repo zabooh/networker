@@ -193,7 +193,7 @@ void MSD_APP_Initialize(void) {
     msd_appData.usbDeviceHandle = USB_DEVICE_HANDLE_INVALID;
 
     MSD_CMDInit();
-    APP_MQTT_Initialize();
+    
     /* TODO: Initialize your application's state machine and other
      * parameters.
      */
@@ -339,8 +339,52 @@ void MSD_APP_Tasks(void) {
 
         case MSD_APP_STATE_SERVICE_TASKS:
         {
-
+            static bool mqtt_init_flag = false;
+            if(mqtt_init_flag == false){
+                SYS_CONSOLE_PRINT("MQTT Init Start\r\n");vTaskDelay(100/portTICK_PERIOD_MS);                
+                APP_MQTT_Initialize();
+                SYS_CONSOLE_PRINT("MQTT Init Done\r\n");vTaskDelay(100/portTICK_PERIOD_MS);                                
+                mqtt_init_flag = true;
+            }
             APP_MQTT_Tasks();
+
+
+            {
+                static SYS_MQTT_STATUS status = -1;
+                extern SYS_MODULE_OBJ g_sSysMqttHandle;
+                SYS_MQTT_STATUS current = SYS_MQTT_GetStatus(g_sSysMqttHandle);
+                if (status != current) {
+                    switch (current) {
+                        case SYS_MQTT_STATUS_IDLE: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_IDLE\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_LOWER_LAYER_DOWN: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_LOWER_LAYER_DOWN\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_SOCK_CLIENT_CONNECTING: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_SOCK_CLIENT_CONNECTING\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_SOCK_CONNECTED: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_SOCK_CONNECTED\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_SOCK_OPEN_FAILED: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_SOCK_OPEN_FAILED\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_MQTT_CONNECTED: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_MQTT_CONNECTED\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_MQTT_DISCONNECTING: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_MQTT_DISCONNECTING\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_WAIT_FOR_MQTT_CONACK: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_WAIT_FOR_MQTT_CONACK\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_WAIT_FOR_MQTT_SUBACK: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_WAIT_FOR_MQTT_SUBACK\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_WAIT_FOR_MQTT_PUBACK: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_WAIT_FOR_MQTT_PUBACK\r\n");
+                            break;
+                        case SYS_MQTT_STATUS_WAIT_FOR_MQTT_UNSUBACK: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_WAIT_FOR_MQTT_UNSUBACK\r\n");
+                            break;
+
+                        default: SYS_CONSOLE_PRINT("MSD_APP_STATE Unknown\r\n");
+                            break;
+                    }
+                }
+                status = current;
+            }            
+
             break;
         }
 

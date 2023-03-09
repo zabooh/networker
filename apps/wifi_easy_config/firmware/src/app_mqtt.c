@@ -205,7 +205,7 @@ void APP_MQTT_Initialize(void) {
     psMqttCfg = &g_sTmpSysMqttCfg;
     psMqttCfg->sBrokerConfig.autoConnect = true;
     psMqttCfg->sBrokerConfig.tlsEnabled = false;
-    strcpy(psMqttCfg->sBrokerConfig.brokerName, "test.mosquitto.org");
+    strcpy(psMqttCfg->sBrokerConfig.brokerName, "192.168.0.227");
     psMqttCfg->sBrokerConfig.serverPort = 1883;
     psMqttCfg->sBrokerConfig.cleanSession = false;
     psMqttCfg->sBrokerConfig.keepAliveInterval = 60;
