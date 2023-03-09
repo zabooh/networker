@@ -501,7 +501,7 @@ const DRV_USBFS_INIT drvUSBFSInit =
 
 
 
-const SYS_MQTT_Config g_sSysMqttConfig =
+SYS_MQTT_Config g_sSysMqttConfig =
 {
 	.intf = SYS_MQTT_INDEX0_MQTT_INTF,
 	.sBrokerConfig.brokerName = SYS_MQTT_INDEX0_BROKER_NAME, 

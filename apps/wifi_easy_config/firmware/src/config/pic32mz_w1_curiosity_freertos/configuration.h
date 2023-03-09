@@ -836,7 +836,7 @@ extern "C" {
 #define SYS_MQTT_PAHO
 
 #define SYS_MQTT_INDEX0_MQTT_PORT        				1883
-#define SYS_MQTT_INDEX0_BROKER_NAME        				"192.168.0.227"
+#define SYS_MQTT_INDEX0_BROKER_NAME        				"test.mosquitto.org"
 #define SYS_MQTT_INDEX0_ENABLE_TLS        				false
 #define SYS_MQTT_INDEX0_RECONNECT        				true
 #define SYS_MQTT_INDEX0_CLEAN_SESSION					true

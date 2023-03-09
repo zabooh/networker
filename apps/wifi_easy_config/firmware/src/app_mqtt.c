@@ -82,11 +82,11 @@ int32_t APP_MQTT_PublishMsg(char *message) {
 	SYS_MQTT_PublishTopicCfg	sMqttTopicCfg;
 	int32_t retVal = SYS_MQTT_FAILURE;
 
-	strcpy(sMqttTopicCfg.topicName, SYS_MQTT_DEF_PUB_TOPIC_NAME);
-	sMqttTopicCfg.topicLength = strlen(SYS_MQTT_DEF_PUB_TOPIC_NAME);
+	strcpy(sMqttTopicCfg.topicName, g_sSysMqttConfig.sSubscribeConfig[0].topicName);
+	sMqttTopicCfg.topicLength = strlen(sMqttTopicCfg.topicName);
 	sMqttTopicCfg.retain = SYS_MQTT_DEF_PUB_RETAIN;
-	sMqttTopicCfg.qos = SYS_MQTT_DEF_PUB_QOS;
-
+	sMqttTopicCfg.qos = SYS_MQTT_DEF_PUB_QOS;    
+    
 	retVal = SYS_MQTT_Publish(g_sSysMqttHandle,
 			&sMqttTopicCfg,
 			message,

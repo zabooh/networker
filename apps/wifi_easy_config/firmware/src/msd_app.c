@@ -36,51 +36,6 @@
 #include "app_mqtt.h"
 
 // *****************************************************************************
-// *****************************************************************************
-// Section: Global Data Definitions
-// *****************************************************************************
-// *****************************************************************************
-#define CMD_MSG(x) (*pCmdIO->pCmdApi->msg)(cmdIoParam, x) 
-
-static void my_pub(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
-    const void* cmdIoParam = pCmdIO->cmdIoParam;
-
-    if (argc > 1) {
-        //char str[100];
-        //snprintf(str, 100, "%s", argv[1]);
-        APP_MQTT_PublishMsg(argv[1]);
-        CMD_MSG("Publish MQTT Message: ");
-        CMD_MSG(argv[1]);
-        CMD_MSG("\n\r");
-    }
-    else
-    {
-        CMD_MSG("Wrong Parameter\r\n");
-    }
-}
-
-static void my_cmd_2(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
-    const void* cmdIoParam = pCmdIO->cmdIoParam;
-
-    CMD_MSG("My command: my_cmd_2\r\n");
-
-}
-
-const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
-    {"pub", (SYS_CMD_FNC) my_pub, ": Publish MQTT Message"},
-    {"my_cmd_2", (SYS_CMD_FNC) my_cmd_2, ": my command 2"},
-};
-
-static bool MSD_CMDInit(void) {
-    bool ret = false;
-
-    if (!SYS_CMD_ADDGRP(msd_cmd_tbl, sizeof (msd_cmd_tbl) / sizeof (*msd_cmd_tbl), "apps", ": Application Commands")) {
-        ret = true;
-    }
-    return ret;
-}
-
-// *****************************************************************************
 /* Application Data
 
   Summary:
@@ -97,7 +52,78 @@ static bool MSD_CMDInit(void) {
 
 MSD_APP_DATA msd_appData;
 
+bool mqtt_init_flag = false;
+
 uint8_t CACHE_ALIGN work[SYS_FS_FAT_MAX_SS];
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Global Data Definitions
+// *****************************************************************************
+// *****************************************************************************
+#define CMD_MSG(x) (*pCmdIO->pCmdApi->msg)(cmdIoParam, x) 
+
+static void my_pub(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+
+    if (argc == 2) {
+        APP_MQTT_PublishMsg(argv[1]);
+        CMD_MSG("Publish MQTT Message: ");
+        CMD_MSG(argv[1]);
+        CMD_MSG("\n\r");
+    }
+    else
+    {
+        CMD_MSG("Wrong Parameter Number\r\n");
+    }
+}
+
+static void my_connect(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+
+    if (argc == 1) {
+        CMD_MSG("Connect to Default MQTT Broker: ");
+        CMD_MSG(SYS_MQTT_INDEX0_BROKER_NAME);
+        CMD_MSG("\n\r");
+        APP_MQTT_Initialize();
+        mqtt_init_flag = true;
+    } else if (argc == 2) {
+        strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
+        CMD_MSG("Connect to MQTT Broker: ");
+        CMD_MSG(argv[1]);
+        CMD_MSG("\n\r");
+        APP_MQTT_Initialize();
+        mqtt_init_flag = true;
+    } else if (argc == 3) {
+        strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
+        strcpy(g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
+        CMD_MSG("Connect to MQTT Broker: ");
+        CMD_MSG(argv[1]);
+        CMD_MSG("with topic: ");
+        CMD_MSG(argv[2]);
+        CMD_MSG("\n\r");
+        APP_MQTT_Initialize();
+        mqtt_init_flag = true;
+    } else {
+        CMD_MSG("Wrong Parameter Number\r\n");
+    }
+}
+
+const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
+    {"pub", (SYS_CMD_FNC) my_pub, ": Publish MQTT Message: pub msg "},
+    {"con", (SYS_CMD_FNC) my_connect, ": Connect to MQTT Broker: con [host] [topic]"},
+};
+
+static bool MSD_CMDInit(void) {
+    bool ret = false;
+
+    if (!SYS_CMD_ADDGRP(msd_cmd_tbl, sizeof (msd_cmd_tbl) / sizeof (*msd_cmd_tbl), "apps", ": Application Commands")) {
+        ret = true;
+    }
+    return ret;
+}
+
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -338,16 +364,10 @@ void MSD_APP_Tasks(void) {
             }
 
         case MSD_APP_STATE_SERVICE_TASKS:
-        {
-            static bool mqtt_init_flag = false;
-            if(mqtt_init_flag == false){
-                SYS_CONSOLE_PRINT("MQTT Init Start\r\n");vTaskDelay(100/portTICK_PERIOD_MS);                
-                APP_MQTT_Initialize();
-                SYS_CONSOLE_PRINT("MQTT Init Done\r\n");vTaskDelay(100/portTICK_PERIOD_MS);                                
-                mqtt_init_flag = true;
+        {            
+            if(mqtt_init_flag == true){
+                APP_MQTT_Tasks();
             }
-            APP_MQTT_Tasks();
-
 
             {
                 static SYS_MQTT_STATUS status = -1;
@@ -377,8 +397,7 @@ void MSD_APP_Tasks(void) {
                             break;
                         case SYS_MQTT_STATUS_WAIT_FOR_MQTT_UNSUBACK: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS_WAIT_FOR_MQTT_UNSUBACK\r\n");
                             break;
-
-                        default: SYS_CONSOLE_PRINT("MSD_APP_STATE Unknown\r\n");
+                        default: SYS_CONSOLE_PRINT("SYS_MQTT_STATUS Unknown\r\n");
                             break;
                     }
                 }
