@@ -835,8 +835,32 @@ extern "C" {
 
 #define SYS_MQTT_PAHO
 
-#define SYS_NET_SUPP_INTF_WIFI_ONLY
-#define SYS_NET_SUPP_NUM_OF_SOCKS        		2
+#define SYS_MQTT_INDEX0_MQTT_PORT        				1883
+#define SYS_MQTT_INDEX0_BROKER_NAME        				"test.mosquitto.org"
+#define SYS_MQTT_INDEX0_ENABLE_TLS        				false
+#define SYS_MQTT_INDEX0_RECONNECT        				true
+#define SYS_MQTT_INDEX0_CLEAN_SESSION					true
+#define SYS_MQTT_INDEX0_CLIENT_ID        				""
+#define SYS_MQTT_INDEX0_KEEPALIVE_INTERVAL 				60
+#define SYS_MQTT_INDEX0_MQTT_INTF        				SYS_MQTT_INTF_WIFI
+
+#define SYS_MQTT_INDEX0_SUB_QOS							1
+#define SYS_MQTT_INDEX0_SUB_TOPIC_COUNT					1
+#define SYS_MQTT_INDEX0_TOPIC_NAME        				"MCHP/Sample/b"
+#define SYS_MQTT_INDEX0_ENTRY_VALID        				true
+
+#define SYS_MQTT_CLICMD_ENABLED
+
+
+#define SYS_MQTT_DEF_PUB_TOPIC_NAME							"MCHP/Sample/a"
+#define SYS_MQTT_DEF_PUB_QOS							1
+#define SYS_MQTT_DEF_PUB_RETAIN								false
+
+
+#define SYS_MQTT_CFG_LWT_ENABLE								false
+
+
+
 
 // *****************************************************************************
 // *****************************************************************************

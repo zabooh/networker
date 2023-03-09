@@ -33,6 +33,7 @@
 #include "string.h"
 #include "system/fs/sys_fs.h"
 #include "system/command/sys_command.h"
+#include "app_mqtt.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -41,15 +42,20 @@
 // *****************************************************************************
 #define CMD_MSG(x) (*pCmdIO->pCmdApi->msg)(cmdIoParam, x) 
 
-static void my_cmd_1(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+static void my_pub(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     const void* cmdIoParam = pCmdIO->cmdIoParam;
 
-    CMD_MSG("My command: my_cmd_1\r\n");
-
     if (argc > 1) {
-        char str[100];
-        snprintf(str, 100, "Parameter: %s\r\n", argv[1]);
-        CMD_MSG(str);
+        //char str[100];
+        //snprintf(str, 100, "%s", argv[1]);
+        APP_MQTT_PublishMsg(argv[1]);
+        CMD_MSG("Publish MQTT Message: ");
+        CMD_MSG(argv[1]);
+        CMD_MSG("\n\r");
+    }
+    else
+    {
+        CMD_MSG("Wrong Parameter\r\n");
     }
 }
 
@@ -61,14 +67,14 @@ static void my_cmd_2(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
 }
 
 const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
-    {"my_cmd_1", (SYS_CMD_FNC) my_cmd_1, ": my command 1"},
+    {"pub", (SYS_CMD_FNC) my_pub, ": Publish MQTT Message"},
     {"my_cmd_2", (SYS_CMD_FNC) my_cmd_2, ": my command 2"},
 };
 
 static bool MSD_CMDInit(void) {
     bool ret = false;
 
-    if (!SYS_CMD_ADDGRP(msd_cmd_tbl, sizeof (msd_cmd_tbl) / sizeof (*msd_cmd_tbl), "msd_apps", ": Application Commands")) {
+    if (!SYS_CMD_ADDGRP(msd_cmd_tbl, sizeof (msd_cmd_tbl) / sizeof (*msd_cmd_tbl), "apps", ": Application Commands")) {
         ret = true;
     }
     return ret;
@@ -187,6 +193,7 @@ void MSD_APP_Initialize(void) {
     msd_appData.usbDeviceHandle = USB_DEVICE_HANDLE_INVALID;
 
     MSD_CMDInit();
+    APP_MQTT_Initialize();
     /* TODO: Initialize your application's state machine and other
      * parameters.
      */
@@ -333,6 +340,7 @@ void MSD_APP_Tasks(void) {
         case MSD_APP_STATE_SERVICE_TASKS:
         {
 
+            APP_MQTT_Tasks();
             break;
         }
 

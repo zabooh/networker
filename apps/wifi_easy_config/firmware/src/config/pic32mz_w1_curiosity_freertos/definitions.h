@@ -104,7 +104,7 @@
 #include "task.h"
 #include "app.h"
 #include "msd_app.h"
-
+#include "system/mqtt/sys_mqtt.h"
 
 
 // DOM-IGNORE-BEGIN
