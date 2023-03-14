@@ -12337,7 +12337,7 @@ int wolfSSL_DTLS_SetCookieSecret(WOLFSSL* ssl,
     }
     #endif /* WOLFSSL_ALLOW_SSLV3 && !NO_OLD_TLS */
 
-
+   
     WOLFSSL_METHOD* wolfSSLv23_client_method(void)
     {
         return wolfSSLv23_client_method_ex(NULL);

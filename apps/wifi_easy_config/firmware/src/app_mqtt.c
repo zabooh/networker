@@ -84,8 +84,8 @@ int32_t APP_MQTT_PublishMsg(char *message) {
 
 	strcpy(sMqttTopicCfg.topicName, g_sSysMqttConfig.sSubscribeConfig[0].topicName);
 	sMqttTopicCfg.topicLength = strlen(sMqttTopicCfg.topicName);
-	sMqttTopicCfg.retain = SYS_MQTT_DEF_PUB_RETAIN;
-	sMqttTopicCfg.qos = SYS_MQTT_DEF_PUB_QOS;    
+	sMqttTopicCfg.retain = false;
+	sMqttTopicCfg.qos = 1;    
     
 	retVal = SYS_MQTT_Publish(g_sSysMqttHandle,
 			&sMqttTopicCfg,

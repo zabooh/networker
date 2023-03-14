@@ -1,5 +1,5 @@
 /*******************************************************************************
-Copyright (C) 2020-2022 released Microchip Technology Inc.  All rights reserved.
+Copyright (C) 2020-2021 released Microchip Technology Inc.  All rights reserved.
 
 Microchip licenses to you the right to use, modify, copy and distribute
 Software only when embedded on a Microchip microcontroller or digital signal
@@ -180,8 +180,6 @@ void SYS_MQTT_messageCallback(MessageData* data)
     }
 }
 
-extern char *sni_host_name;
-
 SYS_MODULE_OBJ SYS_MQTT_PAHO_Open(SYS_MQTT_Config *cfg,
                                   SYS_MQTT_CALLBACK fn,
                                   void *cookie)
@@ -222,7 +220,6 @@ SYS_MODULE_OBJ SYS_MQTT_PAHO_Open(SYS_MQTT_Config *cfg,
     if (cfg == NULL)
     {
         memcpy(&hdl->sCfgInfo, &g_sSysMqttConfig, sizeof (SYS_MQTT_Config));
-		sni_host_name = (char *)g_sSysMqttConfig.sBrokerConfig.brokerName;
     }
     else
     {
@@ -240,7 +237,6 @@ SYS_MODULE_OBJ SYS_MQTT_PAHO_Open(SYS_MQTT_Config *cfg,
         }
         
         memcpy(&hdl->sCfgInfo, cfg, sizeof (SYS_MQTT_Config));
-        sni_host_name = (char *)hdl->sCfgInfo.sBrokerConfig.brokerName;
     }
 
     hdl->vCookie = cookie;

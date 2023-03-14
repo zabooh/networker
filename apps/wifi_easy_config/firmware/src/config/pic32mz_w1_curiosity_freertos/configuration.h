@@ -137,7 +137,7 @@ extern "C" {
 #define SYS_NET_INDEX0_MODE       				SYS_NET_MODE_CLIENT
 #define SYS_NET_INDEX0_PORT        				1
 #define SYS_NET_INDEX0_RECONNECT       			1
-#define SYS_NET_INDEX0_ENABLE_TLS        		0
+#define SYS_NET_INDEX0_ENABLE_TLS        		1
 #define SYS_NET_INDEX0_IPPROT       			SYS_NET_IP_PROT_TCP
 #define SYS_NET_INDEX0_HOST_NAME        		"192.168.1.1"
 
@@ -151,11 +151,36 @@ extern "C" {
 #define SYS_NET_INDEX1_IPPROT       			SYS_NET_IP_PROT_TCP
 #define SYS_NET_INDEX1_HOST_NAME        		"192.168.1.1"
 
+#define SYS_NET_TLS_ENABLED
+#define WOLFSSL_TLS13_NO_PEEK_HANDSHAKE_DONE
 
 
 #define SYS_NET_CLICMD_ENABLED
 
 
+
+#define SYS_MQTT_PAHO
+
+#define SYS_MQTT_INDEX0_MQTT_PORT        				1883
+#define SYS_MQTT_INDEX0_BROKER_NAME        				"test.mosquitto.org"
+#define SYS_MQTT_INDEX0_ENABLE_TLS        				true
+#define SYS_MQTT_INDEX0_RECONNECT        				true
+#define SYS_MQTT_INDEX0_CLEAN_SESSION					true
+#define SYS_MQTT_INDEX0_CLIENT_ID        				""
+#define SYS_MQTT_INDEX0_KEEPALIVE_INTERVAL 				60
+#define SYS_MQTT_INDEX0_MQTT_INTF        				SYS_MQTT_INTF_WIFI
+
+#define SYS_MQTT_INDEX0_SUB_TOPIC_COUNT					0
+#define SYS_MQTT_INDEX0_TOPIC_NAME        				" "
+#define SYS_MQTT_INDEX0_SUB_QOS							0
+#define SYS_MQTT_INDEX0_ENTRY_VALID        				false
+
+#define SYS_MQTT_CLICMD_ENABLED
+
+
+
+
+#define SYS_MQTT_CFG_LWT_ENABLE								false
 
 
 #define SYS_CMD_ENABLE
@@ -273,10 +298,13 @@ extern "C" {
 #define WOLFSSL_USER_IO
 #define NO_WRITEV
 #define MICROCHIP_TCPIP
-#define WOLFSSL_DTLS
+#define HAVE_FFDHE_2048
 #define NO_PWDBASED
-#define NO_ERROR_STRINGS
+#define HAVE_TLS_EXTENSIONS
+#define WOLFSSL_TLS13
+#define HAVE_SUPPORTED_CURVES
 #define NO_OLD_TLS
+#define USE_FAST_MATH
 
 
 /*** TCP Configuration ***/
@@ -431,6 +459,7 @@ extern "C" {
 #define NET_PRES_RTOS_STACK_SIZE                1024
 #define NET_PRES_RTOS_TASK_PRIORITY             1
 	
+#define FREERTOS
 
 
 
@@ -736,7 +765,7 @@ extern "C" {
 #define NO_PWDBASED
 #define HAVE_MCAPI
 #define WOLF_CRYPTO_CB  // provide call-back support
-#define WOLFCRYPT_ONLY
+//#define WOLFCRYPT_ONLY
 #define WOLFSSL_MICROCHIP_PIC32MZ
 // ---------- CRYPTO HARDWARE MANIFEST START ----------
 #define WOLFSSL_HAVE_MCHP_HW_CRYPTO_ECC_HW_BA414E
@@ -744,9 +773,11 @@ extern "C" {
 // ---------- CRYPTO HARDWARE MANIFEST END ----------
 // ---------- FUNCTIONAL CONFIGURATION START ----------
 #define WOLFSSL_AES_SMALL_TABLES
-#define NO_MD4
-#define WOLFSSL_SHA224
-#define NO_PIC32MZ_HASH
+#define WOLFSSL_PIC32MZ_HASH
+#define WOLFSSL_PIC32MZ_HASH
+#define WOLFSSL_PIC32MZ_HASH
+#define HAVE_HKDF
+#define NO_DES3
 #define WOLFSSL_AES_128
 #define WOLFSSL_AES_192
 #define WOLFSSL_AES_256
@@ -757,15 +788,17 @@ extern "C" {
 #define WOLFSSL_AES_COUNTER
 #define WOLFSSL_AES_OFB
 #define HAVE_AESGCM
-#define HAVE_AESCCM
 #define NO_RC4
 #define NO_HC128
 #define NO_RABBIT
 #define HAVE_ECC
-#define NO_DH
+#define HAVE_X963_KDF
+#define HAVE_ECC_ENCRYPT
+#define HAVE_DH
 #define NO_DSA
 #define FP_MAX_BITS 4096
 #define USE_CERT_BUFFERS_2048
+#define WC_RSA_PSS
 #define NO_DEV_RANDOM
 #define HAVE_HASHDRBG
 #define WC_NO_HARDEN
@@ -833,32 +866,6 @@ extern "C" {
 
 
 
-#define SYS_MQTT_PAHO
-
-#define SYS_MQTT_INDEX0_MQTT_PORT        				1883
-#define SYS_MQTT_INDEX0_BROKER_NAME        				"test.mosquitto.org"
-#define SYS_MQTT_INDEX0_ENABLE_TLS        				false
-#define SYS_MQTT_INDEX0_RECONNECT        				true
-#define SYS_MQTT_INDEX0_CLEAN_SESSION					true
-#define SYS_MQTT_INDEX0_CLIENT_ID        				""
-#define SYS_MQTT_INDEX0_KEEPALIVE_INTERVAL 				60
-#define SYS_MQTT_INDEX0_MQTT_INTF        				SYS_MQTT_INTF_WIFI
-
-#define SYS_MQTT_INDEX0_SUB_QOS							1
-#define SYS_MQTT_INDEX0_SUB_TOPIC_COUNT					1
-#define SYS_MQTT_INDEX0_TOPIC_NAME        				"MCHP/Sample/b"
-#define SYS_MQTT_INDEX0_ENTRY_VALID        				true
-
-#define SYS_MQTT_CLICMD_ENABLED
-
-//#define APP_CFG_WITH_MQTT_API
-
-#define SYS_MQTT_DEF_PUB_TOPIC_NAME							"MCHP/Sample/a"
-#define SYS_MQTT_DEF_PUB_QOS							1
-#define SYS_MQTT_DEF_PUB_RETAIN								false
-
-
-#define SYS_MQTT_CFG_LWT_ENABLE								false
 
 
 

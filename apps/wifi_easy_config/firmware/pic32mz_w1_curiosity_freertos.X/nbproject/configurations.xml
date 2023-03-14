@@ -964,6 +964,8 @@
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/pmu_init.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb_device_init_data.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/diskImage.c</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system_exceptions.c</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity_freertos/exception_vector.S</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
@@ -1223,7 +1225,7 @@
         <targetDevice>PIC32MZ1025W104132</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>snap</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>3.01</languageToolchainVersion>
         <platform>3</platform>
@@ -1584,6 +1586,10 @@
         </C32CPP>
         <C32Global>
         </C32Global>
+      </item>
+      <item path="../src/config/pic32mz_w1_curiosity_freertos/exceptions.c"
+            ex="true"
+            overriding="false">
       </item>
       <item path="../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/common/sys_fs_shell.c"
             ex="false"
@@ -3045,7 +3051,7 @@
         <property key="programoptions.pgdconfig" value="pull down"/>
         <property key="programoptions.pgdresistor.value" value="4.7"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.pgmspeed" value="Max"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
                   value="${memories.dataflash.default}"/>
@@ -3234,7 +3240,7 @@
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.pgmspeed" value="Max"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
                   value="${memories.dataflash.default}"/>

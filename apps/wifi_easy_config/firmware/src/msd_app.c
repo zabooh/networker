@@ -56,6 +56,8 @@ bool mqtt_init_flag = false;
 
 uint8_t CACHE_ALIGN work[SYS_FS_FAT_MAX_SS];
 
+extern EXCEPT_MSG last_expt_msg;
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -274,13 +276,31 @@ void MSD_APP_Tasks(void) {
         case MSD_APP_STATE_INIT:
         {
             bool appInitialized = true;
-            vTaskDelay(2000 / portTICK_PERIOD_MS);
-            if (appInitialized) {
-                SYS_CONSOLE_PRINT("MSD_APP_Tasks Started\r\n");
-                msd_appData.state = MSD_APP_STATE_MOUNT_FS; 
+                vTaskDelay(2000 / portTICK_PERIOD_MS);
+                
+                if (last_expt_msg.magic == MAGIC_CODE) {
+                    SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
+                    SYS_CONSOLE_PRINT("Last Runtime has ended with the following Message:\n\r");
+                    {
+                        char ch;
+                        int ix = 0;
+                        for (ix = 0; ix < 4096; ix++) {
+                            ch = last_expt_msg.msg[ix];
+                            if (ch == 0)break;
+                            SYS_CONSOLE_PRINT("%c", ch);
+                        }
+                    }
+                    SYS_CONSOLE_PRINT("%c", last_expt_msg.msg[0]);
+                    SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
+                    last_expt_msg.magic = 0;
+                }
+                
+                if (appInitialized) {
+                    SYS_CONSOLE_PRINT("MSD_APP_Tasks Started\r\n");
+                    msd_appData.state = MSD_APP_STATE_MOUNT_FS;
+                }
+                break;
             }
-            break;
-        }
 
         case MSD_APP_STATE_MOUNT_FS:
             if (checkFSMount()) {

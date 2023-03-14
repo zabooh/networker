@@ -362,7 +362,7 @@ static const NET_PRES_INST_DATA netPresCfgs[] =
         .pTransObject_ds = &netPresTransObject0DS,
         .pTransObject_dc = &netPresTransObject0DC,
         .pProvObject_ss = NULL,
-        .pProvObject_sc = NULL,
+        .pProvObject_sc = &net_pres_EncProviderStreamClient0,
         .pProvObject_ds = NULL,
         .pProvObject_dc = NULL,
     },
@@ -501,22 +501,7 @@ const DRV_USBFS_INIT drvUSBFSInit =
 
 
 
-SYS_MQTT_Config g_sSysMqttConfig =
-{
-	.intf = SYS_MQTT_INDEX0_MQTT_INTF,
-	.sBrokerConfig.brokerName = SYS_MQTT_INDEX0_BROKER_NAME, 
-	.sBrokerConfig.serverPort = SYS_MQTT_INDEX0_MQTT_PORT,
-	.sBrokerConfig.keepAliveInterval = SYS_MQTT_INDEX0_KEEPALIVE_INTERVAL,
-	.sBrokerConfig.autoConnect = SYS_MQTT_INDEX0_RECONNECT,
-	.sBrokerConfig.tlsEnabled = SYS_MQTT_INDEX0_ENABLE_TLS,
-	.sBrokerConfig.clientId = SYS_MQTT_INDEX0_CLIENT_ID,
-	.sBrokerConfig.cleanSession = SYS_MQTT_INDEX0_CLEAN_SESSION,
-	.subscribeCount = SYS_MQTT_INDEX0_SUB_TOPIC_COUNT,
-	.sSubscribeConfig[0].topicName = SYS_MQTT_INDEX0_TOPIC_NAME,
-	.sSubscribeConfig[0].qos = SYS_MQTT_INDEX0_SUB_QOS,
-	.sSubscribeConfig[0].entryValid = SYS_MQTT_INDEX0_ENTRY_VALID,
-	.bLwtEnabled = false,
-};
+
 
 
 // <editor-fold defaultstate="collapsed" desc="TCP/IP Stack Initialization Data">
@@ -870,6 +855,25 @@ const SYS_NET_Config g_sSysNetConfig1 =
 
 
 
+ SYS_MQTT_Config g_sSysMqttConfig =
+{
+	.intf = SYS_MQTT_INDEX0_MQTT_INTF,
+	.sBrokerConfig.brokerName = SYS_MQTT_INDEX0_BROKER_NAME, 
+	.sBrokerConfig.serverPort = SYS_MQTT_INDEX0_MQTT_PORT,
+	.sBrokerConfig.keepAliveInterval = SYS_MQTT_INDEX0_KEEPALIVE_INTERVAL,
+	.sBrokerConfig.autoConnect = SYS_MQTT_INDEX0_RECONNECT,
+	.sBrokerConfig.tlsEnabled = SYS_MQTT_INDEX0_ENABLE_TLS,
+	.sBrokerConfig.clientId = SYS_MQTT_INDEX0_CLIENT_ID,
+	.sBrokerConfig.cleanSession = SYS_MQTT_INDEX0_CLEAN_SESSION,
+	.subscribeCount = SYS_MQTT_INDEX0_SUB_TOPIC_COUNT,
+	.sSubscribeConfig[0].topicName = SYS_MQTT_INDEX0_TOPIC_NAME,
+	.sSubscribeConfig[0].qos = SYS_MQTT_INDEX0_SUB_QOS,
+	.sSubscribeConfig[0].entryValid = SYS_MQTT_INDEX0_ENTRY_VALID,
+	.bLwtEnabled = false,
+};
+
+
+
 const SYS_CMD_INIT sysCmdInit =
 {
     .moduleInit = {0},
@@ -978,6 +982,7 @@ void SYS_Initialize ( void* data )
 
 
     SYS_NET_Initialize();
+
 
     SYS_MQTT_Initialize();
     

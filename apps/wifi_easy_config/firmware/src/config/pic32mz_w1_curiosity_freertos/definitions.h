@@ -83,6 +83,7 @@
 #include "usb/usb_device_cdc.h"
 #include "usb/usb_cdc.h"
 #include "peripheral/uart/plib_uart3.h"
+#include "system/mqtt/sys_mqtt.h"
 #include "peripheral/uart/plib_uart1.h"
 #include "driver/usb/usbfs/drv_usbfs.h"
 #include "library/tcpip/tcpip.h"
@@ -104,7 +105,7 @@
 #include "task.h"
 #include "app.h"
 #include "msd_app.h"
-#include "system/mqtt/sys_mqtt.h"
+
 
 
 // DOM-IGNORE-BEGIN
@@ -114,6 +115,13 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+        typedef struct {        
+        char msg[4096];
+        uint32_t magic;
+    } EXCEPT_MSG;
+
+    #define MAGIC_CODE 0x47114711
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 200000000
