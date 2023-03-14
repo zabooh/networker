@@ -202,7 +202,7 @@ static bool checkFSMount() {
     } else {
         return false;
     }
-
+    
 }
 
 /*******************************************************************************
@@ -439,6 +439,26 @@ void MSD_APP_Tasks(void) {
     }
 }
 
+
+
+void* APP_Calloc(size_t nElems, size_t elemSize) {
+    size_t nBytes = nElems * elemSize;
+
+    void* ptr = pvPortMalloc(nBytes);
+    if (ptr) {
+        memset(ptr, 0, nBytes);
+    }
+
+    return ptr;
+}
+
+void * malloc(size_t size){
+    return pvPortMalloc(size);
+}
+
+void free(void *ptr){
+    vPortFree(ptr);
+}
 
 /*******************************************************************************
  End of File

@@ -38,6 +38,12 @@
 // DOM-IGNORE-END
 #include "FreeRTOS.h"
 #include "task.h"
+#include "system/console/sys_console.h"
+#include <stdio.h>
+#include "definitions.h"
+
+
+extern EXCEPT_MSG last_expt_msg;
 
 /*
 *********************************************************************************************************
@@ -59,12 +65,32 @@ void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName )
    ( void ) pcTaskName;
    ( void ) pxTask;
 
+   sprintf(last_expt_msg.msg,            
+            "===> Stack Overrun <===\n\r"            
+            "Task: %s \r\n", 
+           pcTaskName);
+                      
+   last_expt_msg.magic = MAGIC_CODE;
+
    /* Run time task stack overflow checking is performed if
    configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook  function is
    called if a task stack overflow is detected.  Note the system/interrupt
    stack is not checked. */
    taskDISABLE_INTERRUPTS();
-   for( ;; );
+   //for( ;; );
+   
+      
+    while (1) {
+        SYSKEY = 0x00000000;
+        SYSKEY = 0xAA996655;
+        SYSKEY = 0x556699AA;
+        RSWRSTSET = _RSWRST_SWRST_MASK;
+        RSWRST;
+        Nop();
+        Nop();
+        Nop();
+        Nop();
+    }   
 }
 
 /*
@@ -108,7 +134,21 @@ void vApplicationMallocFailedHook( void )
       to query the size of free heap space that remains (although it does not
       provide information on how the remaining heap might be fragmented). */
    taskDISABLE_INTERRUPTS();
-   for( ;; );
+   //for( ;; );
+   sprintf(last_expt_msg.msg, "===> malloc failed <===\n\r" );                      
+   last_expt_msg.magic = MAGIC_CODE;
+   
+    while (1) {
+        SYSKEY = 0x00000000;
+        SYSKEY = 0xAA996655;
+        SYSKEY = 0x556699AA;
+        RSWRSTSET = _RSWRST_SWRST_MASK;
+        RSWRST;
+        Nop();
+        Nop();
+        Nop();
+        Nop();
+    }    
 }
 
 /*-----------------------------------------------------------*/

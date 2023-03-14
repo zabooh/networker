@@ -959,7 +959,6 @@
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/initialization.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/interrupts.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/interrupts_a.S</itemPath>
-          <itemPath>../src/config/pic32mz_w1_curiosity_freertos/exceptions.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/freertos_hooks.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/pmu_init.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/usb_device_init_data.c</itemPath>
@@ -971,8 +970,8 @@
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
         <logicalFolder name="f1" displayName="Source" projectFiles="true">
           <logicalFolder name="f1" displayName="portable" projectFiles="true">
-            <logicalFolder name="f1" displayName="MemMang" projectFiles="true">
-              <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_3.c</itemPath>
+            <logicalFolder name="MemMang" displayName="MemMang" projectFiles="true">
+              <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_4.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="MPLAB" projectFiles="true">
               <logicalFolder name="f1" displayName="PIC32MZ" projectFiles="true">
@@ -1586,10 +1585,6 @@
         </C32CPP>
         <C32Global>
         </C32Global>
-      </item>
-      <item path="../src/config/pic32mz_w1_curiosity_freertos/exceptions.c"
-            ex="true"
-            overriding="false">
       </item>
       <item path="../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/common/sys_fs_shell.c"
             ex="false"
@@ -2770,6 +2765,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -2800,6 +2796,7 @@
         <property key="additional-options-chop-files" value="false"/>
       </C32-AR>
       <C32-AS>
+        <property key="appendMe" value=""/>
         <property key="assembler-symbols" value=""/>
         <property key="enable-symbols" value="true"/>
         <property key="exclude-floating-point-library" value="false"/>
@@ -2829,6 +2826,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -2845,7 +2843,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="160000"/>
+        <property key="heap-size" value="500"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -2868,6 +2866,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
