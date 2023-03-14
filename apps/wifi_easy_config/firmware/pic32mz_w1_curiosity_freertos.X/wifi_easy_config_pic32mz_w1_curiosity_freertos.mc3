@@ -1633,7 +1633,19 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;664&quot; canvasWidth=&quot;1176&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipDhcp&quot; x=&quot;170&quot; y=&quot;60&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcps&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipDns&quot; x=&quot;320&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpipDnss&quot; x=&quot;450&quot; y=&quot;40&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipHttp&quot; x=&quot;191&quot; y=&quot;296&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpipSntp&quot; x=&quot;600&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_default&quot; x=&quot;460&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;System Configuration&quot; x=&quot;304&quot; y=&quot;153&quot;/&gt;
@@ -1646,23 +1658,31 @@
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;uart3&quot; x=&quot;499&quot; y=&quot;97&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;DRIVER LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;TCP/IP STACK&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;30&quot; y=&quot;260&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;213&quot; y=&quot;113&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;21&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;321&quot; y=&quot;231&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;30&quot; y=&quot;140&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;lib_pahomqtt&quot; x=&quot;393&quot; y=&quot;164&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sysMqttPic32mzw1&quot; x=&quot;393&quot; y=&quot;124&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;DRIVER LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;APPLICATION LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipDhcp&quot; x=&quot;170&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcps&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipDns&quot; x=&quot;320&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpipDnss&quot; x=&quot;450&quot; y=&quot;40&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipHttp&quot; x=&quot;191&quot; y=&quot;296&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpipSntp&quot; x=&quot;600&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;System Configuration&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;System Configuration&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;FreeRTOS&quot; x=&quot;910&quot; y=&quot;34&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;727&quot; y=&quot;15&quot;/&gt;
@@ -1694,31 +1714,13 @@
         &lt;ElementPosition dnOrder=&quot;27&quot; id=&quot;usb_device_msd&quot; x=&quot;1034&quot; y=&quot;120&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;TCP/IP STACK&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;30&quot; y=&quot;260&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;DRIVER LAYER&quot; x=&quot;213&quot; y=&quot;113&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;NETWORK LAYER&quot; x=&quot;21&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;PRESENTATION LAYER&quot; x=&quot;320&quot; y=&quot;232&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;30&quot; y=&quot;140&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;lib_pahomqtt&quot; x=&quot;393&quot; y=&quot;164&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sysMqttPic32mzw1&quot; x=&quot;393&quot; y=&quot;124&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;256&quot; y=&quot;168&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipTelnet&quot; x=&quot;441&quot; y=&quot;59&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;NETWORK LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;NETWORK LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
@@ -1726,14 +1728,12 @@
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;9&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;256&quot; y=&quot;168&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipTelnet&quot; x=&quot;441&quot; y=&quot;59&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;664&quot; canvasWidth=&quot;1176&quot; dnOrder=&quot;9&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -8132,6 +8132,7 @@
   &lt;net_Pres dnOrder=&quot;0&quot; id=&quot;NET_PRES_RTOS_STACK_SIZE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; value=&quot;32768&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;32768&quot;/&gt;
     &lt;/Values&gt;
   &lt;/net_Pres&gt;
 &lt;/net_Pres&gt;
@@ -15158,7 +15159,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\tasks.c</file>
-         <hash>694ec22ab2e9313ae29ab9710f022de9eb9247fdb4bc99bda438a392e31ea097</hash>
+         <hash>4075184fe2dc00884bc47cd1dd6355423c2850a0245e78f4d70755bd56b0fd98</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\driver\usb\usbfs\src\templates\usb_OTG_ASessionValid_Unsupported.h</file>
