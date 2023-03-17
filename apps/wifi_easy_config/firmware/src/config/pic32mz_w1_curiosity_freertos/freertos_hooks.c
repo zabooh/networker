@@ -133,22 +133,22 @@ void vApplicationMallocFailedHook( void )
       FreeRTOSConfig.h, and the xPortGetFreeHeapSize() API function can be used
       to query the size of free heap space that remains (although it does not
       provide information on how the remaining heap might be fragmented). */
-   taskDISABLE_INTERRUPTS();
+   //taskDISABLE_INTERRUPTS();
    //for( ;; );
-   sprintf(last_expt_msg.msg, "===> malloc failed <===\n\r" );                      
-   last_expt_msg.magic = MAGIC_CODE;
-   
-    while (1) {
-        SYSKEY = 0x00000000;
-        SYSKEY = 0xAA996655;
-        SYSKEY = 0x556699AA;
-        RSWRSTSET = _RSWRST_SWRST_MASK;
-        RSWRST;
-        Nop();
-        Nop();
-        Nop();
-        Nop();
-    }    
+   //sprintf(last_expt_msg.msg, "===> malloc failed <===\n\r" );                      
+   //last_expt_msg.magic = MAGIC_CODE;
+   SYS_CONSOLE_PRINT("===> malloc failed <===\n\r");
+//    while (1) {
+//        SYSKEY = 0x00000000;
+//        SYSKEY = 0xAA996655;
+//        SYSKEY = 0x556699AA;
+//        RSWRSTSET = _RSWRST_SWRST_MASK;
+//        RSWRST;
+//        Nop();
+//        Nop();
+//        Nop();
+//        Nop();
+//    }    
 }
 
 /*-----------------------------------------------------------*/

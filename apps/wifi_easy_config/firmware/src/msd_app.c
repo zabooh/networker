@@ -64,20 +64,18 @@ extern EXCEPT_MSG last_expt_msg;
 // *****************************************************************************
 // *****************************************************************************
 #define CMD_MSG(x) (*pCmdIO->pCmdApi->msg)(cmdIoParam, x) 
-#define CMD_PRINTF (*pCmdIO->pCmdApi->print)
+#define CMD_PRINTF (*pCmdIO->pCmdApi->print)  // CMD_PRINTF(cmdIoParam, "%d", c );
 
 static void my_pub(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     const void* cmdIoParam = pCmdIO->cmdIoParam;
 
     if (argc == 2) {
         APP_MQTT_PublishMsg(argv[1]);
-        CMD_MSG("Publish MQTT Message: ");
-        CMD_MSG(argv[1]);
-        CMD_MSG("\n\r");
+        CMD_PRINTF(cmdIoParam, "Publish MQTT Message: %s\n\r",argv[1]);
     }
     else
     {
-        CMD_MSG("Wrong Parameter Number\r\n");
+        CMD_PRINTF(cmdIoParam, "Wrong Parameter Number\r\n");
     }
 }
 
@@ -85,31 +83,37 @@ static void my_connect(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     const void* cmdIoParam = pCmdIO->cmdIoParam;
 
     if (argc == 1) {
-        CMD_MSG("Connect to Default MQTT Broker: ");
-        CMD_MSG(SYS_MQTT_INDEX0_BROKER_NAME);
-        CMD_MSG("\n\r");
+        CMD_PRINTF(cmdIoParam, "Connect to Default MQTT Broker: %s \n\r",SYS_MQTT_INDEX0_BROKER_NAME);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else if (argc == 2) {
         strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
-        CMD_MSG("Connect to MQTT Broker: ");
-        CMD_MSG(argv[1]);
-        CMD_MSG("\n\r");
+        CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s\n\r",argv[1]);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else if (argc == 3) {
         strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
         strcpy(g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
-        CMD_MSG("Connect to MQTT Broker: ");
-        CMD_MSG(argv[1]);
-        CMD_MSG("with topic: ");
-        CMD_MSG(argv[2]);
-        CMD_MSG("\n\r");
+        CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s with topic: %s\n\r",argv[1],argv[2]);
+        APP_MQTT_Initialize();
+        mqtt_init_flag = true;
+    } else if (argc == 4) {
+        strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
+        strcpy(g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
+        g_sSysMqttConfig.sBrokerConfig.tlsEnabled = (bool) atoi(argv[3]);
+        CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s with topic: %s tls =\n\r",argv[1],argv[2],argv[3]);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else {
         CMD_MSG("Wrong Parameter Number\r\n");
     }
+}
+
+static void my_diconnect(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+    
+    APP_MQTT_Disconnect();
+    CMD_PRINTF(cmdIoParam, "Disconnect from MQTT Broker\n\r");
 }
 
 static void CommandHeap(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
@@ -133,7 +137,8 @@ static void CommandHeap(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
 
 const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
     {"pub", (SYS_CMD_FNC) my_pub, ": Publish MQTT Message: pub msg "},
-    {"con", (SYS_CMD_FNC) my_connect, ": Connect to MQTT Broker: con [host] [topic]"},
+    {"con", (SYS_CMD_FNC) my_connect, ": Connect to MQTT Broker: con [host] [topic] [tls enabled]"},
+    {"dis", (SYS_CMD_FNC) my_diconnect, ": Disconnect from MQTT Broker "},
     {"heap",(SYS_CMD_FNC) CommandHeap, ": heap statistics"},    
 };
 

@@ -56,6 +56,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 void APP_MQTT_Initialize(void);
 void APP_MQTT_Tasks(void);
+void APP_MQTT_Disconnect(void);
 
 int32_t APP_MQTT_GetStatus(void *p);
 int32_t APP_MQTT_PublishMsg(char *message);

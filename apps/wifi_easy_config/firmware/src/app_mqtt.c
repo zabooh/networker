@@ -242,6 +242,12 @@ int32_t APP_MQTT_GetStatus(void *p) {
     return SYS_MQTT_GetStatus(g_sSysMqttHandle);
 }
 
+ 
+void APP_MQTT_Disconnect(void) {
+
+    SYS_MQTT_Disconnect(g_sSysMqttHandle);
+}
+
 
 /*******************************************************************************
  End of File
