@@ -144,6 +144,13 @@ then
 	openssl asn1parse -in client.crt -out client_cert.der
 	xxd -i client_cert.der >client_cert.h 
 	cp client_cert.h ../firmware/src/third_party/wolfssl/wolfssl/	
+
+	openssl asn1parse -in client.key -out client_key.der
+	xxd -i client_key.der >client_key.h 
+	cp client_key.h ../firmware/src/third_party/wolfssl/wolfssl/	
+	
+	cat client_cert.h client_key.h >> device-certs.h
+	cp device-certs.h ../firmware/src/third_party/wolfssl/wolfssl/	
 	
 fi 
 
