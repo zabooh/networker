@@ -74,6 +74,9 @@ then
 	rm server.key
 	rm server.crt
 	rm server.csr
+	
+	rm *.der
+	rm *.h
 fi
 
 
