@@ -33,6 +33,12 @@
 #   Use the Ca.crt file and the server.crt file
 #      openssl verify -CAfile ca.crt server.crt
 #
+# - if for any reason the LINE FEED (0x0A) is replaced by CRLF (0x0D 0x0A), 
+#   then the following line deletes the 0x0D
+#       awk 'BEGIN {RS="\r\n";ORS="\n"} {print $0}' gen_all.sh > gen_all_.sh
+#
+#
+
 
 ## Control Variables
 remove_old_files=0
