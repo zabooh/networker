@@ -112,13 +112,6 @@ bool NET_PRES_EncProviderStreamClientInit0(NET_PRES_TransportObject * transObjec
 {
     const uint8_t * caCertsPtr;
     int32_t caCertsLen;
-    const uint8_t * deviceCertPtr;
-    const uint8_t * pvtKeyPtr;
-    int32_t deviceCertLen, pvtKeyLen;
-    if (!NET_PRES_CertStoreGetDeviceTlsParams(&deviceCertPtr, &deviceCertLen, &pvtKeyPtr, &pvtKeyLen, 0))
-    {
-        return false;
-    }
     if (!NET_PRES_CertStoreGetCACerts(&caCertsPtr, &caCertsLen, 0))
     {
         return false;
@@ -134,7 +127,8 @@ bool NET_PRES_EncProviderStreamClientInit0(NET_PRES_TransportObject * transObjec
     {
         return false;
     }
-	wolfSSL_CTX_set_verify(net_pres_wolfSSLInfoStreamClient0.context, WOLFSSL_VERIFY_PEER, 0);
+    // Turn off verification, because SNTP is usually blocked by a firewall
+    wolfSSL_CTX_set_verify(net_pres_wolfSSLInfoStreamClient0.context, SSL_VERIFY_NONE, 0);
 	
     wolfSSL_SetIORecv(net_pres_wolfSSLInfoStreamClient0.context, (CallbackIORecv)&NET_PRES_EncGlue_StreamClientReceiveCb0);
     wolfSSL_SetIOSend(net_pres_wolfSSLInfoStreamClient0.context, (CallbackIOSend)&NET_PRES_EncGlue_StreamClientSendCb0);
@@ -142,20 +136,6 @@ bool NET_PRES_EncProviderStreamClientInit0(NET_PRES_TransportObject * transObjec
     {
         // Couldn't load the CA certificates
         //SYS_CONSOLE_MESSAGE("Something went wrong loading the CA certificates\r\n");
-        wolfSSL_CTX_free(net_pres_wolfSSLInfoStreamClient0.context);
-        return false;
-    }
-    if (wolfSSL_CTX_use_certificate_buffer(net_pres_wolfSSLInfoStreamClient0.context, deviceCertPtr, deviceCertLen, SSL_FILETYPE_ASN1) != SSL_SUCCESS)
-    {
-        // Couldn't load the device certificates
-        //SYS_CONSOLE_MESSAGE("Something went wrong loading the device certificates\r\n");
-        wolfSSL_CTX_free(net_pres_wolfSSLInfoStreamClient0.context);
-        return false;
-    }
-    if (wolfSSL_CTX_use_PrivateKey_buffer(net_pres_wolfSSLInfoStreamClient0.context, pvtKeyPtr, pvtKeyLen, SSL_FILETYPE_ASN1) != SSL_SUCCESS)
-    {
-        // Couldn't load the device private key
-        //SYS_CONSOLE_MESSAGE("Something went wrong loading the device private key\r\n");
         wolfSSL_CTX_free(net_pres_wolfSSLInfoStreamClient0.context);
         return false;
     }
