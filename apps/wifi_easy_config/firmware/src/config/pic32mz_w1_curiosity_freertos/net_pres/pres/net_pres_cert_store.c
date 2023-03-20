@@ -36,22 +36,22 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
 #include "net_pres/pres/net_pres_certstore.h"
 #define USE_CERT_BUFFERS_2048
-#include "wolfssl/certs_test.h"
+#include "wolfssl/ca_cert.h"
 #define USE_CERT_BUFFERS_2048
-#include "wolfssl/certs_test.h"
-#include "wolfssl/certs_test.h"
+#include "wolfssl/server_cert.h"
+#include "wolfssl/server_key.h"
 
 bool NET_PRES_CertStoreGetCACerts(const uint8_t ** certPtr, int32_t * certSize, uint8_t certIndex)
 {
-    *certPtr = client_cert_der_2048;
-    *certSize = sizeof_client_cert_der_2048;
+    *certPtr = ca_cert_der;
+    *certSize = ca_cert_der_len;
     return true;
 }
 bool NET_PRES_CertStoreGetServerCert(const uint8_t ** serverCertPtr, int32_t * serverCertSize, const uint8_t ** serverKeyPtr, int32_t * serverKeySize, uint8_t certIndex)
 {
-    *serverCertPtr = server_cert_der_2048;
-    *serverCertSize = sizeof_server_cert_der_2048;
-    *serverKeyPtr = server_key_der_2048;
-    *serverKeySize = sizeof_server_key_der_2048;
+    *serverCertPtr = server_cert_der;
+    *serverCertSize = server_cert_der_len;
+    *serverKeyPtr = server_key_der;
+    *serverKeySize = server_key_der_len;
     return true;
 }

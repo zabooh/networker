@@ -147,13 +147,17 @@ extern "C" {
 #define SYS_NET_INDEX1_MODE       				SYS_NET_MODE_CLIENT
 #define SYS_NET_INDEX1_PORT        				1
 #define SYS_NET_INDEX1_RECONNECT       			1
-#define SYS_NET_INDEX1_ENABLE_TLS        		0
+#define SYS_NET_INDEX1_ENABLE_TLS        		1
 #define SYS_NET_INDEX1_IPPROT       			SYS_NET_IP_PROT_TCP
 #define SYS_NET_INDEX1_HOST_NAME        		"192.168.1.1"
 
 #define SYS_NET_TLS_ENABLED
 #define WOLFSSL_TLS13_NO_PEEK_HANDSHAKE_DONE
+#define SYS_NET_TLS_CERT_VERIFY_ENABLED
 
+#define SYS_NET_TLS_ENABLED
+#define WOLFSSL_TLS13_NO_PEEK_HANDSHAKE_DONE
+#define SYS_NET_TLS_CERT_VERIFY_ENABLED
 
 #define SYS_NET_CLICMD_ENABLED
 
@@ -161,7 +165,7 @@ extern "C" {
 
 #define SYS_MQTT_PAHO
 
-#define SYS_MQTT_INDEX0_MQTT_PORT        				1883
+#define SYS_MQTT_INDEX0_MQTT_PORT        				8883
 #define SYS_MQTT_INDEX0_BROKER_NAME        				"test.mosquitto.org"
 #define SYS_MQTT_INDEX0_ENABLE_TLS        				true
 #define SYS_MQTT_INDEX0_RECONNECT        				true

@@ -29,8 +29,18 @@
 # - start mosquitto with 
 #      mosquitto -v -c /etc/mosquitto/mosquitto.conf
 #
+# - Verify that a server certificate is signed by a particular CA. 
+#   Use the Ca.crt file and the server.crt file
+#      openssl verify -CAfile ca.crt server.crt
 #
-#
+
+## Control Variables
+remove_old_files=0
+generate_CA_Certs=0
+generate_Server_Certs=0
+generate_Client_Certs=0
+copy_files=0
+convert_files=1
 
 # === Certificate Authority Setup ===
 ca_common_name="192.168.0.227"
@@ -50,47 +60,90 @@ cl_org_name="Microchip"
 cl_pass="cl_passphrase"
 
 
-echo ===  Remove all Files ===
-rm ca.crt
-rm ca.key
-rm ca.srl
+if [ $remove_old_files -eq 1 ]
+then
+	echo ===  Remove all Files ===
+	rm ca.crt
+	rm ca.key
+	rm ca.srl
 
-rm client.key
-rm client.crt
-rm client.csr
+	rm client.key
+	rm client.crt
+	rm client.csr
 
-rm server.key
-rm server.crt
-rm server.csr
+	rm server.key
+	rm server.crt
+	rm server.csr
+fi
 
-echo === Generate a certificate authority certificate and key === 
-openssl req -new -x509 -days 360 -extensions v3_ca -keyout ca.key -out ca.crt -subj /CN=$ca_common_name/O=$ca_org_name/C=$ca_country/ST=$ca_st -passout pass:$ca_pass
 
-echo ===  Generate a server key === 
-#openssl genrsa -des3 -passout pass:$sv_pass -out server.key 2048
-# => no passphrase used for server. Key is stored without encryption
-openssl genrsa -out server.key 2048
+if [ $generate_CA_Certs -eq 1 ]
+then
+	echo === Generate a certificate authority certificate and key === 
+	openssl req -new -x509 -days 360 -extensions v3_ca -keyout ca.key -out ca.crt -subj /CN=$ca_common_name/O=$ca_org_name/C=$ca_country/ST=$ca_st -passout pass:$ca_pass
+fi
 
-echo === generate a certificate signing request to send to the CA === 
-openssl req -new -out server.csr -key server.key -subj /CN=$sv_common_name/O=$sv_org_name
 
-echo === Send the CSR to the CA, or sign it with your CA key === 
-openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 360 -passin pass:$ca_pass
+if [ $generate_Server_Certs -eq 1 ]
+then
+	echo ===  Generate a server key === 
+	#openssl genrsa -des3 -passout pass:$sv_pass -out server.key 2048
+	# => no passphrase used for server. Key is stored without encryption
+	openssl genrsa -out server.key 2048
 
-echo === Generate a client key === 
-#openssl genrsa -des3 -passout pass:$cl_pass -out client.key 2048
-# => no assphrase used for server. Key is stored without encryption
-openssl genrsa -out client.key 2048
+	echo === generate a certificate signing request to send to the CA === 
+	openssl req -new -out server.csr -key server.key -subj /CN=$sv_common_name/O=$sv_org_name
 
-echo === Generate a certificate signing request to send to the CA === 
-#openssl req -out client.csr -key client.key -new -subj /CN=$cl_common_name/O=$cl_org_name -passin pass:$cl_pass
-openssl req -out client.csr -key client.key -new -subj /CN=$cl_common_name/O=$cl_org_name 
+	echo === Send the CSR to the CA, or sign it with your CA key === 
+	openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 360 -passin pass:$ca_pass
+fi
 
-echo === Send the CSR to the CA, or sign it with your CA key === 
-openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 360 -passin pass:$ca_pass
 
-echo === copy files to mosquitto folders ===
-cp ca.crt /etc/mosquitto/ca_certificates/
-cp server.crt /etc/mosquitto/certs/
-cp server.key /etc/mosquitto/certs/
-cp mosquitto.conf /etc/mosquitto/
+if [ $generate_Client_Certs -eq 1 ]
+then
+	echo === Generate a client key === 
+	#openssl genrsa -des3 -passout pass:$cl_pass -out client.key 2048
+	# => no assphrase used for server. Key is stored without encryption
+	openssl genrsa -out client.key 2048
+
+	echo === Generate a certificate signing request to send to the CA === 
+	#openssl req -out client.csr -key client.key -new -subj /CN=$cl_common_name/O=$cl_org_name -passin pass:$cl_pass
+	openssl req -out client.csr -key client.key -new -subj /CN=$cl_common_name/O=$cl_org_name 
+
+	echo === Send the CSR to the CA, or sign it with your CA key === 
+	openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 360 -passin pass:$ca_pass
+fi
+
+
+if [ $copy_files -eq 1 ]
+then
+	echo === copy files to mosquitto folders ===
+	cp ca.crt /etc/mosquitto/ca_certificates/
+	cp server.crt /etc/mosquitto/certs/
+	cp server.key /etc/mosquitto/certs/
+	cp mosquitto.conf /etc/mosquitto/
+fi 
+
+
+if [ $convert_files -eq 1 ]
+then
+	echo === convert files from ASN.1 to DER and C Header ===
+	
+	openssl asn1parse -in ca.crt -out ca_cert.der
+	xxd -i ca_cert.der >ca_cert.h 
+	cp ca_cert.h ../firmware/src/third_party/wolfssl/wolfssl/
+	
+	openssl asn1parse -in server.crt -out server_cert.der
+	xxd -i server_cert.der >server_cert.h 
+	cp server_cert.h ../firmware/src/third_party/wolfssl/wolfssl/	
+
+	openssl asn1parse -in server.key -out server_key.der
+	xxd -i server_key.der >server_key.h 
+	cp server_key.h ../firmware/src/third_party/wolfssl/wolfssl/	
+
+	openssl asn1parse -in client.crt -out client_cert.der
+	xxd -i client_cert.der >client_cert.h 
+	cp client_cert.h ../firmware/src/third_party/wolfssl/wolfssl/	
+	
+fi 
+

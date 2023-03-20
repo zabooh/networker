@@ -988,7 +988,6 @@
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/event_groups.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
-        <itemPath>../src/main.c</itemPath>
       </logicalFolder>
       <logicalFolder name="paho.mqtt.embedded-c"
                      displayName="paho.mqtt.embedded-c"
@@ -1130,6 +1129,7 @@
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/msd_app.c</itemPath>
       <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/app_mqtt.c</itemPath>
+      <itemPath>../src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
