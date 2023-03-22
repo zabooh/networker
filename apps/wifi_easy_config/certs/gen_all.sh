@@ -44,8 +44,7 @@
 #
 #   mosquitto_pub -h 192.168.0.227 -t flat/bulb --cafile /etc/mosquitto/ca_certificates/ca.crt -m "Hello World!" -p 8883 -d
 #   mosquitto_sub -h 192.168.0.227 -t flat/bulb --cafile /etc/mosquitto/ca_certificates/ca.crt -p 8883 -d		
-#
-#   sysmqtt subscribe 0 flat/bulb 0		
+#	
 #   sysmqtt get info
 #		
 #   con 192.168.0.227 flat/bulb 1
