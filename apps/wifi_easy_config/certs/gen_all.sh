@@ -1,5 +1,6 @@
 #!/bin/sh
 
+################################################################################
 # Some Comments (20.03.2023): 
 #
 # - with parameter "-nodes" (no DES) instead 
@@ -37,7 +38,25 @@
 #   then the following line deletes the 0x0D
 #       awk 'BEGIN {RS="\r\n";ORS="\n"} {print $0}' gen_all.sh > gen_all_.sh
 #
+################################################################################
 #
+#   mosquitto -v -c /etc/mosquitto/mosquitto.conf
+#
+#   mosquitto_pub -h 192.168.0.227 -t flat/bulb --cafile /etc/mosquitto/ca_certificates/ca.crt -m "Hello World!" -p 8883 -d
+#   mosquitto_sub -h 192.168.0.227 -t flat/bulb --cafile /etc/mosquitto/ca_certificates/ca.crt -p 8883 -d		
+#
+#   sysmqtt subscribe 0 flat/bulb 0		
+#   sysmqtt get info
+#		
+#   con 192.168.0.227 flat/bulb 1
+#   sub flat/bulb
+#   pub Hello_World
+#
+#   wifiprov set 0 1 GEN 0 1 3 MyWorld x3vbrjzW8hrd
+#
+#   netinfo
+#
+################################################################################
 
 
 ## Control Variables
