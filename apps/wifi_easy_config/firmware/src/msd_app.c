@@ -57,7 +57,8 @@ bool mqtt_init_flag = false;
 uint8_t CACHE_ALIGN work[SYS_FS_FAT_MAX_SS];
 
 extern EXCEPT_MSG last_expt_msg;
-
+extern SYS_MODULE_OBJ g_sSysMqttHandle;
+                
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -109,6 +110,16 @@ static void my_connect(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     }
 }
 
+static void my_sub(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+    SYS_MQTT_SubscribeConfig subConfig;
+    subConfig.qos = 0;
+    
+    CMD_PRINTF(cmdIoParam, "%s\n\r",argv[1]);
+    strcpy(subConfig.topicName, argv[1]);
+    SYS_MQTT_Subscribe(g_sSysMqttHandle, &subConfig);
+}
+
 static void my_diconnect(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     const void* cmdIoParam = pCmdIO->cmdIoParam;
     
@@ -137,6 +148,7 @@ static void CommandHeap(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
 
 const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
     {"pub", (SYS_CMD_FNC) my_pub, ": Publish MQTT Message: pub msg "},
+    {"sub", (SYS_CMD_FNC) my_sub, ": Subcribe MQTT Message: sub topic "},    
     {"con", (SYS_CMD_FNC) my_connect, ": Connect to MQTT Broker: con [host] [topic] [tls enabled]"},
     {"dis", (SYS_CMD_FNC) my_diconnect, ": Disconnect from MQTT Broker "},
     {"heap",(SYS_CMD_FNC) CommandHeap, ": heap statistics"},    
@@ -417,7 +429,6 @@ void MSD_APP_Tasks(void) {
 
             {
                 static SYS_MQTT_STATUS status = -1;
-                extern SYS_MODULE_OBJ g_sSysMqttHandle;
                 SYS_MQTT_STATUS current = SYS_MQTT_GetStatus(g_sSysMqttHandle);
                 if (status != current) {
                     switch (current) {
