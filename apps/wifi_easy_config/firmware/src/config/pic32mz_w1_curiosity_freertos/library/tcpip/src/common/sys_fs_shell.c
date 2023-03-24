@@ -402,6 +402,8 @@ static SYS_FS_SHELL_RES Shell_Cwd(const SYS_FS_SHELL_OBJ* pObj, const char *path
     return _Shell_ObjectUnlock(pShell, SYS_FS_SHELL_RES_OK);
 }
 
+volatile bool f_Flag = false;
+
 static SYS_FS_HANDLE Shell_FileOpen(const SYS_FS_SHELL_OBJ* pObj, const char *fname, SYS_FS_FILE_OPEN_ATTRIBUTES attributes)
 {
     SYS_FS_HANDLE fsHandle = SYS_FS_HANDLE_INVALID;
@@ -411,14 +413,25 @@ static SYS_FS_HANDLE Shell_FileOpen(const SYS_FS_SHELL_OBJ* pObj, const char *fn
         char absBuff[SYS_FS_FILE_NAME_LEN + 1];
         SYS_FS_SHELL_RES absRes = Shell_FileAbsPath(pShell, fname, absBuff, sizeof(absBuff));
         _Shell_ObjectUnlock(pShell, absRes);
-
+   
         if(absRes == SYS_FS_SHELL_RES_OK)
         {
             fsHandle = SYS_FS_FileOpen(absBuff, attributes);
         }
+
+        if (fsHandle == SYS_FS_HANDLE_INVALID)
+        {
+            int s_size = strlen(absBuff);
+            char *name_new = malloc(s_size+10);            
+            strcpy(name_new,absBuff);            
+            strcat(name_new,".gz");                     
+            fsHandle = SYS_FS_FileOpen(name_new, attributes);
+            f_Flag = true;            
+            free(name_new);
+        }
     }
 
-    return fsHandle;
+     return fsHandle;
 }
 
 static SYS_FS_RESULT Shell_FileStat(const SYS_FS_SHELL_OBJ* pObj, const char *fname, SYS_FS_FSTAT* statBuff)
@@ -549,7 +562,9 @@ static SYS_FS_RESULT Shell_DirClose(const SYS_FS_SHELL_OBJ* pObj, SYS_FS_HANDLE 
 static int32_t Shell_FileSize(const SYS_FS_SHELL_OBJ* pObj, SYS_FS_HANDLE handle)
 {
     (void)pObj;
-    return SYS_FS_FileSize(handle);
+    int size = SYS_FS_FileSize(handle); 
+    SYS_CONSOLE_PRINT("File Size:%d\n\r",size);
+    return size;
 }
 
 static int32_t  Shell_FileSeek(const SYS_FS_SHELL_OBJ* pObj, SYS_FS_HANDLE handle, int32_t offset, SYS_FS_FILE_SEEK_CONTROL whence)

@@ -1073,9 +1073,22 @@ static void TCPIP_HTTP_ProcessConnection(HTTP_CONN* pHttpCon)
                 // Output the content type, if known
                 if(pHttpCon->fileType != HTTP_UNKNOWN)
                 {
+
+                    extern volatile bool f_Flag;                    
+                    
+                    if (f_Flag == true) {                        
+                        TCPIP_TCP_StringPut(pHttpCon->socket, (const uint8_t*) "Accept-Ranges: bytes");
+                        TCPIP_TCP_StringPut(pHttpCon->socket, HTTP_CRLF);
+                        TCPIP_TCP_StringPut(pHttpCon->socket, (const uint8_t*) "Vary: Accept-Encoding");
+                        TCPIP_TCP_StringPut(pHttpCon->socket, HTTP_CRLF);
+                        TCPIP_TCP_StringPut(pHttpCon->socket, (const uint8_t*) "Content-Encoding: gzip ");
+                        TCPIP_TCP_StringPut(pHttpCon->socket, HTTP_CRLF);                       
+                        f_Flag = false;
+                    }
+                    
                     TCPIP_TCP_StringPut(pHttpCon->socket, (const uint8_t*)"Content-Type: ");
                     TCPIP_TCP_StringPut(pHttpCon->socket, (const uint8_t*)httpContentTypes[pHttpCon->fileType]);
-                    TCPIP_TCP_StringPut(pHttpCon->socket, HTTP_CRLF);
+                    TCPIP_TCP_StringPut(pHttpCon->socket, HTTP_CRLF);                    
                 }
 
                 // Output the gzip encoding header if needed
