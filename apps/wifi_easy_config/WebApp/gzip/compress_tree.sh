@@ -6,7 +6,7 @@ compress_directory() {
     if [ -d "$file" ]; then
       compress_directory "$file"
     elif [ -f "$file" ]; then
-      gzip "$file"
+      gzip "$file" -f 
     fi
   done
 }
