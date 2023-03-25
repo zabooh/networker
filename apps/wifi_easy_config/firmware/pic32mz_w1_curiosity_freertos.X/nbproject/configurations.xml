@@ -462,6 +462,9 @@
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/wifiprov/sys_wifiprov.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/wifiprov/sys_wifiprov_json.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="wss" displayName="wss" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/wss/sys_wss.h</itemPath>
+            </logicalFolder>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/system.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/system_common.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/system_module.h</itemPath>
@@ -502,6 +505,7 @@
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/config.h</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/FreeRTOSConfig.h</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/interrupts.h</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/wss/app_wss.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
@@ -944,6 +948,9 @@
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/wifiprov/http_print.c</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/wifiprov/mpfs_img2.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="wss" displayName="wss" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/wss/src/sys_wss.c</itemPath>
+            </logicalFolder>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/sys_time_h2_adapter.c</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/sys_random_h2_adapter.c</itemPath>
           </logicalFolder>
@@ -965,6 +972,7 @@
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/diskImage.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system_exceptions.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_freertos/exception_vector.S</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/wss/src/app_wss.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">

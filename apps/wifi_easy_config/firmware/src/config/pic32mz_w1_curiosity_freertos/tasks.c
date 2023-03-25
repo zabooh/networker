@@ -112,6 +112,15 @@ void _NET_PRES_Tasks(  void *pvParameters  )
     }
 }
 
+static void _SYS_WSS_Task(  void *pvParameters  )
+{
+    while(1)
+    {
+        SYS_WSS_Task(sysObj.sysWSS);
+        vTaskDelay(1/ portTICK_PERIOD_MS);
+    }
+}
+
 
 void _SYS_FS_Tasks(  void *pvParameters  )
 {
@@ -253,6 +262,15 @@ void SYS_Tasks ( void )
         DRV_MIIM_RTOS_STACK_SIZE,
         (void*)NULL,
         DRV_MIIM_RTOS_TASK_PRIORITY,
+        (TaskHandle_t*)NULL
+    );
+
+
+    xTaskCreate( _SYS_WSS_Task,
+        "SYS_WSS_Task",
+        SYS_WSS_RTOS_STACK_SIZE,
+        (void*)NULL,
+        SYS_WSS_RTOS_TASK_PRIORITY,
         (TaskHandle_t*)NULL
     );
 

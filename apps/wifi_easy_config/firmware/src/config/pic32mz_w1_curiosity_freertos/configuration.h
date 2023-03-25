@@ -100,6 +100,20 @@ extern "C" {
 #define SYS_CONSOLE_RTOS_STACK_SIZE_IDX0               256
 #define SYS_CONSOLE_RTOS_TASK_PRIORITY_IDX0                     1
 
+/*** WSS Configuration ***/
+#define SYS_WSS_RTOS_STACK_SIZE     4096
+#define SYS_WSS_RTOS_TASK_PRIORITY  1
+#define SYS_WSS_RTOS_TASK_DELAY     1
+
+#define SYS_WSS_PORT                        8000
+#define SYS_WSS_ENABLE_TLS   			    false
+#define SYS_WSS_ENABLE_DEBUG   			    0
+#define SYS_WSS_MAX_RX_BUFFER               1400
+#define SYS_WSS_MAX_NUM_CLIENTS             2
+#define SYS_WSS_START_AT_BOOT   			1
+#define SYS_WSS_CLIENT_TIMEOUT              30000
+
+#define WOLFSSL_BASE64_ENCODE
 
 /* File System Service Configuration */
 

@@ -68,6 +68,8 @@
 #include "net_pres/pres/net_pres_encryptionproviderapi.h"
 #include "net_pres/pres/net_pres_transportapi.h"
 #include "net_pres/pres/net_pres_socketapi.h"
+#include "system/wss/sys_wss.h"
+#include "system/wss/app_wss.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_fat_interface.h"
@@ -243,6 +245,7 @@ typedef struct
     SYS_MODULE_OBJ  drvMiim;
     SYS_MODULE_OBJ  netPres;
 
+    SYS_MODULE_OBJ  sysWSS;
 
     SYS_MODULE_OBJ  ba414e;
 

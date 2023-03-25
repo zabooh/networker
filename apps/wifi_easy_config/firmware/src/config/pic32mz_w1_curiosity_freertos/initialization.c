@@ -980,9 +980,11 @@ void SYS_Initialize ( void* data )
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
     sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
 
-
     SYS_NET_Initialize();
-
+    
+    /* WSS Service Initialization */
+    sysObj.sysWSS = SYS_WSS_Initialize(NULL,NULL,NULL);
+    SYS_ASSERT(sysObj.sysWSS  != SYS_MODULE_OBJ_INVALID, "SYS_WSS_Initialize Failed" );
 
     SYS_MQTT_Initialize();
     

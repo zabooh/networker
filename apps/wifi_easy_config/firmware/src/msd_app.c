@@ -314,31 +314,37 @@ void MSD_APP_Tasks(void) {
         case MSD_APP_STATE_INIT:
         {
             bool appInitialized = true;
-                vTaskDelay(2000 / portTICK_PERIOD_MS);
-                
-                if (last_expt_msg.magic == MAGIC_CODE) {
-                    SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
-                    SYS_CONSOLE_PRINT("Last Runtime has ended with the following Message:\n\r");
-                    {
-                        char ch;
-                        int ix = 0;
-                        for (ix = 0; ix < 4096; ix++) {
-                            ch = last_expt_msg.msg[ix];
-                            if (ch == 0)break;
-                            SYS_CONSOLE_PRINT("%c", ch);
-                        }
+            SYS_WSS_RESULT result;
+            vTaskDelay(2000 / portTICK_PERIOD_MS);
+
+            if (last_expt_msg.magic == MAGIC_CODE) {
+                SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
+                SYS_CONSOLE_PRINT("Last Runtime has ended with the following Message:\n\r");
+                {
+                    char ch;
+                    int ix = 0;
+                    for (ix = 0; ix < 4096; ix++) {
+                        ch = last_expt_msg.msg[ix];
+                        if (ch == 0)break;
+                        SYS_CONSOLE_PRINT("%c", ch);
                     }
-                    SYS_CONSOLE_PRINT("%c", last_expt_msg.msg[0]);
-                    SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
-                    last_expt_msg.magic = 0;
                 }
-                
-                if (appInitialized) {
-                    SYS_CONSOLE_PRINT("MSD_APP_Tasks Started\r\n");
-                    msd_appData.state = MSD_APP_STATE_MOUNT_FS;
-                }
-                break;
+                SYS_CONSOLE_PRINT("%c", last_expt_msg.msg[0]);
+                SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
+                last_expt_msg.magic = 0;
             }
+
+            result = SYS_WSS_register_callback(wss_user_callback, 0);
+            if (SYS_WSS_SUCCESS == result) {
+                SYS_CONSOLE_PRINT("Registered call back with WSS service successfully\r\n");
+            }
+
+            if (appInitialized) {
+                SYS_CONSOLE_PRINT("MSD_APP_Tasks Started\r\n");
+                msd_appData.state = MSD_APP_STATE_MOUNT_FS;
+            }
+            break;
+        }
 
         case MSD_APP_STATE_MOUNT_FS:
             if (checkFSMount()) {

@@ -1695,7 +1695,7 @@ static bool _TCPIPStackIsRunState(void)
         if(ifUpMask == ((1 << netIx) - 1))
         {   // all interfaces up
             tcpip_stack_status = SYS_STATUS_READY;
-            SYS_CONSOLE_MESSAGE(TCPIP_STACK_HDR_MESSAGE "Initialization Ended - success \r\n");
+            SYS_CONSOLE_MESSAGE("\n\r\n\r"TCPIP_STACK_HDR_MESSAGE "Initialization Ended - success \r\n");
         }
         else
         {   // failed initializing all interfaces;
