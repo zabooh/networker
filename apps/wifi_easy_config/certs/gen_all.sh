@@ -54,6 +54,7 @@
 #   
 #   STA:   wifiprov set 0 1 GEN 0 1 3 MyWorld x3vbrjzW8hrd
 #   AP:    wifiprov set 1 1 GEN 1 1 1 DEMO_SOFTAP password
+#
 #                                   authtype (1-Open 2-WEP 3-Mixed mode(WPA/WPA2) 4-WPA2 5-Mixed mode 6-WPA3)
 #                                 ssidVisibility(AP mode only)
 #                                 auto connect (STA mode only) 
@@ -65,6 +66,10 @@
 #  
 #   netinfo
 #
+#
+#
+#     (ip.src == 192.168.0.227 && ip.dst == 192.168.0.32)  || (ip.src == 192.168.0.32 && ip.dst == 192.168.0.227) 
+#     
 ################################################################################
 
 
