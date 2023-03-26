@@ -354,42 +354,71 @@ static SYS_WSS_RESULT parseHandshake(void *buffer, uint16_t length, int32_t clie
     do {
         //Check for URI
         token = strtok(NULL, " \r\n");
-        WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN3: %s", token);           
-      
-        if(token == NULL) break;
-        
-        if (!strcasecmp(token, "HOST:")) {
-            token = strtok(NULL, " \r\n");
-            WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN4: %s", token);
-        } else if (!strcasecmp(token, "UPGRADE:")) {
-            token = strtok(NULL, " \r\n");
-            WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN5: %s", token);
-            if (!strcasecmp(token, "websocket")) {
-                g_wssSrvcObj[clientIndex].wssHandshake.upgradeWebSocket = true;
-            }
-        } else if (!strcasecmp(token, "ORIGIN:")) {
-            token = strtok(NULL, " \r\n");
-            g_wssSrvcObj[clientIndex].wssHandshake.origin = true;
-            WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN6: %s", token);
-        } else if (!strcasecmp(token, "Sec-WebSocket-Key:")) {
-            token = strtok(NULL, " \r\n");
-            strcpy(g_wssSrvcObj[clientIndex].wssHandshake.clientKey, token);
-            g_wssSrvcObj[clientIndex].wssHandshake.iskey = true;
-            WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN7: %s", g_wssSrvcObj[clientIndex].wssHandshake.clientKey);
-        } else if (!strcasecmp(token, "Sec-WebSocket-Version:")) {
-            token = strtok(NULL, " \r\n");
-            //memcpy((uint8_t *)g_wssSrvcObj[clientIndex].wssHandshake.ws_version,(char *) token,1);
-            WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN8: %s", g_wssSrvcObj[clientIndex].wssHandshake.ws_version);
-        } else if (!strcasecmp(token, "Connection:")) {
-            token = strtok(NULL, " \r\n");
-            if (!strcasecmp(token, "Upgrade")) {
-                g_wssSrvcObj[clientIndex].wssHandshake.connectionUpgrade = true;
-                WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN9: %s", token);
-            }
-        } else {
+        WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN3: %s", token);
 
-            WSS_DEBUG_PRINT("\r\nIn parseHandshake :Handshake parsing completed:");
-            break;
+        if (token != NULL) {
+            if (!strcasecmp(token, "HOST:")) {
+                token = strtok(NULL, " \r\n");
+                WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN4: %s", token);
+            } else if (!strcasecmp(token, "UPGRADE:")) {
+                token = strtok(NULL, " \r\n");
+                WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN5: %s", token);
+                if (!strcasecmp(token, "websocket")) {
+                    g_wssSrvcObj[clientIndex].wssHandshake.upgradeWebSocket = true;
+                }
+            } else if (!strcasecmp(token, "ORIGIN:")) {
+                token = strtok(NULL, " \r\n");
+                g_wssSrvcObj[clientIndex].wssHandshake.origin = true;
+                WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN6: %s", token);
+            } else if (!strcasecmp(token, "Sec-WebSocket-Key:")) {
+                token = strtok(NULL, " \r\n");
+                strcpy(g_wssSrvcObj[clientIndex].wssHandshake.clientKey, token);
+                g_wssSrvcObj[clientIndex].wssHandshake.iskey = true;
+                WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN7: %s", g_wssSrvcObj[clientIndex].wssHandshake.clientKey);
+            } else if (!strcasecmp(token, "Sec-WebSocket-Version:")) {
+                token = strtok(NULL, " \r\n");
+                //memcpy((uint8_t *)g_wssSrvcObj[clientIndex].wssHandshake.ws_version,(char *) token,1);
+                WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN8: %s", g_wssSrvcObj[clientIndex].wssHandshake.ws_version);
+            } else if (!strcasecmp(token, "Connection:")) {
+                token = strtok(NULL, " \r\n");
+                if (!strcasecmp(token, "Upgrade")) {
+                    g_wssSrvcObj[clientIndex].wssHandshake.connectionUpgrade = true;
+                    WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN9: %s", token);
+                }
+            } else if (!strcasecmp(token, "Pragma:")) {
+                token = strtok(NULL, " \r\n");
+                if (!strcasecmp(token, "no-cache")) {
+                    WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN10: %s", token);
+                }
+            } else if (!strcasecmp(token, "Cache-Control:")) {
+                token = strtok(NULL, " \r\n");
+                if (!strcasecmp(token, "no-cache")) {
+                    WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN11: %s", token);
+                }            
+            } else if (!strcasecmp(token, "User-Agent:")) {
+                token = strtok(NULL, "\r\n");
+                //if (!strcasecmp(token, "no-cache")) {
+                    WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN12: %s", token);
+                //}  
+            } else if (!strcasecmp(token, "Accept-Encoding:")) {
+                token = strtok(NULL, "\r\n");
+                //if (!strcasecmp(token, "no-cache")) {
+                    WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN13: %s", token);
+                //}  
+            } else if (!strcasecmp(token, "Accept-Language:")) {
+                token = strtok(NULL, "\r\n");
+                //if (!strcasecmp(token, "no-cache")) {
+                    WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN14: %s", token);
+                //}          
+            } else if (!strcasecmp(token, "Sec-WebSocket-Extensions:")) {
+                token = strtok(NULL, "\r\n");
+                //if (!strcasecmp(token, "no-cache")) {
+                    WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN15: %s", token);
+                //}                    
+            } else {
+                WSS_DEBUG_PRINT("\r\nIn parseHandshake :Handshake parsing completed:");
+                break;
+            }
         }
     } while (token != NULL);
 
