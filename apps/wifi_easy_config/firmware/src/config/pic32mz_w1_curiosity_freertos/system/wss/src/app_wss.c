@@ -45,6 +45,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #include "definitions.h"
 
+bool ParseData(uint8_t buffer[], int length);
+
 void wss_user_callback(SYS_WSS_EVENTS event, void *data, int32_t clientIndex, void *cookie) {
 
     int i = 0;
@@ -68,7 +70,7 @@ void wss_user_callback(SYS_WSS_EVENTS event, void *data, int32_t clientIndex, vo
             for (i = 0; i < ((SYS_WSS_RXDATA*) data)->datalen; i++) {
                 SYS_CONSOLE_PRINT("%X ", ((SYS_WSS_RXDATA*) data)->data[i]);
             }
-            SYS_CONSOLE_PRINT("\r\n");
+            SYS_CONSOLE_PRINT("\r\n");                        
             //echo server.
             SYS_WSS_sendMessage(1, SYS_WSS_FRAME_TEXT, ((SYS_WSS_RXDATA*) data)->data, ((SYS_WSS_RXDATA *) data)->datalen, clientIndex);
             break;
@@ -81,6 +83,8 @@ void wss_user_callback(SYS_WSS_EVENTS event, void *data, int32_t clientIndex, vo
                 SYS_CONSOLE_PRINT("%c", ((SYS_WSS_RXDATA*) data)->data[i]);
             }
             SYS_CONSOLE_PRINT("\r\n");
+            
+            ParseData( ((SYS_WSS_RXDATA *)data)->data, ((SYS_WSS_RXDATA *)data)->datalen );
             //echo server
             SYS_WSS_sendMessage(1, SYS_WSS_FRAME_TEXT, ((SYS_WSS_RXDATA*) data)->data, ((SYS_WSS_RXDATA *) data)->datalen, clientIndex);
             break;

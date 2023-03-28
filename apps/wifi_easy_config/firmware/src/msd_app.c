@@ -482,7 +482,123 @@ void MSD_APP_Tasks(void) {
     }
 }
 
+#include "config/pic32mz_w1_curiosity_freertos/system/wifiprov/sys_wifiprov_json.h"
 
+bool ParseData(uint8_t buffer[], int length) {
+    struct json_obj root, child; //, sub;
+    bool error = false;
+
+    SYS_CONSOLE_PRINT("JSON: Parse Data\n\r");
+    if (buffer) {
+        SYS_CONSOLE_PRINT("JSON: buffer is valid: %d \n\r", length);
+        buffer[length] = 0;
+        SYS_CONSOLE_PRINT("JSON: %s\n\r", buffer);
+
+        /* Creating JSON object to parse incoming JSON data */
+        if (!json_create(&root, (const char*) buffer, length)) {
+            
+            SYS_CONSOLE_PRINT("JSON: Start\n\r");
+            if (!json_find(&root, "var1", &child)) {
+                SYS_CONSOLE_PRINT("JSON: Found var1: %s type:%d\n\r", child.value.s,child.type);                
+            }
+            
+            if (!json_find(&root, "var2", &child)) {
+                SYS_CONSOLE_PRINT("JSON: Found var2: %s type:%d\n\r", child.value.s,child.type);     
+            } 
+
+            if (!json_find(&root, "var3", &child)) {
+                SYS_CONSOLE_PRINT("JSON: Found var3: %d type:%d\n\r", child.value.i,child.type);
+            } 
+
+            //            if (!json_find(&root, "variable_set", &child)) {
+            //                child.value.b;
+            //            }
+            //            else {
+            //                error = true;
+            //            }
+
+            //            /* Verifying JSON  "save_config" field */
+            //            if (!json_find(&root, "save_config", &child)) {
+            //                child.value.b;
+            //            }
+            //            else {
+            //                error = true;
+            //            }
+            //
+            //            /* Verifying JSON  "countrycode" field */
+            //            if (!json_find(&root, "countrycode", &child)) {
+            //                char buff[20];
+            //                memcpy(buff, child.value.s, strlen(child.value.s));
+            //            }
+            //            else {
+            //                error = true;
+            //            }
+            //                if (!json_find(&child, "auto", &sub)) {
+            //                    sub.value.b;
+            //                }
+            //                else {
+            //                    error = true;
+            //                }
+            //
+            //                if (!json_find(&child, "auth", &sub)) {
+            //                    sub.value.i;
+            //                } else {
+            //                    error = true;
+            //                }
+            //
+            //                if (!json_find(&child, "SSID", &sub)) {
+            //
+            //                    
+            //
+            //                    if (!json_find(&child, "PWD", &sub)) {
+            //                        char buff[20];
+            //                        memcpy(buff, child.value.s, strlen(child.value.s));
+            //                    }
+            //                    else {
+            //                        error = true;
+            //                    }
+            //                }
+            //                /* Verifying JSON  "AP" field */
+            //                if (!json_find(&root, "AP", &child)) {
+            //                    if (!json_find(&child, "ch", &sub)) {
+            //                        sub.value.i;
+            //                    } else {
+            //                        error = true;
+            //                    }
+            //
+            //                    if (!json_find(&child, "ssidv", &sub)) {
+            //                        sub.value.b;
+            //                    } else {
+            //                        error = true;
+            //                    }
+            //
+            //                    if (!json_find(&child, "auth", &sub)) {
+            //                        sub.value.i;
+            //                    } else {
+            //                        error = true;
+            //                    }
+            //
+            //                    if (!json_find(&child, "SSID", &sub)) {
+            //                        char buff[20];
+            //                        memcpy(buff, child.value.s, strlen(child.value.s));
+            //                    }
+            //                    else {
+            //                        error = true;
+            //                    }
+            //
+            //                    if (!json_find(&child, "PWD", &sub)) {
+            //                        char buff[20];
+            //                        memcpy(buff, child.value.s, strlen(child.value.s));
+            //                    }
+            //                    else {
+            //                        error = true;
+            //                    }
+            //                }
+            //            }
+        }
+    }
+    return error;
+}
 
 void* APP_Calloc(size_t nElems, size_t elemSize) {
     size_t nBytes = nElems * elemSize;
