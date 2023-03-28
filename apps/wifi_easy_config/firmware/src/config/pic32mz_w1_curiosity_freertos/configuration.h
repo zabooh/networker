@@ -111,13 +111,13 @@ extern "C" {
 #define SYS_WSS_MAX_RX_BUFFER               1400
 #define SYS_WSS_MAX_NUM_CLIENTS             2
 #define SYS_WSS_START_AT_BOOT   			1
-#define SYS_WSS_CLIENT_TIMEOUT              30000
+#define SYS_WSS_CLIENT_TIMEOUT              (24*60*60*1000)
 
 #define WOLFSSL_BASE64_ENCODE
-
 /* File System Service Configuration */
 
 #define SYS_FS_MEDIA_NUMBER               1
+
 #define SYS_FS_VOLUME_NUMBER              1
 
 #define SYS_FS_AUTOMOUNT_ENABLE           false
