@@ -107,7 +107,7 @@ extern "C" {
 
 #define SYS_WSS_PORT                        8000
 #define SYS_WSS_ENABLE_TLS   			    false
-#define SYS_WSS_ENABLE_DEBUG   			    1
+#define SYS_WSS_ENABLE_DEBUG   			    0
 #define SYS_WSS_MAX_RX_BUFFER               1400
 #define SYS_WSS_MAX_NUM_CLIENTS             2
 #define SYS_WSS_START_AT_BOOT   			1
@@ -117,7 +117,6 @@ extern "C" {
 /* File System Service Configuration */
 
 #define SYS_FS_MEDIA_NUMBER               1
-
 #define SYS_FS_VOLUME_NUMBER              1
 
 #define SYS_FS_AUTOMOUNT_ENABLE           false
@@ -148,8 +147,8 @@ extern "C" {
 #define SYS_NET_SUPP_NUM_OF_SOCKS        		2
 
 #define SYS_NET_INDEX0_INTF       				SYS_NET_INTF_WIFI
-#define SYS_NET_INDEX0_MODE       				SYS_NET_MODE_CLIENT
-#define SYS_NET_INDEX0_PORT        				1
+#define SYS_NET_INDEX0_MODE       				SYS_NET_MODE_SERVER
+#define SYS_NET_INDEX0_PORT        				8000
 #define SYS_NET_INDEX0_RECONNECT       			1
 #define SYS_NET_INDEX0_ENABLE_TLS        		1
 #define SYS_NET_INDEX0_IPPROT       			SYS_NET_IP_PROT_TCP
@@ -337,7 +336,7 @@ extern "C" {
 #define TCPIP_TCP_AUTO_TRANSMIT_TIMEOUT_VAL			40
 #define TCPIP_TCP_WINDOW_UPDATE_TIMEOUT_VAL			200
 #define TCPIP_TCP_MAX_SOCKETS		                10
-#define TCPIP_TCP_TASK_TICK_RATE		        	5
+#define TCPIP_TCP_TASK_TICK_RATE		        	1
 #define TCPIP_TCP_MSL_TIMEOUT		        	    0
 #define TCPIP_TCP_QUIET_TIME		        	    0
 #define TCPIP_TCP_COMMANDS   false
@@ -624,7 +623,7 @@ extern "C" {
 #define TCPIP_HTTP_MAX_CONNECTIONS		    		4
 #define TCPIP_HTTP_DEFAULT_FILE		        		"index.htm"
 #define TCPIP_HTTP_DEFAULT_LEN		        		10
-#define TCPIP_HTTP_MAX_DATA_LEN		        		100
+#define TCPIP_HTTP_MAX_DATA_LEN		        		200
 #define TCPIP_HTTP_MIN_CALLBACK_FREE				16
 #define TCPIP_HTTP_SKT_TX_BUFF_SIZE		    		0
 #define TCPIP_HTTP_SKT_RX_BUFF_SIZE		    		0
@@ -634,7 +633,7 @@ extern "C" {
 #define TCPIP_HTTP_USE_COOKIES
 #define TCPIP_HTTP_USE_BASE64_DECODE
 #define TCPIP_HTTP_USE_AUTHENTICATION
-#define TCPIP_HTTP_TASK_RATE					33
+#define TCPIP_HTTP_TASK_RATE					1
 #define TCPIP_HTTP_MALLOC_FUNC                     malloc
 #define TCPIP_HTTP_FREE_FUNC                     free
 
@@ -722,7 +721,7 @@ extern "C" {
 #define TCPIP_STACK_USE_TCP
 #define TCPIP_STACK_USE_UDP
 
-#define TCPIP_STACK_TICK_RATE		        		5
+#define TCPIP_STACK_TICK_RATE		        		1
 #define TCPIP_STACK_SECURE_PORT_ENTRIES             10
 
 #define TCPIP_STACK_ALIAS_INTERFACE_SUPPORT   false
