@@ -363,9 +363,9 @@ void MSD_APP_Tasks(void) {
                SYS_CONSOLE_PRINT("FS:Directory open is successful\r\n");               
             }
             
-            LOG_Start();
+            //LOG_Start();
             do {                
-                LOG_log("Read Dir",0);
+                //LOG_log("Read Dir",0);
                 if (SYS_FS_DirRead(dirHandle, &stat) == SYS_FS_RES_FAILURE) {
                     SYS_CONSOLE_PRINT("FS:Directory read failed\r\n");
                 } else {
@@ -373,7 +373,7 @@ void MSD_APP_Tasks(void) {
                     SYS_CONSOLE_PRINT("FS:%s\n\r", stat.fname);             
                 }                
             } while (1);
-            LOG_Stop();
+            //LOG_Stop();
                     
             fileHandle = SYS_FS_FileOpen("/mnt/mchpSite1/index.htm", (SYS_FS_FILE_OPEN_READ));
             if (fileHandle != SYS_FS_HANDLE_INVALID) {

@@ -387,14 +387,14 @@ static SYS_WSS_RESULT parseHandshake(void *buffer, uint16_t length, int32_t clie
                 }
             } else if (!strcasecmp(token, "Pragma:")) {
                 token = strtok(NULL, " \r\n");
-                if (!strcasecmp(token, "no-cache")) {
+                //if (!strcasecmp(token, "no-cache")) {
                     WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN10: %s", token);
-                }
+                //}
             } else if (!strcasecmp(token, "Cache-Control:")) {
                 token = strtok(NULL, " \r\n");
-                if (!strcasecmp(token, "no-cache")) {
+                //if (!strcasecmp(token, "no-cache")) {
                     WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN11: %s", token);
-                }            
+                //}            
             } else if (!strcasecmp(token, "User-Agent:")) {
                 token = strtok(NULL, "\r\n");
                 //if (!strcasecmp(token, "no-cache")) {
@@ -414,6 +414,11 @@ static SYS_WSS_RESULT parseHandshake(void *buffer, uint16_t length, int32_t clie
                 token = strtok(NULL, "\r\n");
                 //if (!strcasecmp(token, "no-cache")) {
                     WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN15: %s", token);
+                //}                    
+            } else if (!strcasecmp(token, "Accept:")) {
+                token = strtok(NULL, "\r\n");
+                //if (!strcasecmp(token, "no-cache")) {
+                    WSS_DEBUG_PRINT("\r\nIn parseHandshake TOKEN16: %s", token);
                 //}                    
             } else {
                 WSS_DEBUG_PRINT("\r\nIn parseHandshake :Handshake parsing completed:");
@@ -614,10 +619,16 @@ static void wssNetCallback(uint32_t event, void *data, void *cookie) {
         case SYS_NET_EVNT_RCVD_DATA:
         {
             len = SYS_NET_RecvMsg(g_wssSrvcObj[clientIndex].wssNetHandle, g_wssSrvcObj[clientIndex].recv_buffer, SYS_WSS_MAX_RX_BUFFER);
-            WSS_DEBUG_PRINT("\r\n Data received from lower layer of length : %u ",len);
+            WSS_DEBUG_PRINT("\r\n Data received from lower layer of length : %u \n\r",len);
+//            g_wssSrvcObj[clientIndex].recv_buffer[len]=0;
+//            int ix;
+//            for(ix=0;ix<len;ix++){
+//                WSS_DEBUG_PRINT("%c",g_wssSrvcObj[clientIndex].recv_buffer[ix]);
+//                vTaskDelay(10 / portTICK_PERIOD_MS);
+//            }
             if (len > 0) {
 
-                    processData(g_wssSrvcObj[clientIndex].recv_buffer, len ,clientIndex);
+                    processData(g_wssSrvcObj[clientIndex].recv_buffer, len ,clientIndex);                    
             }
             break;
         }

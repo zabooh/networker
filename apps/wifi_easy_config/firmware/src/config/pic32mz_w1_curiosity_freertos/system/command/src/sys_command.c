@@ -1160,14 +1160,15 @@ static void CmdAdjustPointers(SYS_CMD_IO_DCPT* pCmdIO)
 
 static void CommandLog(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 {
-    const void* cmdIoParam = pCmdIO->cmdIoParam;
-    uint32_t ix_max = LOG_GetLogSize();
-    uint32_t ix;
-    char str[256];
-    
-    (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " Dump Log Data\r\n" );
-    for(ix=0;ix<ix_max;ix++){
-        LOG_GetData(ix,str);
-        (*pCmdIO->pCmdApi->msg)(cmdIoParam, str );
-    }
+//    const void* cmdIoParam = pCmdIO->cmdIoParam;
+//    uint32_t ix_max = LOG_GetLogSize();
+//    uint32_t ix;
+//    char str[256];
+//    
+//    (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " Dump Log Data\r\n" );
+//    for(ix=0;ix<ix_max;ix++){
+//        LOG_GetData(ix,str);
+//        (*pCmdIO->pCmdApi->msg)(cmdIoParam, str );
+//    }
+//
 }

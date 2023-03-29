@@ -107,7 +107,7 @@ extern "C" {
 
 #define SYS_WSS_PORT                        8000
 #define SYS_WSS_ENABLE_TLS   			    false
-#define SYS_WSS_ENABLE_DEBUG   			    0
+#define SYS_WSS_ENABLE_DEBUG   			    1
 #define SYS_WSS_MAX_RX_BUFFER               1400
 #define SYS_WSS_MAX_NUM_CLIENTS             2
 #define SYS_WSS_START_AT_BOOT   			1
@@ -293,7 +293,7 @@ extern "C" {
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUESTS         4
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_DELAY    1000
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_TIMEOUT          5000
-#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_BUFF_SIZE    2000
+#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_BUFF_SIZE    1000
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_DATA_SIZE    100
 
 /******************************************************************************/

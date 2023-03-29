@@ -50,8 +50,8 @@ int main ( void )
     return ( EXIT_FAILURE );
 }
 
-
-
+//#define LOG_DATA
+#ifdef LOG_DATA
 #define LOG_SIZE 128
 int32_t LOG_ix = 0;
 uint32_t LOG_data[LOG_SIZE][3];
@@ -104,7 +104,7 @@ void LOG_GetData(uint32_t ix, char *str) {
     sprintf(str, "%02d \t%09d \t%s \t%09d\n\r", ix, delta, (char*) LOG_data[ix][1], LOG_data[ix][2]);
     vTaskDelay(5 / portTICK_PERIOD_MS);
 }
-
+#endif
 
 
 /*******************************************************************************
