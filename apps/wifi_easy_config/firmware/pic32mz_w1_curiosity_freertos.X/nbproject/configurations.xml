@@ -715,6 +715,7 @@
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/msd_app.h</itemPath>
       <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/app_mqtt.h</itemPath>
+      <itemPath>../src/app_mqtt.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -1129,7 +1130,7 @@
       </logicalFolder>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/msd_app.c</itemPath>
-      <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/app_mqtt.c</itemPath>
+      <itemPath>../src/app_mqtt.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

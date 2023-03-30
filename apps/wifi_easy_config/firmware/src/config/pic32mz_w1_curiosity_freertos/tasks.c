@@ -159,7 +159,7 @@ void _TCPIP_STACK_Task(  void *pvParameters  )
     while(1)
     {
         TCPIP_STACK_Task(sysObj.tcpip);
-        vTaskDelay(4 / portTICK_PERIOD_MS);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 

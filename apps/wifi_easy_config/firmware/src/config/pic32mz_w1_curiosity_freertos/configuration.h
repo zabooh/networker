@@ -620,7 +620,7 @@ extern "C" {
 #define TCPIP_HTTP_USE_COOKIES
 #define TCPIP_HTTP_USE_BASE64_DECODE
 #define TCPIP_HTTP_USE_AUTHENTICATION
-#define TCPIP_HTTP_TASK_RATE					33
+#define TCPIP_HTTP_TASK_RATE					1
 #define TCPIP_HTTP_MALLOC_FUNC                     malloc
 #define TCPIP_HTTP_FREE_FUNC                     free
 
@@ -708,7 +708,7 @@ extern "C" {
 #define TCPIP_STACK_USE_TCP
 #define TCPIP_STACK_USE_UDP
 
-#define TCPIP_STACK_TICK_RATE		        		5
+#define TCPIP_STACK_TICK_RATE		        		1
 #define TCPIP_STACK_SECURE_PORT_ENTRIES             10
 
 #define TCPIP_STACK_ALIAS_INTERFACE_SUPPORT   false

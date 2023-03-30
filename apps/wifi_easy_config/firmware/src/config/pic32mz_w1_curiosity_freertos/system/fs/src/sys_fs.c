@@ -779,7 +779,7 @@ SYS_FS_HANDLE SYS_FS_FileOpen
     uint8_t *ptr = NULL;
     OSAL_RESULT osalResult = OSAL_RESULT_FALSE;
 
-//MR:    SYS_CONSOLE_PRINT("File Open:%s\n\r",fname);
+    SYS_CONSOLE_PRINT("File Open:%s\n\r",fname);
     
     /* Get the disk from the name, and also append the disk number prior to the
      * file name like this "0:file.txt" */
