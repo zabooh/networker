@@ -61,7 +61,7 @@ typedef struct {
     uint32_t kaTimerCount;
 } SYS_WSS_OBJ;
 
-SYS_WSS_OBJ g_wssSrvcObj[SYS_WSS_MAX_NUM_CLIENTS];
+SYS_WSS_OBJ  g_wssSrvcObj[SYS_WSS_MAX_NUM_CLIENTS];
 static SYS_TIME_HANDLE kaTimerHandle;
 static volatile bool isBoot=true;
 static volatile bool kaTimerExpired=false;

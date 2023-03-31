@@ -59,6 +59,8 @@ uint8_t CACHE_ALIGN work[SYS_FS_FAT_MAX_SS];
 extern EXCEPT_MSG last_expt_msg;
 extern SYS_MODULE_OBJ g_sSysMqttHandle;
                 
+volatile bool print_delay_started = false;
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -137,9 +139,11 @@ static void CommandHeap(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     CMD_PRINTF(cmdIoParam, "configTOTAL_HEAP_SIZE           : %d\r\n", configTOTAL_HEAP_SIZE);        
     CMD_PRINTF(cmdIoParam, "xAvailableHeapSpaceInBytes      : %d\r\n", xHeapStats.xAvailableHeapSpaceInBytes);
     CMD_PRINTF(cmdIoParam, "xSizeOfLargestFreeBlockInBytes  : %d\r\n", xHeapStats.xSizeOfLargestFreeBlockInBytes);
+//    vTaskDelay(30 / portTICK_PERIOD_MS);
     CMD_PRINTF(cmdIoParam, "xSizeOfSmallestFreeBlockInBytes : %d\r\n", xHeapStats.xSizeOfSmallestFreeBlockInBytes);
     CMD_PRINTF(cmdIoParam, "xNumberOfFreeBlocks             : %d\r\n", xHeapStats.xNumberOfFreeBlocks);
     CMD_PRINTF(cmdIoParam, "xMinimumEverFreeBytesRemaining  : %d\r\n", xHeapStats.xMinimumEverFreeBytesRemaining);
+//    vTaskDelay(30 / portTICK_PERIOD_MS);
     CMD_PRINTF(cmdIoParam, "xNumberOfSuccessfulAllocations  : %d\r\n", xHeapStats.xNumberOfSuccessfulAllocations);
     CMD_PRINTF(cmdIoParam, "xNumberOfSuccessfulFrees        : %d\r\n", xHeapStats.xNumberOfSuccessfulFrees);
 //    (*pCmdIO->pCmdApi->print)(cmdIoParam, "xNumberOfFaileddAllocations     : %d\r\n", xHeapStats.xNumberOfFaileddAllocations);
@@ -316,7 +320,7 @@ void MSD_APP_Tasks(void) {
             bool appInitialized = true;
             SYS_WSS_RESULT result;
             vTaskDelay(2000 / portTICK_PERIOD_MS);
-
+            print_delay_started = true;
             if (last_expt_msg.magic == MAGIC_CODE) {
                 SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
                 SYS_CONSOLE_PRINT("Last Runtime has ended with the following Message:\n\r");

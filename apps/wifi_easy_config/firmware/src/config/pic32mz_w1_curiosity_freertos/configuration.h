@@ -57,7 +57,7 @@
 
 #include "user.h"
 #include "device.h"
-#include "system/console/sys_console.h"
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -94,14 +94,14 @@ extern "C" {
 #define SYS_CONSOLE_USB_CDC_RD_BUFFER_SIZE_IDX0    129
 
 /* TX buffer size has one additional element for the empty spot needed in circular buffer */
-#define SYS_CONSOLE_USB_CDC_WR_BUFFER_SIZE_IDX0    1025
-
+#define SYS_CONSOLE_USB_CDC_WR_BUFFER_SIZE_IDX0    512
+    
 /* Console Driver Instance 0 RTOS Configurations*/
 #define SYS_CONSOLE_RTOS_STACK_SIZE_IDX0               256
 #define SYS_CONSOLE_RTOS_TASK_PRIORITY_IDX0                     1
 
 /*** WSS Configuration ***/
-#define SYS_WSS_RTOS_STACK_SIZE     4096
+#define SYS_WSS_RTOS_STACK_SIZE     2048
 #define SYS_WSS_RTOS_TASK_PRIORITY  1
 #define SYS_WSS_RTOS_TASK_DELAY     1
 
@@ -111,9 +111,10 @@ extern "C" {
 #define SYS_WSS_MAX_RX_BUFFER               1400
 #define SYS_WSS_MAX_NUM_CLIENTS             2
 #define SYS_WSS_START_AT_BOOT   			1
-#define SYS_WSS_CLIENT_TIMEOUT              (24*60*60*1000)
+#define SYS_WSS_CLIENT_TIMEOUT              30000
 
 #define WOLFSSL_BASE64_ENCODE
+
 /* File System Service Configuration */
 
 #define SYS_FS_MEDIA_NUMBER               1
@@ -144,7 +145,7 @@ extern "C" {
 
 
 #define SYS_NET_SUPP_INTF_WIFI_ETHERNET
-#define SYS_NET_SUPP_NUM_OF_SOCKS        		2
+#define SYS_NET_SUPP_NUM_OF_SOCKS        		3
 
 #define SYS_NET_INDEX0_INTF       				SYS_NET_INTF_WIFI
 #define SYS_NET_INDEX0_MODE       				SYS_NET_MODE_SERVER
@@ -254,7 +255,7 @@ extern "C" {
 /* Memory Driver Instance 0 RTOS Configurations*/
 #define DRV_MEMORY_STACK_SIZE_IDX0           1024
 #define DRV_MEMORY_PRIORITY_IDX0             1
-#define DRV_MEMORY_RTOS_DELAY_IDX0                         10
+#define DRV_MEMORY_RTOS_DELAY_IDX0                         3
 
 /* SST26 Driver Instance Configuration */
 #define DRV_SST26_INDEX                 0
@@ -269,8 +270,8 @@ extern "C" {
 #define WDRV_PIC32MZW_WPA3_PERSONAL_SUPPORT
 #define WDRV_PIC32MZW_BA414E_SUPPORT
 #define WDRV_PIC32MZW_BIGINTSW_SUPPORT
-#define WDRV_PIC32MZW_ALARM_PERIOD_1MS          0
-#define WDRV_PIC32MZW_ALARM_PERIOD_MAX          0
+#define WDRV_PIC32MZW_ALARM_PERIOD_1MS          390
+#define WDRV_PIC32MZW_ALARM_PERIOD_MAX          168
 
 
 // *****************************************************************************
@@ -292,7 +293,7 @@ extern "C" {
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUESTS         4
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_DELAY    1000
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_TIMEOUT          5000
-#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_BUFF_SIZE    1000
+#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_BUFF_SIZE    2000
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_DATA_SIZE    100
 
 /******************************************************************************/
@@ -316,6 +317,7 @@ extern "C" {
 #define HAVE_TLS_EXTENSIONS
 #define WOLFSSL_TLS13
 #define HAVE_SUPPORTED_CURVES
+#define WOLFSSL_SMALL_STACK
 #define NO_OLD_TLS
 #define USE_FAST_MATH
 
@@ -469,25 +471,10 @@ extern "C" {
 #define NET_PRES_NUM_SOCKETS 10
 
 /* Net Pres RTOS Configurations*/
-#define NET_PRES_RTOS_STACK_SIZE                8192
+#define NET_PRES_RTOS_STACK_SIZE                4096
 #define NET_PRES_RTOS_TASK_PRIORITY             1
 	
 #define FREERTOS
-
-
-
-/*** DNS Server Configuration ***/
-#define TCPIP_STACK_USE_DNS_SERVER
-#define TCPIP_DNSS_HOST_NAME_LEN		    	64
-#define TCPIP_DNSS_REPLY_BOARD_ADDR				true
-#define TCPIP_DNSS_CACHE_PER_IPV4_ADDRESS		2
-#define TCPIP_DNSS_CACHE_PER_IPV6_ADDRESS		1
-#define TCPIP_DNSS_TTL_TIME						600
-#define TCPIP_DNSS_TASK_PROCESS_RATE			33
-#define TCPIP_DNSS_DELETE_OLD_LEASE				true
-#define TCPIP_DNSS_CONSOLE_CMD           false
-/***Maximum DNS server Cache entries. It is the sum of TCPIP_DNSS_CACHE_PER_IPV4_ADDRESS and TCPIP_DNSS_CACHE_PER_IPV6_ADDRESS.***/
-#define TCPIP_DNSS_CACHE_MAX_SERVER_ENTRIES     (TCPIP_DNSS_CACHE_PER_IPV4_ADDRESS + TCPIP_DNSS_CACHE_PER_IPV6_ADDRESS)
 
 
 
@@ -823,7 +810,7 @@ extern "C" {
 /* Maximum instances of MSD function driver */
 #define USB_DEVICE_MSD_INSTANCES_NUMBER     1 
 
-#define USB_DEVICE_MSD_NUM_SECTOR_BUFFERS 1
+#define USB_DEVICE_MSD_NUM_SECTOR_BUFFERS 4
 
 
 /* Number of Logical Units */
@@ -888,11 +875,6 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 
-void LOG_log(char *str, uint32_t data);
-uint32_t LOG_GetLogSize(void);
-void LOG_GetData(uint32_t ix, char *str);
-void LOG_Start(void);
-void LOG_Stop(void);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

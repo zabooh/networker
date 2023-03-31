@@ -77,7 +77,7 @@ void _APP_Tasks(  void *pvParameters  )
     while(1)
     {
         APP_Tasks();
-        vTaskDelay(40 / portTICK_PERIOD_MS);
+        vTaskDelay(4000 / portTICK_PERIOD_MS);
     }
 }
 /* Handle for the MSD_APP_Tasks. */
@@ -88,7 +88,6 @@ void _MSD_APP_Tasks(  void *pvParameters  )
     while(1)
     {
         MSD_APP_Tasks();
-        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -138,7 +137,6 @@ void _DRV_BA414E_Tasks(  void *pvParameters  )
     while(1)
     {
         DRV_BA414E_Tasks(sysObj.ba414e);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -157,7 +155,7 @@ void _DRV_MEMORY_0_Tasks(  void *pvParameters  )
     while(1)
     {
         DRV_MEMORY_Tasks(sysObj.drvMemory0);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
+        vTaskDelay(DRV_MEMORY_RTOS_DELAY_IDX0 / portTICK_PERIOD_MS);
     }
 }
 
@@ -367,7 +365,6 @@ void SYS_Tasks ( void )
 
 
     /* Start RTOS Scheduler. */
-    
      /**********************************************************************
      * Create all Threads for APP Tasks before starting FreeRTOS Scheduler *
      ***********************************************************************/

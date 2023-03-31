@@ -671,7 +671,8 @@ ssize_t Console_USB_CDC_Write(uint32_t index, const void* pWrBuffer, size_t size
     ssize_t nBytesWritten  = 0;
     uint8_t* pWrBuff = (uint8_t*)pWrBuffer;
     CONS_USB_CDC_INSTANCE* cdcInstance = CONSOLE_USB_CDC_GET_INSTANCE(index);
-
+    extern bool print_delay_started;
+    
     if ((cdcInstance == NULL) || (pWrBuff == NULL) || (gConsoleUSBCdcData.isConfigured == false))
     {
         return -1;
@@ -684,6 +685,12 @@ ssize_t Console_USB_CDC_Write(uint32_t index, const void* pWrBuffer, size_t size
 
     while (nBytesWritten < size)
     {
+        static int deci=10;
+        if(--deci==0){
+            if(print_delay_started) vTaskDelay(1 / portTICK_PERIOD_MS); //MR: Console Print Delay
+            deci=20;
+        }
+        
         if (Console_USB_CDC_TxPushByte(index, pWrBuff[nBytesWritten]) == true)
         {
             nBytesWritten++;

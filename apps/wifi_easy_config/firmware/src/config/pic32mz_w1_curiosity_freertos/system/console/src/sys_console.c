@@ -347,7 +347,7 @@ void SYS_CONSOLE_Print(const SYS_CONSOLE_HANDLE handle, const char *format, ...)
     {
         consolePrintBuffer[len] = '\0';
 
-        pConsoleObj->devDesc->write(pConsoleObj->devIndex, consolePrintBuffer, len);
+        pConsoleObj->devDesc->write(pConsoleObj->devIndex, consolePrintBuffer, len);       
     }
 
     /* Release mutex */

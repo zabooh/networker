@@ -82,9 +82,9 @@
 #include "driver/ethmac/drv_ethmac.h"
 #include "system/net/sys_net.h"
 #include "peripheral/nvm/plib_nvm.h"
-#include "peripheral/uart/plib_uart3.h"
 #include "usb/usb_device_cdc.h"
 #include "usb/usb_cdc.h"
+#include "peripheral/uart/plib_uart3.h"
 #include "system/mqtt/sys_mqtt.h"
 #include "peripheral/uart/plib_uart1.h"
 #include "driver/usb/usbfs/drv_usbfs.h"
@@ -241,6 +241,7 @@ typedef struct
     SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysConsole0;
 
+    SYS_MODULE_OBJ  sysAppDebug;
 
     SYS_MODULE_OBJ  drvMiim;
     SYS_MODULE_OBJ  netPres;
