@@ -55,7 +55,7 @@
 #   pub Hello_World
 #
 #   
-#   STA:   wifiprov set 0 1 GEN 0 1 3 MyWorld x3vbrjzW8hrd
+#   STA:   wifiprov set 0 1 GEN 0 1 4 MyWorld x3vbrjzW8hrd
 #   AP:    wifiprov set 1 1 GEN 1 1 1 DEMO_SOFTAP password
 #
 #                                   authtype (1-Open 2-WEP 3-Mixed mode(WPA/WPA2) 4-WPA2 5-Mixed mode 6-WPA3)
