@@ -15,4 +15,5 @@
 *.ico binary
 *.elf binary
 *.bin binary
+*.a binary
 *.bsdesign binary
