@@ -141,14 +141,14 @@ static void CommandHeap(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     CMD_PRINTF(cmdIoParam, "configTOTAL_HEAP_SIZE           : %d\r\n", configTOTAL_HEAP_SIZE);        
     CMD_PRINTF(cmdIoParam, "xAvailableHeapSpaceInBytes      : %d\r\n", xHeapStats.xAvailableHeapSpaceInBytes);
     CMD_PRINTF(cmdIoParam, "xSizeOfLargestFreeBlockInBytes  : %d\r\n", xHeapStats.xSizeOfLargestFreeBlockInBytes);
-//    vTaskDelay(30 / portTICK_PERIOD_MS);
     CMD_PRINTF(cmdIoParam, "xSizeOfSmallestFreeBlockInBytes : %d\r\n", xHeapStats.xSizeOfSmallestFreeBlockInBytes);
     CMD_PRINTF(cmdIoParam, "xNumberOfFreeBlocks             : %d\r\n", xHeapStats.xNumberOfFreeBlocks);
     CMD_PRINTF(cmdIoParam, "xMinimumEverFreeBytesRemaining  : %d\r\n", xHeapStats.xMinimumEverFreeBytesRemaining);
-//    vTaskDelay(30 / portTICK_PERIOD_MS);
     CMD_PRINTF(cmdIoParam, "xNumberOfSuccessfulAllocations  : %d\r\n", xHeapStats.xNumberOfSuccessfulAllocations);
     CMD_PRINTF(cmdIoParam, "xNumberOfSuccessfulFrees        : %d\r\n", xHeapStats.xNumberOfSuccessfulFrees);
-//    (*pCmdIO->pCmdApi->print)(cmdIoParam, "xNumberOfFaileddAllocations     : %d\r\n", xHeapStats.xNumberOfFaileddAllocations);
+    CMD_PRINTF(cmdIoParam, "xNumberOfCurrentAllocations     : %d\r\n", xHeapStats.xNumberOfSuccessfulAllocations - xHeapStats.xNumberOfSuccessfulFrees);
+    CMD_PRINTF(cmdIoParam, "Min_xFreeBytesRemaining         : %d\r\n", xHeapStats.Min_xFreeBytesRemaining);
+
 
 }
 
