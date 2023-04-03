@@ -50,6 +50,7 @@
 #   sysmqtt get info
 #		
 #   con 192.168.0.227 flat/bulb 1
+#   con test.mosquitto.org flat/bulb 1
 #   sub flat/bulb
 #   pub Hello_World
 #

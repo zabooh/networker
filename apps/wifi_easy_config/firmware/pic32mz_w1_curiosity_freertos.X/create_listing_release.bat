@@ -5,8 +5,8 @@ SET TOOL="C:\Program Files\Microchip\xc32\v3.01\bin"
 cmsort /S=7,100  %REL_FILE%.sym %REL_FILE%.symbols.txt
 DEL %REL_FILE%.sym   
 COPY %REL_FILE%.symbols.txt .
-rem %TOOL%\xc32-objdump -S %REL_FILE%.elf > %REL_FILE%.disassembly.txt
-rem COPY %REL_FILE%.disassembly.txt .
-rem COPY %REL_FILE%.map .
+%TOOL%\xc32-objdump -S %REL_FILE%.elf > %REL_FILE%.disassembly.txt
+COPY %REL_FILE%.disassembly.txt .
+COPY %REL_FILE%.map .
 
 
