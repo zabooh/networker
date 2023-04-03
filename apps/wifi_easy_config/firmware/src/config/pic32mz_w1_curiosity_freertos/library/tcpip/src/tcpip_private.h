@@ -99,7 +99,6 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #include "tcpip/src/tcp_manager.h"
 #include "tcpip/src/http_manager.h"
 #include "tcpip/src/tcpip_commands_manager.h"
-#include "tcpip/src/telnet_manager.h"
 #include "tcpip/src/udp_manager.h"
 #include "tcpip/src/sntp_manager.h"
 #include "tcpip/src/lldp_manager.h"

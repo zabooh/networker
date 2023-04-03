@@ -226,10 +226,6 @@
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
-         <string>tcpipTelnet</string>
-         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
-      </entry>
-      <entry>
          <string>tcpipUdp</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
@@ -1633,25 +1629,24 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;NETWORK LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipIcmp&quot; x=&quot;580&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipDhcp&quot; x=&quot;170&quot; y=&quot;81&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcps&quot; x=&quot;22&quot; y=&quot;86&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipDns&quot; x=&quot;320&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpipHttp&quot; x=&quot;22&quot; y=&quot;252&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipSntp&quot; x=&quot;600&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;DRIVER LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;271&quot; y=&quot;58&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipTelnet&quot; x=&quot;441&quot; y=&quot;59&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;327&quot; canvasWidth=&quot;727&quot; dnOrder=&quot;2&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;TCP/IP STACK&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;30&quot; y=&quot;380&quot;/&gt;
@@ -1665,73 +1660,73 @@
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;sysWssPic32mzw1&quot; x=&quot;396&quot; y=&quot;200&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;NETWORK LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_default&quot; x=&quot;297&quot; y=&quot;89&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;System Configuration&quot; x=&quot;33&quot; y=&quot;186&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;TCP/IP STACK&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core&quot; x=&quot;302&quot; y=&quot;33&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;dfp&quot; x=&quot;296&quot; y=&quot;119&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;stdio&quot; x=&quot;645&quot; y=&quot;122&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;sysNetPic32mzw1&quot; x=&quot;25&quot; y=&quot;143&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sysWifiPic32mzw1&quot; x=&quot;39&quot; y=&quot;257&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;sysWifiProvPic32mzw1&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;uart3&quot; x=&quot;499&quot; y=&quot;97&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipIcmp&quot; x=&quot;580&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;System Configuration&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;System Configuration&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;FreeRTOS&quot; x=&quot;910&quot; y=&quot;34&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;727&quot; y=&quot;15&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core_timer&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;drvExtPhyLan8740&quot; x=&quot;16&quot; y=&quot;511&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drvMiim&quot; x=&quot;24&quot; y=&quot;423&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;drvPic32mEthmac&quot; x=&quot;111&quot; y=&quot;546&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;drvWifiPic32mzw1&quot; x=&quot;14&quot; y=&quot;253&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;drv_ba414e&quot; x=&quot;19&quot; y=&quot;30&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;drv_memory&quot; x=&quot;874&quot; y=&quot;219&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;drv_sst26&quot; x=&quot;712&quot; y=&quot;450&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;drv_usbfs_v1&quot; x=&quot;382&quot; y=&quot;380&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;lib_crypto&quot; x=&quot;500&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;lib_wolfcrypt&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;lib_wolfssl&quot; x=&quot;30&quot; y=&quot;420&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;nvm&quot; x=&quot;913&quot; y=&quot;467&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;spi1&quot; x=&quot;557&quot; y=&quot;476&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_command&quot; x=&quot;550&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_console&quot; x=&quot;370&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;sys_debug&quot; x=&quot;550&quot; y=&quot;220&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;19&quot; id=&quot;sys_fs&quot; x=&quot;1034&quot; y=&quot;287&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;20&quot; id=&quot;sys_time&quot; x=&quot;210&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;21&quot; id=&quot;tcpipNetConfig&quot; x=&quot;227&quot; y=&quot;440&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;22&quot; id=&quot;tcpipStack&quot; x=&quot;712&quot; y=&quot;254&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;23&quot; id=&quot;uart1&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;24&quot; id=&quot;usb_device&quot; x=&quot;564&quot; y=&quot;380&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;25&quot; id=&quot;usb_device_cdc&quot; x=&quot;379&quot; y=&quot;482&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;26&quot; id=&quot;usb_device_msd&quot; x=&quot;1034&quot; y=&quot;120&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;TCP/IP STACK&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core_timer&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drvExtPhyLan8740&quot; x=&quot;16&quot; y=&quot;511&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;drvMiim&quot; x=&quot;24&quot; y=&quot;423&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;drvPic32mEthmac&quot; x=&quot;111&quot; y=&quot;546&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;drvWifiPic32mzw1&quot; x=&quot;14&quot; y=&quot;253&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;drv_ba414e&quot; x=&quot;19&quot; y=&quot;30&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;drv_memory&quot; x=&quot;874&quot; y=&quot;219&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;drv_sst26&quot; x=&quot;712&quot; y=&quot;450&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;drv_usbfs_v1&quot; x=&quot;382&quot; y=&quot;380&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;lib_crypto&quot; x=&quot;500&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;lib_wolfcrypt&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;lib_wolfssl&quot; x=&quot;30&quot; y=&quot;420&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;nvm&quot; x=&quot;913&quot; y=&quot;467&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;spi1&quot; x=&quot;557&quot; y=&quot;476&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_command&quot; x=&quot;550&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;sys_console&quot; x=&quot;370&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;19&quot; id=&quot;sys_debug&quot; x=&quot;550&quot; y=&quot;220&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;20&quot; id=&quot;sys_fs&quot; x=&quot;1034&quot; y=&quot;287&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;21&quot; id=&quot;sys_time&quot; x=&quot;210&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;22&quot; id=&quot;tcpipNetConfig&quot; x=&quot;227&quot; y=&quot;440&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;23&quot; id=&quot;tcpipStack&quot; x=&quot;712&quot; y=&quot;254&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;24&quot; id=&quot;uart1&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;25&quot; id=&quot;usb_device&quot; x=&quot;564&quot; y=&quot;380&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;26&quot; id=&quot;usb_device_cdc&quot; x=&quot;379&quot; y=&quot;482&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;27&quot; id=&quot;usb_device_msd&quot; x=&quot;1034&quot; y=&quot;120&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;327&quot; canvasWidth=&quot;727&quot; dnOrder=&quot;7&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;9&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipDhcp&quot; x=&quot;170&quot; y=&quot;81&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcps&quot; x=&quot;22&quot; y=&quot;86&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipDns&quot; x=&quot;320&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpipHttp&quot; x=&quot;22&quot; y=&quot;252&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipSntp&quot; x=&quot;600&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_default&quot; x=&quot;297&quot; y=&quot;89&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;System Configuration&quot; x=&quot;33&quot; y=&quot;186&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;302&quot; y=&quot;33&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;296&quot; y=&quot;119&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;stdio&quot; x=&quot;645&quot; y=&quot;122&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;sysNetPic32mzw1&quot; x=&quot;25&quot; y=&quot;143&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;sysWifiPic32mzw1&quot; x=&quot;39&quot; y=&quot;257&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;sysWifiProvPic32mzw1&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;uart3&quot; x=&quot;499&quot; y=&quot;97&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;271&quot; y=&quot;58&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;9&quot; id=&quot;DRIVER LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -11814,7 +11809,7 @@
   &lt;tcpipTcp dnOrder=&quot;0&quot; id=&quot;TCPIP_TCP_HEAP_SIZE&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
@@ -11833,168 +11828,6 @@
     &lt;/Values&gt;
   &lt;/tcpipTcp&gt;
 &lt;/tcpipTcp&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="!@#harmonyAttachmentState"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot;/&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>PRESENTATION LAYER</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_AUTHENTICATION_CONN_INFO"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_AUTHENTICATION_CONN_INFO&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_AUTH_CONFIG"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_AUTH_CONFIG&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_CONFIG_FLAG_NO_DELAY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_CONFIG_FLAG_NO_DELAY&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_CONFIG_PASS_CONTROL_CHARS"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_CONFIG_PASS_CONTROL_CHARS&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_HEAP_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_HEAP_SIZE&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipTelnet&quot; value=&quot;56&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_LINE_BUFF_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_LINE_BUFF_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_LISTEN_PORT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_LISTEN_PORT&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_MAX_CONNECTIONS"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_MAX_CONNECTIONS&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_PASSWORD"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_PASSWORD&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_PRINT_BUFF_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_PRINT_BUFF_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_SKT_RX_BUFF_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_SKT_RX_BUFF_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_SKT_TX_BUFF_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_SKT_TX_BUFF_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_TASK_TICK_RATE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_TASK_TICK_RATE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_USERNAME"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_USERNAME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_TELNET_USERNAME_SIZE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_TELNET_USERNAME_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipTelnet" name="TCPIP_USE_TELNET"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipTelnet&gt;
-  &lt;tcpipTelnet dnOrder=&quot;0&quot; id=&quot;TCPIP_USE_TELNET&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/tcpipTelnet&gt;
-&lt;/tcpipTelnet&gt;
 </value>
       </entry>
       <entry>
@@ -13808,7 +13641,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\library\tcpip\tcpip.h</file>
-         <hash>578ba6d1d259a11fc5905c38f637c35a40c6155aeb188f6900b9d88e514ba87f</hash>
+         <hash>39e4eeffd103fcaa2305e5443b8dbd8dc74860a4aff2f05f30952c28f62eae75</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\driver\usb\drv_usb_external_dependencies.h</file>
@@ -14024,7 +13857,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\library\tcpip\src\tcpip_private.h</file>
-         <hash>8d6a792a587389b1b34c29d378b9da97a7a60eff45e42ebc33af6c934e808ed0</hash>
+         <hash>06fdd15361fbb6c7fbb86c0d9cec09e29e7b5b871344ec6fe4c5f414e9b2872a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\library\tcpip\src\helpers.c</file>
@@ -14408,7 +14241,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\initialization.c</file>
-         <hash>a65ba548038787875d61036fa0613095fadf7a9f45b34b842463d7791688f318</hash>
+         <hash>486b85493cc2e44d99a12249a6c596ab2e73ae71e667a3737a53ff9f42f37c82</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\rsa.h</file>
@@ -14620,7 +14453,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\configuration.h</file>
-         <hash>ee71b0822cc373d3b959c0cfc3806b94ac0c9d01be3a0be5b24affda446e5197</hash>
+         <hash>7fca75baa53d8e5753c266d646372dfadb7d62165458bc5c70ff186c0d43f28c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\driver\usb\usbfs\src\templates\usb_OTG_ASessionValid_Default.h</file>
@@ -16313,10 +16146,6 @@
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\curve25519.c</file>
          <hash>70c89882186b470159d22d42608cf97fa399ca91be21705b5fc39c43c4fe40d2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_w1_curiosity_freertos\library\tcpip\src\telnet.c</file>
-         <hash>6e6e89bf1ef6ced43832ba732b2c05a40ee51adb1815ee84e7d4e2a585e61bee</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\driver\usb\usbfs\src\templates\usb_BufferFreeze_Unsupported.h</file>

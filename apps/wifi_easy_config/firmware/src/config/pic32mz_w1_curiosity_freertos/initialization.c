@@ -524,15 +524,6 @@ const TCPIP_ARP_MODULE_CONFIG tcpipARPInitData =
     .retries            = TCPIP_ARP_CACHE_ENTRY_RETRIES, 
     .gratProbeCount     = TCPIP_ARP_GRATUITOUS_PROBE_COUNT,
 };
-/*** telnet Server Initialization Data ***/
-const TCPIP_TELNET_MODULE_CONFIG tcpipTelnetInitData =
-{ 
-    .nConnections   = TCPIP_TELNET_MAX_CONNECTIONS,
-    .sktTxBuffSize  = TCPIP_TELNET_SKT_TX_BUFF_SIZE,
-    .sktRxBuffSize  = TCPIP_TELNET_SKT_RX_BUFF_SIZE,
-    .listenPort     = TCPIP_TELNET_LISTEN_PORT,
-    .configFlags    = TCPIP_TELNET_CONFIG_FLAGS,
-};
 
 
 /*** UDP Sockets Initialization Data ***/
@@ -715,7 +706,6 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     {TCPIP_MODULE_SNTP,             &tcpipSNTPInitData},            // TCPIP_MODULE_SNTP
 
     {TCPIP_MODULE_HTTP_SERVER,      &tcpipHTTPInitData},            // TCPIP_MODULE_HTTP_SERVER
-    {TCPIP_MODULE_TELNET_SERVER,    &tcpipTelnetInitData},          // TCPIP_MODULE_TELNET_SERVER
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules

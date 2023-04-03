@@ -408,24 +408,6 @@ extern "C" {
 
 
 
-/*** telnet Configuration ***/
-#define TCPIP_STACK_USE_TELNET_SERVER
-#define TCPIP_TELNET_MAX_CONNECTIONS    2
-#define TCPIP_TELNET_TASK_TICK_RATE     100
-#define TCPIP_TELNET_SKT_TX_BUFF_SIZE   0
-#define TCPIP_TELNET_SKT_RX_BUFF_SIZE   0
-#define TCPIP_TELNET_LISTEN_PORT        23
-#define TCPIP_TELNET_PRINT_BUFF_SIZE    200
-#define TCPIP_TELNET_LINE_BUFF_SIZE     80
-#define TCPIP_TELNET_USERNAME_SIZE      15
-#define TCPIP_TELNET_CONFIG_FLAGS       \
-                                       TCPIP_TELNET_FLAG_NONE
-
-#define TCPIP_TELNET_OBSOLETE_AUTHENTICATION false
-#define TCPIP_TELNET_AUTHENTICATION_CONN_INFO true
-
-
-
 /*** IPv4 Configuration ***/
 #define TCPIP_IPV4_ARP_SLOTS                        10
 #define TCPIP_IPV4_EXTERN_PACKET_PROCESS   false
