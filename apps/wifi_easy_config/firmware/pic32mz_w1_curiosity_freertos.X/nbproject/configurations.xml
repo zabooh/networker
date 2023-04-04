@@ -548,18 +548,18 @@
             <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/Platforms/MCHP_pic32mzw1.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="src" projectFiles="true">
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTClient-C/src/MQTTClient.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/src/MQTTClient.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="f1" displayName="MQTTPacket" projectFiles="true">
           <logicalFolder name="f1" displayName="src" projectFiles="true">
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnect.h</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTFormat.h</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPacket.h</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPublish.h</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribe.h</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribe.h</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/StackTrace.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnect.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTFormat.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPacket.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPublish.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribe.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribe.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/StackTrace.h</itemPath>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
@@ -718,7 +718,7 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/msd_app.h</itemPath>
-      <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/app_mqtt.h</itemPath>
+      <itemPath>../src/app_mqtt.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -1006,21 +1006,21 @@
             <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/Platforms/MCHP_pic32mzw1.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="src" projectFiles="true">
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTClient-C/src/MQTTClient.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/src/MQTTClient.c</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="f1" displayName="MQTTPacket" projectFiles="true">
           <logicalFolder name="f1" displayName="src" projectFiles="true">
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnectClient.c</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnectServer.c</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTDeserializePublish.c</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTFormat.c</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPacket.c</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSerializePublish.c</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribeClient.c</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribeServer.c</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribeClient.c</itemPath>
-            <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribeServer.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnectClient.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnectServer.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTDeserializePublish.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTFormat.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPacket.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSerializePublish.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribeClient.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribeServer.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribeClient.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribeServer.c</itemPath>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
@@ -1135,7 +1135,7 @@
       </logicalFolder>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/msd_app.c</itemPath>
-      <itemPath>C:/work/networker/networker/apps/wifi_easy_config/firmware/src/app_mqtt.c</itemPath>
+      <itemPath>../src/app_mqtt.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
