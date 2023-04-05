@@ -894,8 +894,6 @@
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/command/src/sys_command.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="console" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_uart.h</itemPath>
-              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_uart_definitions.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console.c</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_local.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_usb_cdc.c</itemPath>
