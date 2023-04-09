@@ -77,7 +77,7 @@ void _APP_Tasks(  void *pvParameters  )
     while(1)
     {
         APP_Tasks();
-        vTaskDelay(40 / portTICK_PERIOD_MS);
+        vTaskDelay(4000 / portTICK_PERIOD_MS);
     }
 }
 /* Handle for the MSD_APP_Tasks. */
@@ -88,7 +88,6 @@ void _MSD_APP_Tasks(  void *pvParameters  )
     while(1)
     {
         MSD_APP_Tasks();
-        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -127,7 +126,7 @@ void _SYS_FS_Tasks(  void *pvParameters  )
     while(1)
     {
         SYS_FS_Tasks();
-        vTaskDelay(1 / portTICK_PERIOD_MS);
+        vTaskDelay(10 / portTICK_PERIOD_MS);
     }
 }
 
@@ -138,7 +137,6 @@ void _DRV_BA414E_Tasks(  void *pvParameters  )
     while(1)
     {
         DRV_BA414E_Tasks(sysObj.ba414e);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -157,7 +155,7 @@ void _DRV_MEMORY_0_Tasks(  void *pvParameters  )
     while(1)
     {
         DRV_MEMORY_Tasks(sysObj.drvMemory0);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
+        vTaskDelay(DRV_MEMORY_RTOS_DELAY_IDX0 / portTICK_PERIOD_MS);
     }
 }
 
@@ -168,7 +166,7 @@ void _TCPIP_STACK_Task(  void *pvParameters  )
     while(1)
     {
         TCPIP_STACK_Task(sysObj.tcpip);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
+        vTaskDelay(4 / portTICK_PERIOD_MS);
     }
 }
 
@@ -177,7 +175,7 @@ void _SYS_CMD_Tasks(  void *pvParameters  )
     while(1)
     {
         SYS_CMD_Tasks();
-        vTaskDelay(1 / portTICK_PERIOD_MS);
+        vTaskDelay(10 / portTICK_PERIOD_MS);
     }
 }
 
@@ -194,7 +192,7 @@ static void _WDRV_PIC32MZW1_Tasks(  void *pvParameters  )
 
         if ((SYS_STATUS_ERROR == status) || (SYS_STATUS_UNINITIALIZED == status))
         {
-            vTaskDelay(1 / portTICK_PERIOD_MS);
+            vTaskDelay(50 / portTICK_PERIOD_MS);
     }
     }
 }
@@ -204,7 +202,7 @@ void _SYS_WIFI_Task(  void *pvParameters  )
     while(1)
     {
         SYS_WIFI_Tasks(sysObj.syswifi);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
+        vTaskDelay(4 / portTICK_PERIOD_MS);
     }
 }
 

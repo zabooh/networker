@@ -88,20 +88,21 @@ static void my_connect(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else if (argc == 2) {
-        strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
+        strcpy((char*)g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
         CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s\n\r",argv[1]);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else if (argc == 3) {
-        strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
-        strcpy(g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
+        strcpy((char*)g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
+        strcpy((char*)g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
         CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s with topic: %s\n\r",argv[1],argv[2]);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else if (argc == 4) {
-        strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
-        strcpy(g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
-        g_sSysMqttConfig.sBrokerConfig.tlsEnabled = (bool) atoi(argv[3]);
+        strcpy((char*)g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
+        strcpy((char*)g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
+        bool *ptrbool = (bool*)&g_sSysMqttConfig.sBrokerConfig.tlsEnabled;
+        *ptrbool = (bool) atoi(argv[3]);
         CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s with topic: %s tls =\n\r",argv[1],argv[2],argv[3]);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;

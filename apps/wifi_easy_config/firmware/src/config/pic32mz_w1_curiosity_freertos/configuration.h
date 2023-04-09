@@ -57,7 +57,7 @@
 
 #include "user.h"
 #include "device.h"
-#include "system/console/sys_console.h"
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -111,13 +111,13 @@ extern "C" {
 #define SYS_WSS_MAX_RX_BUFFER               1400
 #define SYS_WSS_MAX_NUM_CLIENTS             2
 #define SYS_WSS_START_AT_BOOT   			1
-#define SYS_WSS_CLIENT_TIMEOUT              (24*60*60*1000)
+#define SYS_WSS_CLIENT_TIMEOUT              30000
 
 #define WOLFSSL_BASE64_ENCODE
+
 /* File System Service Configuration */
 
 #define SYS_FS_MEDIA_NUMBER               1
-
 #define SYS_FS_VOLUME_NUMBER              1
 
 #define SYS_FS_AUTOMOUNT_ENABLE           false
@@ -148,8 +148,8 @@ extern "C" {
 #define SYS_NET_SUPP_NUM_OF_SOCKS        		2
 
 #define SYS_NET_INDEX0_INTF       				SYS_NET_INTF_WIFI
-#define SYS_NET_INDEX0_MODE       				SYS_NET_MODE_CLIENT
-#define SYS_NET_INDEX0_PORT        				1
+#define SYS_NET_INDEX0_MODE       				SYS_NET_MODE_SERVER
+#define SYS_NET_INDEX0_PORT        				8000
 #define SYS_NET_INDEX0_RECONNECT       			1
 #define SYS_NET_INDEX0_ENABLE_TLS        		1
 #define SYS_NET_INDEX0_IPPROT       			SYS_NET_IP_PROT_TCP
@@ -175,7 +175,7 @@ extern "C" {
 
 #define SYS_MQTT_PAHO
 
-#define SYS_MQTT_INDEX0_MQTT_PORT        				8883
+#define SYS_MQTT_INDEX0_MQTT_PORT        				1883
 #define SYS_MQTT_INDEX0_BROKER_NAME        				"test.mosquitto.org"
 #define SYS_MQTT_INDEX0_ENABLE_TLS        				true
 #define SYS_MQTT_INDEX0_RECONNECT        				true
@@ -270,8 +270,8 @@ extern "C" {
 #define WDRV_PIC32MZW_WPA3_PERSONAL_SUPPORT
 #define WDRV_PIC32MZW_BA414E_SUPPORT
 #define WDRV_PIC32MZW_BIGINTSW_SUPPORT
-#define WDRV_PIC32MZW_ALARM_PERIOD_1MS          0
-#define WDRV_PIC32MZW_ALARM_PERIOD_MAX          0
+#define WDRV_PIC32MZW_ALARM_PERIOD_1MS          390
+#define WDRV_PIC32MZW_ALARM_PERIOD_MAX          168
 
 
 // *****************************************************************************

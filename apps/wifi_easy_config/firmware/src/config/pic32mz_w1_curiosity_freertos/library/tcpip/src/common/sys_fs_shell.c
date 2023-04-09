@@ -563,7 +563,7 @@ static int32_t Shell_FileSize(const SYS_FS_SHELL_OBJ* pObj, SYS_FS_HANDLE handle
 {
     (void)pObj;
     int size = SYS_FS_FileSize(handle); 
-    SYS_CONSOLE_PRINT("File Size:%d\n\r",size);
+//MR:    SYS_CONSOLE_PRINT("File Size:%d\n\r",size);
     return size;
 }
 

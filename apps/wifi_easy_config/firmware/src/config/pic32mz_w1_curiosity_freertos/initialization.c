@@ -361,7 +361,7 @@ static const NET_PRES_INST_DATA netPresCfgs[] =
         .pTransObject_sc = &netPresTransObject0SC,
         .pTransObject_ds = &netPresTransObject0DS,
         .pTransObject_dc = &netPresTransObject0DC,
-        .pProvObject_ss = NULL,
+        .pProvObject_ss = &net_pres_EncProviderStreamServer0,
         .pProvObject_sc = &net_pres_EncProviderStreamClient0,
         .pProvObject_ds = NULL,
         .pProvObject_dc = NULL,
@@ -438,7 +438,7 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 
 
 
- const DRV_BA414E_INIT_DATA ba414eInitData = 
+static const DRV_BA414E_INIT_DATA ba414eInitData = 
 {
 };
   
@@ -855,7 +855,7 @@ const SYS_NET_Config g_sSysNetConfig1 =
 
 
 
- SYS_MQTT_Config g_sSysMqttConfig =
+const SYS_MQTT_Config g_sSysMqttConfig =
 {
 	.intf = SYS_MQTT_INDEX0_MQTT_INTF,
 	.sBrokerConfig.brokerName = SYS_MQTT_INDEX0_BROKER_NAME, 

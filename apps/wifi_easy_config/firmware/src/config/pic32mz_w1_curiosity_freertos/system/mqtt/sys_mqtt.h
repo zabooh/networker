@@ -382,7 +382,7 @@ typedef struct
     uint8_t intf;
 } SYS_MQTT_Config;
 
-extern SYS_MQTT_Config g_sSysMqttConfig;
+extern const SYS_MQTT_Config g_sSysMqttConfig;
 
 // *****************************************************************************
 // *****************************************************************************
