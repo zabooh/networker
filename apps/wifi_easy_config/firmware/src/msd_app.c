@@ -59,6 +59,7 @@ uint8_t CACHE_ALIGN work[SYS_FS_FAT_MAX_SS];
 extern EXCEPT_MSG last_expt_msg;
 extern SYS_MODULE_OBJ g_sSysMqttHandle;
                 
+volatile bool print_delay_started = false;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -144,13 +145,50 @@ static void CommandHeap(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     CMD_PRINTF(cmdIoParam, "xNumberOfSuccessfulAllocations  : %d\r\n", xHeapStats.xNumberOfSuccessfulAllocations);
     CMD_PRINTF(cmdIoParam, "xNumberOfSuccessfulFrees        : %d\r\n", xHeapStats.xNumberOfSuccessfulFrees);
 //    (*pCmdIO->pCmdApi->print)(cmdIoParam, "xNumberOfFaileddAllocations     : %d\r\n", xHeapStats.xNumberOfFaileddAllocations);
+}
 
+static void my_dump(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+    uint32_t addr;
+    uint32_t count;
+    uint32_t ix, jx;
+    uint8_t *puc;
+    char str[64];
+    int flag = 0;
+
+    addr = strtoul(argv[1], NULL, 16);
+    count = strtoul(argv[2], NULL, 16);
+    puc = (uint8_t *) addr;
+    puc = (uint8_t *) addr;
+
+    jx = 0;
+    for (ix = 0; ix < count; ix++) {
+        if ((ix % 16) == 0) {
+            if(flag == 1){
+                str[16] = 0;
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "   %s", str);
+            }
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "\n\r%08x: ", puc);
+            flag = 1;
+            jx = 0;
+        }
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, " %02x", *puc);
+        if ( (*puc > 31) && (*puc < 127) )
+            str[jx++] = *puc;
+        else
+            str[jx++] = '.';
+        puc++;
+    }
+    str[jx] = 0;
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "   %s", str);
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "\n\rReady\n\r");
+    
 }
 
 static void my_log(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     const void* cmdIoParam = pCmdIO->cmdIoParam;    
     uint32_t ix;
-    char str[64];    
+    char str[128];    
     int cc;
     cc = LOG_GetLogSize();
 
@@ -158,6 +196,7 @@ static void my_log(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     for(ix=0;ix<cc;ix++){
         LOG_GetData(ix,str);
         (*pCmdIO->pCmdApi->print)(cmdIoParam, "%s\n\r",str);
+        vTaskDelay(50 / portTICK_PERIOD_MS);
     }    
 }
 
@@ -168,6 +207,7 @@ const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
     {"dis", (SYS_CMD_FNC) my_diconnect, ": Disconnect from MQTT Broker "},
     {"heap",(SYS_CMD_FNC) CommandHeap, ": heap statistics"},    
     {"log", (SYS_CMD_FNC) my_log, ": print log data"}, 
+    {"dump",(SYS_CMD_FNC) my_dump,    ": dump memory"},   
 };
 
 static bool MSD_CMDInit(void) {
@@ -332,7 +372,7 @@ void MSD_APP_Tasks(void) {
             bool appInitialized = true;
             SYS_WSS_RESULT result;
             vTaskDelay(2000 / portTICK_PERIOD_MS);
-
+            print_delay_started = true;
             if (last_expt_msg.magic == MAGIC_CODE) {
                 SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
                 SYS_CONSOLE_PRINT("Last Runtime has ended with the following Message:\n\r");
