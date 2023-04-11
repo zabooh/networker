@@ -46,7 +46,7 @@
 #   mosquitto_sub -h 192.168.0.227 -t flat/bulb --cafile /etc/mosquitto/ca_certificates/ca.crt -p 8883 -d		
 #	
 #   sysmqtt get info
-#	
+#	defnet set eth
 #   con test.mosquitto.org flat/bulb 1	
 #   con 192.168.0.227 flat/bulb 1
 #   sub flat/bulb
