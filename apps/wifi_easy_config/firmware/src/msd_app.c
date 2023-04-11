@@ -101,10 +101,12 @@ static void my_connect(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
         mqtt_init_flag = true;
     } else if (argc == 4) {
         strcpy((char*)g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
-        strcpy((char*)g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
-        bool *ptrbool = (bool*)&g_sSysMqttConfig.sBrokerConfig.tlsEnabled;
-        *ptrbool = (bool) atoi(argv[3]);
-        CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s with topic: %s tls =\n\r",argv[1],argv[2],argv[3]);
+        strcpy((char*) g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
+        if (strcmp(argv[3], "1") == 0) {
+            g_sSysMqttConfig.sBrokerConfig.tlsEnabled = 1;
+            g_sSysMqttConfig.sBrokerConfig.serverPort = 8883;
+        }                
+        CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s with topic: %s tls =%s\n\r",argv[1],argv[2],argv[3]);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else {
