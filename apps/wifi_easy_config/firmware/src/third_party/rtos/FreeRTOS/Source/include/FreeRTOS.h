@@ -55,6 +55,8 @@
 #endif
 /* *INDENT-ON* */
 
+#include "logger.h"
+        
 /* Application specific configuration options. */
 #include "FreeRTOSConfig.h"
 

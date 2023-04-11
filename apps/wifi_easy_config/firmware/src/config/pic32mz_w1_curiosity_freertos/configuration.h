@@ -215,7 +215,7 @@ extern "C" {
 
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			1
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			1
-#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		1
+#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		1   //MR: MCC overwrites with wrong value. set it to "1" by hand
 #define SYS_CONSOLE_PRINT_BUFFER_SIZE        		256
 
 #define SYS_CONSOLE_USB_CDC_READ_WRITE_BUFFER_SIZE 	64
@@ -889,11 +889,6 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 
-void LOG_log(char *str, uint32_t data);
-uint32_t LOG_GetLogSize(void);
-void LOG_GetData(uint32_t ix, char *str);
-void LOG_Start(void);
-void LOG_Stop(void);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

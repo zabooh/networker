@@ -1138,6 +1138,8 @@
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/msd_app.c</itemPath>
       <itemPath>../src/app_mqtt.c</itemPath>
+      <itemPath>../src/logger.c</itemPath>
+      <itemPath>../src/logger.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

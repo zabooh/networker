@@ -147,12 +147,26 @@ static void CommandHeap(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
 
 }
 
+static void my_log(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;    
+    uint32_t ix;
+    char str[64];    
+    int cc;
+    cc = LOG_GetLogSize();
+
+    for(ix=0;ix<cc;ix++){
+        LOG_GetData(ix,str);
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "%s\n\r",str);
+    }    
+}
+
 const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
     {"pub", (SYS_CMD_FNC) my_pub, ": Publish MQTT Message: pub msg "},
     {"sub", (SYS_CMD_FNC) my_sub, ": Subcribe MQTT Message: sub topic "},    
     {"con", (SYS_CMD_FNC) my_connect, ": Connect to MQTT Broker: con [host] [topic] [tls enabled]"},
     {"dis", (SYS_CMD_FNC) my_diconnect, ": Disconnect from MQTT Broker "},
     {"heap",(SYS_CMD_FNC) CommandHeap, ": heap statistics"},    
+    {"log", (SYS_CMD_FNC) my_log, ": print log data"}, 
 };
 
 static bool MSD_CMDInit(void) {
@@ -364,9 +378,7 @@ void MSD_APP_Tasks(void) {
                SYS_CONSOLE_PRINT("FS:Directory open is successful\r\n");               
             }
             
-            LOG_Start();
             do {                
-                LOG_log("Read Dir",0);
                 if (SYS_FS_DirRead(dirHandle, &stat) == SYS_FS_RES_FAILURE) {
                     SYS_CONSOLE_PRINT("FS:Directory read failed\r\n");
                 } else {
@@ -374,8 +386,7 @@ void MSD_APP_Tasks(void) {
                     SYS_CONSOLE_PRINT("FS:%s\n\r", stat.fname);             
                 }                
             } while (1);
-            LOG_Stop();
-                    
+                   
             fileHandle = SYS_FS_FileOpen("/mnt/mchpSite1/index.htm", (SYS_FS_FILE_OPEN_READ));
             if (fileHandle != SYS_FS_HANDLE_INVALID) {
                 SYS_CONSOLE_PRINT("FS:File \"mnt/mchpSite1/index.htm\" open succeeded\r\n");

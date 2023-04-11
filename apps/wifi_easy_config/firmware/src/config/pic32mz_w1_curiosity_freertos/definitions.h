@@ -107,7 +107,7 @@
 #include "task.h"
 #include "app.h"
 #include "msd_app.h"
-
+#include "logger.h"
 
 
 // DOM-IGNORE-BEGIN
