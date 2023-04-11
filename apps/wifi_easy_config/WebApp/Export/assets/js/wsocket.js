@@ -8,14 +8,96 @@ var m_send_text = document.getElementById('m_send_text');
 var m_send_button = document.getElementById('m_send_button');
 var wsServer = document.getElementById('wsServer');
 
+var myChart = document.getElementById('myChart');
+var myTrigger = document.getElementById('myTrigger');
+
+// Daten initialisieren
+var t_data = [];
+var y_data =   [];
+
+var totalPoints = 100;
+
+for (ix = 0; ix < totalPoints; ix++) {
+    t_data.push(ix)
+    y_data.push(0);
+}
+
+// Chart.js-Objekt erstellen
+var ctx = document.querySelector('#myChart canvas').getContext('2d');
+
+var myChart_2 = new Chart(ctx, {
+  
+  type: 'line',
+  
+ options: {
+      scales: {
+        x: {
+          type: 'linear', // Art der Skalierung für die x-Achse
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'X-Achse'
+          }
+        },
+        y: {
+          type: 'linear', // Art der Skalierung für die y-Achse
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Y-Achse'
+          }
+        }
+      }
+    },
+
+
+ 
+  data: {
+    labels: t_data,
+    datasets: [{
+      label: 'Data From yC',
+      data: y_data,
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    }]
+  },
+  
+  
+  
+});
+    
 console.log("Die IP-Adresse des Servers lautet: " + serverIP);
-//wsServer.value = "ws://" + serverIP + ":8000" + "/echo"
+wsServer.value = "ws://" + serverIP + ":8000" + "/echo"
 
 m_connect.disabled = false;
 m_disconnect.disabled = true; 
 m_send_text.disabled = true; 
 m_send_button.disabled = true; 
 wsServer.disabled = false;
+
+var xx=0;
+var yy=0;
+
+myTrigger.addEventListener('click', function(event) {
+    console.log('myTrigger Clicked');
+
+    t_data.slice(1);
+    y_data.slice(1);
+
+    t_data.push(xx);
+    y_data.push(yy);
+    
+    xx++;
+    yy++;
+    
+    // Daten im Chart aktualisieren
+    myChart_2.data.labels = t_data;
+    myChart_2.data.datasets[0].data = y_data;
+    myChart_2.update();
+    
+});
+
 
 m_connect.addEventListener('click', function(event) {
     

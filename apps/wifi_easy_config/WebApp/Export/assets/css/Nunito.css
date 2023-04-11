@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: italic;
 	font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: italic;
 	font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: italic;
 	font-display: swap;
@@ -27,16 +27,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: italic;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: italic;
 	font-display: swap;
@@ -45,7 +45,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: italic;
 	font-display: swap;
@@ -54,7 +54,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: italic;
 	font-display: swap;
@@ -63,7 +63,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: italic;
 	font-display: swap;
@@ -72,16 +72,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: italic;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: italic;
 	font-display: swap;
@@ -90,7 +90,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -99,7 +99,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -108,7 +108,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -117,16 +117,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -135,7 +135,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
@@ -144,7 +144,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
@@ -153,7 +153,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
@@ -162,16 +162,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
@@ -180,7 +180,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -189,7 +189,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -198,7 +198,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -207,16 +207,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -225,7 +225,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: italic;
 	font-display: swap;
@@ -234,7 +234,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: italic;
 	font-display: swap;
@@ -243,7 +243,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: italic;
 	font-display: swap;
@@ -252,16 +252,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: italic;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: italic;
 	font-display: swap;
@@ -270,7 +270,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaORs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
@@ -279,7 +279,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaHRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
@@ -288,7 +288,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaMRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
@@ -297,16 +297,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaNRs71cA.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXX3I6Li01BKofIMNaDRs4.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
@@ -315,7 +315,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: normal;
 	font-display: swap;
@@ -324,7 +324,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: normal;
 	font-display: swap;
@@ -333,7 +333,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: normal;
 	font-display: swap;
@@ -342,16 +342,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: normal;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 200;
 	font-style: normal;
 	font-display: swap;
@@ -360,7 +360,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
@@ -369,7 +369,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
@@ -378,7 +378,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
@@ -387,16 +387,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
@@ -405,7 +405,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -414,7 +414,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -423,7 +423,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -432,16 +432,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -450,7 +450,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -459,7 +459,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -468,7 +468,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -477,16 +477,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -495,7 +495,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -504,7 +504,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -513,7 +513,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -522,16 +522,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -540,7 +540,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: normal;
 	font-display: swap;
@@ -549,7 +549,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: normal;
 	font-display: swap;
@@ -558,7 +558,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: normal;
 	font-display: swap;
@@ -567,16 +567,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: normal;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 800;
 	font-style: normal;
 	font-display: swap;
@@ -585,7 +585,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOOaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
@@ -594,7 +594,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIMeaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
@@ -603,7 +603,7 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIOuaBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
@@ -612,16 +612,16 @@
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofIO-aBXso.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
 	font-family: 'Nunito';
-	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=91fad921c3f35b00694a4ba3caaa810b) format('woff2');
+	src: url(../../assets/fonts/XRXV3I6Li01BKofINeaB.woff2?h=6ea5656bc8d0bc61b768d5a1a400ade0) format('woff2');
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;

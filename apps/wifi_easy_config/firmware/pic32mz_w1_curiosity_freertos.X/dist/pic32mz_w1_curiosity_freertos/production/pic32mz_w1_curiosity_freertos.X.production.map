@@ -311,25 +311,25 @@ c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(strlen.o)
                               build/pic32mz_w1_curiosity_freertos/production/_ext/991598407/wdrv_pic32mzw.o (strlen)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
-                              C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o (_bootstrap_exception_handler)
+                              C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o (_bootstrap_exception_handler)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
-                              C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o (_on_reset)
+                              C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o (_on_reset)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
-                              C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o (_on_bootstrap)
+                              C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o (_on_bootstrap)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
-                              C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o (_nmi_handler)
+                              C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o (_nmi_handler)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(pic32_data_init.o)
-                              C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o (__pic32_data_init)
+                              C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o (__pic32_data_init)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
-                              C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o (__pic32_init_cache)
+                              C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o (__pic32_init_cache)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(pic32_init_tlb_ebi_sqi.o)
-                              C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o (__pic32_tlb_init_ebi_sqi)
+                              C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o (__pic32_tlb_init_ebi_sqi)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o)
-                              C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o (_cache_err_exception_context)
+                              C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o (_cache_err_exception_context)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(simple-tlb-refill-exception.o)
-                              C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o (_simple_tlb_refill_exception_context)
+                              C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o (_simple_tlb_refill_exception_context)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
-                              C:\Users\m91221\AppData\Local\Temp\cc8ul7tz.o (_DefaultInterrupt)
+                              C:\Users\m91221\AppData\Local\Temp\cc4Cs5ww.o (_DefaultInterrupt)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
                               c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o) (_cache_err_exception_handler)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libc.a(_iob.o)
@@ -9987,6 +9987,22 @@ Discarded input sections
                 0x0000000000000000       0x1c build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
  .scommon       0x0000000000000000        0x8 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
  COMMON         0x0000000000000000      0x624 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
+ .text          0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .data          0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .bss           0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .reginfo       0x0000000000000000       0x18 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ __memory__crypto1SCM
+                0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ __memory__crypto1UCM
+                0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ __memory__wcmDataMem
+                0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .text.LOG_Start
+                0x0000000000000000       0x70 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .text.LOG_Stop
+                0x0000000000000000       0x5c build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
  .text          0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
  .data          0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
  .bss           0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
@@ -10011,22 +10027,6 @@ Discarded input sections
                 0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
  __memory__wcmDataMem
                 0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
- .text          0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
- .data          0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
- .bss           0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
- .reginfo       0x0000000000000000       0x18 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
- __memory__crypto1SCM
-                0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
- __memory__crypto1UCM
-                0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
- __memory__wcmDataMem
-                0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
- .text.LOG_Start
-                0x0000000000000000       0x70 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
- .text.LOG_Stop
-                0x0000000000000000       0x5c build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
  .text          0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
  .data          0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
  .bss           0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
@@ -11501,31 +11501,31 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(frame_11w.o)
  .bss           0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(frame_11w.o)
  .reginfo       0x0000000000000000       0x18 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(frame_11w.o)
- .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
- .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
- .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
- .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
+ .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
+ .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
+ .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
- .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccZ9b4rh.o
- .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccZ9b4rh.o
- .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccZ9b4rh.o
- .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccZ9b4rh.o
+                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
+ .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccg3iU0F.o
+ .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccg3iU0F.o
+ .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccg3iU0F.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccg3iU0F.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccZ9b4rh.o
- .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
- .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
- .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
- .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccg3iU0F.o
+ .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
+ .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
+ .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
- .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc8ul7tz.o
- .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc8ul7tz.o
- .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc8ul7tz.o
- .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cc8ul7tz.o
+                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
+ .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc4Cs5ww.o
+ .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc4Cs5ww.o
+ .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc4Cs5ww.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cc4Cs5ww.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cc8ul7tz.o
- .discard       0x0000000000000000        0x4 C:\Users\m91221\AppData\Local\Temp\cc8ul7tz.o
+                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cc4Cs5ww.o
+ .discard       0x0000000000000000        0x4 C:\Users\m91221\AppData\Local\Temp\cc4Cs5ww.o
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
  .reginfo       0x0000000000000000       0x18 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
@@ -12755,9 +12755,9 @@ LOAD build/pic32mz_w1_curiosity_freertos/production/_ext/2046716756/internal.o
 LOAD build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app.o
 LOAD build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/msd_app.o
 LOAD build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
+LOAD build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
 LOAD build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
 LOAD build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
-LOAD build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
 LOAD ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a
                 0x0000000000000001                __MPLAB_BUILD = 0x1
                 0x0000000000000400                PROVIDE (_min_stack_size = 0x400)
@@ -12844,16 +12844,16 @@ END GROUP
 
 .reset          0x00000000bfc00000      0x1b4
  *(.reset)
- .reset         0x00000000bfc00000       0x18 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
+ .reset         0x00000000bfc00000       0x18 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
                 0x00000000bfc00000                _reset
  *(.reset.startup)
  .reset.startup
-                0x00000000bfc00018      0x19c C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
+                0x00000000bfc00018      0x19c C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
                 0x00000000bfc00018                _startup
 
 .bev_excpt      0x00000000bfc00380       0x10
  *(.bev_handler)
- .bev_handler   0x00000000bfc00380       0x10 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
+ .bev_handler   0x00000000bfc00380       0x10 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
 
 .cache_init     0x00000000bfc004b0      0x1c0
  *(.cache_init)
@@ -12868,18 +12868,18 @@ END GROUP
                 0x0000000090000000       0x10
  *(.simple_tlb_refill_vector)
  .simple_tlb_refill_vector
-                0x0000000090000000       0x10 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
+                0x0000000090000000       0x10 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
 
 .cache_err_excpt
                 0x0000000090000100       0x10
  *(.cache_err_vector)
  .cache_err_vector
-                0x0000000090000100       0x10 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
+                0x0000000090000100       0x10 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
 
 .app_excpt      0x0000000090000180       0x24
  *(.gen_handler)
  .gen_handler   0x0000000090000180       0x14 build/pic32mz_w1_curiosity_freertos/production/_ext/500644711/exception_vector.o
- .gen_handler   0x0000000090000194       0x10 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
+ .gen_handler   0x0000000090000194       0x10 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
 
 .vectors        0x0000000090000200     0x23a4
                 0x0000000090000200                . = ALIGN (0x4)
@@ -14833,9 +14833,9 @@ END GROUP
  .mdebug.abi32  0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app.o
  .mdebug.abi32  0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/msd_app.o
  .mdebug.abi32  0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
+ .mdebug.abi32  0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
  .mdebug.abi32  0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
  .mdebug.abi32  0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
- .mdebug.abi32  0x0000000000000000        0x0 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
  .mdebug.abi32  0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
  .mdebug.abi32  0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(maccontroller.o)
  .mdebug.abi32  0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(scan_manager.o)
@@ -15316,9 +15316,9 @@ END GROUP
  .comment       0x0000000000000053       0x54 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app.o
  .comment       0x0000000000000053       0x54 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/msd_app.o
  .comment       0x0000000000000053       0x54 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
+ .comment       0x0000000000000053       0x54 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
  .comment       0x0000000000000053       0x54 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
  .comment       0x0000000000000053       0x54 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
- .comment       0x0000000000000053       0x54 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
  .comment       0x0000000000000053       0x3c ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
                                          0x3d (size before relaxing)
  .comment       0x000000000000008f       0x3d ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(maccontroller.o)
@@ -16032,11 +16032,11 @@ END GROUP
  .debug_aranges
                 0x0000000000007b18       0x48 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
  .debug_aranges
-                0x0000000000007b60       0x18 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
+                0x0000000000007b60       0x40 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
  .debug_aranges
-                0x0000000000007b78       0x18 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
+                0x0000000000007ba0       0x18 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
  .debug_aranges
-                0x0000000000007b90       0x40 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+                0x0000000000007bb8       0x18 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
  .debug_aranges
                 0x0000000000007bd0      0x798 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
  .debug_aranges
@@ -16683,9 +16683,9 @@ END GROUP
  .debug_info    0x0000000002c5b678    0x37379 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app.o
  .debug_info    0x0000000002c929f1    0x387dd build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/msd_app.o
  .debug_info    0x0000000002ccb1ce    0x37293 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
- .debug_info    0x0000000002d02461    0x3454d build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
- .debug_info    0x0000000002d369ae    0x34521 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
- .debug_info    0x0000000002d6aecf    0x36fb6 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .debug_info    0x0000000002d02461    0x36fb6 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .debug_info    0x0000000002d39417    0x3454d build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
+ .debug_info    0x0000000002d6d964    0x34521 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
  .debug_info    0x0000000002da1e85    0x13b6c ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
  .debug_info    0x0000000002db59f1     0xaaef ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(maccontroller.o)
  .debug_info    0x0000000002dc04e0     0xfd19 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(scan_manager.o)
@@ -17126,9 +17126,9 @@ END GROUP
  .debug_abbrev  0x00000000000327ef      0x3b7 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app.o
  .debug_abbrev  0x0000000000032ba6      0x5ab build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/msd_app.o
  .debug_abbrev  0x0000000000033151      0x3ec build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
- .debug_abbrev  0x000000000003353d      0x29d build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
- .debug_abbrev  0x00000000000337da      0x298 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
- .debug_abbrev  0x0000000000033a72      0x3c1 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .debug_abbrev  0x000000000003353d      0x3c1 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .debug_abbrev  0x00000000000338fe      0x29d build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
+ .debug_abbrev  0x0000000000033b9b      0x298 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
  .debug_abbrev  0x0000000000033e33      0x798 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
  .debug_abbrev  0x00000000000345cb      0x55c ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(maccontroller.o)
  .debug_abbrev  0x0000000000034b27      0x696 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(scan_manager.o)
@@ -17570,9 +17570,9 @@ END GROUP
  .debug_line    0x00000000000cddcf      0xc95 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app.o
  .debug_line    0x00000000000cea64     0x13be build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/msd_app.o
  .debug_line    0x00000000000cfe22      0xc5f build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
- .debug_line    0x00000000000d0a81      0x40c build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
- .debug_line    0x00000000000d0e8d      0x3f7 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
- .debug_line    0x00000000000d1284      0xc7f build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .debug_line    0x00000000000d0a81      0xc7f build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .debug_line    0x00000000000d1700      0x40c build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
+ .debug_line    0x00000000000d1b0c      0x3f7 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
  .debug_line    0x00000000000d1f03     0x25d1 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
  .debug_line    0x00000000000d44d4      0xe6e ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(maccontroller.o)
  .debug_line    0x00000000000d5342     0x1440 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(scan_manager.o)
@@ -18380,9 +18380,9 @@ END GROUP
  .debug_str     0x00000000012089b2    0x1890a build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app.o
  .debug_str     0x00000000012212bc    0x192aa build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/msd_app.o
  .debug_str     0x000000000123a566    0x18910 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
- .debug_str     0x0000000001252e76    0x14cf6 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
- .debug_str     0x0000000001267b6c    0x14ce4 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
- .debug_str     0x000000000127c850    0x18626 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .debug_str     0x0000000001252e76    0x18626 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+ .debug_str     0x000000000126b49c    0x14cf6 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
+ .debug_str     0x0000000001280192    0x14ce4 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
  .debug_str     0x0000000001294e76      0x316 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
  .debug_str     0x000000000129518c      0x1fa ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(maccontroller.o)
  .debug_str     0x0000000001295386      0x2ec ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(scan_manager.o)
@@ -19749,11 +19749,11 @@ END GROUP
  .gnu.attributes
                 0x0000000000000ea0       0x10 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/app_mqtt.o
  .gnu.attributes
-                0x0000000000000eb0       0x10 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
+                0x0000000000000eb0       0x10 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
  .gnu.attributes
-                0x0000000000000ec0       0x10 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
+                0x0000000000000ec0       0x10 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/misc.o
  .gnu.attributes
-                0x0000000000000ed0       0x10 build/pic32mz_w1_curiosity_freertos/production/_ext/1360937237/logger.o
+                0x0000000000000ed0       0x10 build/pic32mz_w1_curiosity_freertos/production/_ext/1664057780/evp.o
  .gnu.attributes
                 0x0000000000000ee0       0x10 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(iconfig.o)
  .gnu.attributes
@@ -20045,13 +20045,13 @@ END GROUP
  .gnu.attributes
                 0x00000000000017e0       0x10 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(frame_11w.o)
  .gnu.attributes
-                0x00000000000017f0       0x10 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
+                0x00000000000017f0       0x10 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
  .gnu.attributes
-                0x0000000000001800       0x10 C:\Users\m91221\AppData\Local\Temp\ccZ9b4rh.o
+                0x0000000000001800       0x10 C:\Users\m91221\AppData\Local\Temp\ccg3iU0F.o
  .gnu.attributes
-                0x0000000000001810       0x10 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x0000000000001810       0x10 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
  .gnu.attributes
-                0x0000000000001820       0x10 C:\Users\m91221\AppData\Local\Temp\cc8ul7tz.o
+                0x0000000000001820       0x10 C:\Users\m91221\AppData\Local\Temp\cc4Cs5ww.o
  .gnu.attributes
                 0x0000000000001830       0x10 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
  .gnu.attributes
@@ -20259,10 +20259,10 @@ END GROUP
                 0x0000000090000000                PROVIDE (__pic32_init_cache_program_base_addr = 0x90000000)
                 0x0000000080000000                PROVIDE (__pic32_init_cache_data_base_addr = 0x80000000)
                 0x00000000000001f4                _min_heap_size = 0x1f4
-LOAD C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
-LOAD C:\Users\m91221\AppData\Local\Temp\ccZ9b4rh.o
-LOAD C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
-LOAD C:\Users\m91221\AppData\Local\Temp\cc8ul7tz.o
+LOAD C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
+LOAD C:\Users\m91221\AppData\Local\Temp\ccg3iU0F.o
+LOAD C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
+LOAD C:\Users\m91221\AppData\Local\Temp\cc4Cs5ww.o
 LOAD c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
 LOAD c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1\libgcc.a
 START GROUP
@@ -20295,67 +20295,67 @@ __memory__wlan_mem@.bss.pic32mzwRsrvPkts.pic32mzwRsrvPkts
 .__vector_offset_BF810540_data
                 0x00000000bf810540       0x64
  .__vector_offset_BF810540_data
-                0x00000000bf810540       0x64 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf810540       0x64 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF8106E8_data
                 0x00000000bf8106e8       0x60
  .__vector_offset_BF8106E8_data
-                0x00000000bf8106e8       0x60 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf8106e8       0x60 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF8105B8_data
                 0x00000000bf8105b8       0x48
  .__vector_offset_BF8105B8_data
-                0x00000000bf8105b8       0x48 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf8105b8       0x48 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF810614_data
                 0x00000000bf810614       0x30
  .__vector_offset_BF810614_data
-                0x00000000bf810614       0x30 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf810614       0x30 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF81068C_data
                 0x00000000bf81068c       0x28
  .__vector_offset_BF81068C_data
-                0x00000000bf81068c       0x28 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf81068c       0x28 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF810650_data
                 0x00000000bf810650       0x24
  .__vector_offset_BF810650_data
-                0x00000000bf810650       0x24 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf810650       0x24 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF8107C8_data
                 0x00000000bf8107c8       0x1c
  .__vector_offset_BF8107C8_data
-                0x00000000bf8107c8       0x1c C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf8107c8       0x1c C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF8107A0_data
                 0x00000000bf8107a0       0x18
  .__vector_offset_BF8107A0_data
-                0x00000000bf8107a0       0x18 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf8107a0       0x18 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF8106D0_data
                 0x00000000bf8106d0       0x14
  .__vector_offset_BF8106D0_data
-                0x00000000bf8106d0       0x14 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf8106d0       0x14 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF8106B8_data
                 0x00000000bf8106b8       0x10
  .__vector_offset_BF8106B8_data
-                0x00000000bf8106b8       0x10 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf8106b8       0x10 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF810778_data
                 0x00000000bf810778       0x10
  .__vector_offset_BF810778_data
-                0x00000000bf810778       0x10 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf810778       0x10 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF810680_data
                 0x00000000bf810680        0x4
  .__vector_offset_BF810680_data
-                0x00000000bf810680        0x4 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf810680        0x4 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .__vector_offset_BF810798_data
                 0x00000000bf810798        0x4
  .__vector_offset_BF810798_data
-                0x00000000bf810798        0x4 C:\Users\m91221\AppData\Local\Temp\cc4NCd3f.o
+                0x00000000bf810798        0x4 C:\Users\m91221\AppData\Local\Temp\ccS61xJP.o
 
 .COHERENTDATA$  0x00000000a000af20      0x174
  .COHERENTDATA$
@@ -33197,7 +33197,7 @@ __memory__wlan_mem@.bss.pic32mzwRsrvPkts.pic32mzwRsrvPkts
 .text.main_entry
                 0x00000000900de978       0x54
  .text.main_entry
-                0x00000000900de978       0x54 C:\Users\m91221\AppData\Local\Temp\cciSaxvQ.o
+                0x00000000900de978       0x54 C:\Users\m91221\AppData\Local\Temp\ccrkCRRS.o
                 0x00000000900de9ac                __crt0_exit
 
 .text.strpbrk   0x00000000900de9cc       0x54
