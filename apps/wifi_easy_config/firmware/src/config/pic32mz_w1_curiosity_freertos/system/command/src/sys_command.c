@@ -189,7 +189,6 @@ static const KEY_SEQ_DCPT keySeqTbl[] =
 static void     CommandReset(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 static void     CommandQuit(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);              // command quit
 static void     CommandHelp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);              // help
-static void     CommandLog(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 
 static int      StringToArgs(char *str, char *argv[], size_t argvSize); 
 static void     ParseCmdBuffer(SYS_CMD_IO_DCPT* pCmdIO);      // parse the command buffer
@@ -222,7 +221,6 @@ static const SYS_CMD_DESCRIPTOR    _builtinCmdTbl[]=
 {
     {"reset",   CommandReset,   ": Reset host"},
     {"q",       CommandQuit,    ": quit command processor"},
-    {"log",     CommandLog,     ": dump log"},
     {"help",    CommandHelp,    ": help"},
 };
 
@@ -1156,19 +1154,4 @@ static void CmdAdjustPointers(SYS_CMD_IO_DCPT* pCmdIO)
     {
         pCmdIO->cmdEnd = pCmdIO->cmdPnt;
     }
-}
-
-static void CommandLog(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
-{
-//    const void* cmdIoParam = pCmdIO->cmdIoParam;
-//    uint32_t ix_max = LOG_GetLogSize();
-//    uint32_t ix;
-//    char str[256];
-//    
-//    (*pCmdIO->pCmdApi->msg)(cmdIoParam, LINE_TERM " Dump Log Data\r\n" );
-//    for(ix=0;ix<ix_max;ix++){
-//        LOG_GetData(ix,str);
-//        (*pCmdIO->pCmdApi->msg)(cmdIoParam, str );
-//    }
-//
 }

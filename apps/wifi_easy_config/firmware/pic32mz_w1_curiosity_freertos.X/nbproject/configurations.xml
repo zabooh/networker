@@ -837,6 +837,7 @@
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/tcpip_packet.c</itemPath>
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/udp.c</itemPath>
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/sntp.c</itemPath>
+                <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/dnss.c</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>

@@ -48,7 +48,7 @@
 #   wget http://192.168.0.32/check/assets/bootstrap/css/bootstrap.min.css
 #
 #   sysmqtt get info
-#		
+#   defnet set eth0
 #   con 192.168.0.227 flat/bulb 1
 #   con test.mosquitto.org flat/bulb 1
 #   sub flat/bulb

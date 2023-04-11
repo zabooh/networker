@@ -61,6 +61,14 @@ extern SYS_MODULE_OBJ g_sSysMqttHandle;
                 
 volatile bool print_delay_started = false;
 
+bool StartFlag = true;
+
+void LOG_Start(void);
+void LOG_Stop(void);
+void LOG_log(char *str, uint32_t data_1, uint32_t data_2);
+uint32_t LOG_GetLogSize(void);
+void LOG_GetData(uint32_t ix, char *str);
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -152,6 +160,81 @@ static void CommandHeap(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
 
 }
 
+static void my_dump(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+    uint32_t addr;
+    uint32_t count;
+    uint32_t ix, jx;
+    uint8_t *puc;
+    char str[64];
+    int flag = 0;
+
+    addr = strtoul(argv[1], NULL, 16);
+    count = strtoul(argv[2], NULL, 16);
+    puc = (uint8_t *) addr;
+    puc = (uint8_t *) addr;
+
+    jx = 0;
+    for (ix = 0; ix < count; ix++) {
+        if ((ix % 16) == 0) {
+            if(flag == 1){
+                str[16] = 0;
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "   %s", str);
+            }
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "\n\r%08x: ", puc);
+            flag = 1;
+            jx = 0;
+        }
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, " %02x", *puc);
+        if ( (*puc > 31) && (*puc < 127) )
+            str[jx++] = *puc;
+        else
+            str[jx++] = '.';
+        puc++;
+    }
+    str[jx] = 0;
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "   %s", str);
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "\n\rReady\n\r");
+    
+}
+
+static void my_log(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;    
+    uint32_t ix;
+    char str[64];    
+    int cc;
+    cc = LOG_GetLogSize();
+
+    for(ix=0;ix<cc;ix++){
+        LOG_GetData(ix,str);
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "%s\n\r",str);
+    }    
+}
+
+static void my_crash(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+
+    volatile uint8_t data[10000];    
+    volatile uint8_t *ptr;
+    int ix;
+    
+    ptr = data;
+    for(ix=0;ix<10000;ix++){
+        *ptr++ = 0xAB;
+    }
+    
+}
+
+void StartNetworkApplication(void);
+
+static void my_start(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
+    const void* cmdIoParam = pCmdIO->cmdIoParam;    
+
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "Start Network and Application\n\r");
+    //StartNetworkApplication();
+    StartFlag = true;
+}
+
+
 const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
     {"pub", (SYS_CMD_FNC) my_pub, ": Publish MQTT Message: pub msg "},
     {"sub", (SYS_CMD_FNC) my_sub, ": Subcribe MQTT Message: sub topic "},    
@@ -159,8 +242,18 @@ const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
     {"dis", (SYS_CMD_FNC) my_diconnect, ": Disconnect from MQTT Broker "},
     {"heap",(SYS_CMD_FNC) CommandHeap, ": heap statistics"},    
     {"scan",(SYS_CMD_FNC) CommandscanWifi, ": scan wifi"},    
+    {"log", (SYS_CMD_FNC) my_log, ": print log data"}, 
+    {"dump",(SYS_CMD_FNC) my_dump,    ": dump memory"},    
+    {"cra", (SYS_CMD_FNC) my_crash,    ": force crash"},    
+    {"sta", (SYS_CMD_FNC) my_start,    ": Start Network and Application"},    
 };
 
+
+
+
+
+    
+    
 static bool MSD_CMDInit(void) {
     bool ret = false;
 
@@ -294,6 +387,8 @@ void MSD_APP_Tasks(void) {
             switch (msd_appData.state) {
                 case MSD_APP_STATE_INIT: SYS_CONSOLE_PRINT("MSD_APP_STATE_INIT\r\n");
                     break;
+                case MSD_APP_STATE_START: SYS_CONSOLE_PRINT("MSD_APP_STATE_START\r\n");
+                    break;                
                 case MSD_APP_STATE_CHECK_SWITCH: SYS_CONSOLE_PRINT("MSD_APP_STATE_CHECK_SWITCH\r\n");
                     break;
                 case MSD_APP_STATE_CHECK_FS: SYS_CONSOLE_PRINT("MSD_APP_STATE_CHECK_FS\r\n");
@@ -321,7 +416,7 @@ void MSD_APP_Tasks(void) {
         case MSD_APP_STATE_INIT:
         {
             bool appInitialized = true;
-            SYS_WSS_RESULT result;
+
             vTaskDelay(2000 / portTICK_PERIOD_MS);
             print_delay_started = true;
             if (last_expt_msg.magic == MAGIC_CODE) {
@@ -340,19 +435,28 @@ void MSD_APP_Tasks(void) {
                 SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
                 last_expt_msg.magic = 0;
             }
-
-            result = SYS_WSS_register_callback(wss_user_callback, 0);
-            if (SYS_WSS_SUCCESS == result) {
-                SYS_CONSOLE_PRINT("Registered call back with WSS service successfully\r\n");
-            }
+            
 
             if (appInitialized) {
                 SYS_CONSOLE_PRINT("MSD_APP_Tasks Started\r\n");
-                msd_appData.state = MSD_APP_STATE_MOUNT_FS;
+                msd_appData.state = MSD_APP_STATE_START;
             }
             break;
         }
 
+        case MSD_APP_STATE_START:
+        {
+            SYS_WSS_RESULT result;
+            if (StartFlag == true) {
+                result = SYS_WSS_register_callback(wss_user_callback, 0);
+                if (SYS_WSS_SUCCESS == result) {
+                    SYS_CONSOLE_PRINT("Registered call back with WSS service successfully\r\n");
+                }
+                msd_appData.state = MSD_APP_STATE_MOUNT_FS;
+            }
+            break;
+        }
+            
         case MSD_APP_STATE_MOUNT_FS:
             if (checkFSMount()) {
                 msd_appData.state = MSD_APP_STATE_CHECK_FS;
