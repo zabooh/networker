@@ -224,6 +224,9 @@ void _SYS_WIFI_Task(  void *pvParameters  )
 */
 void SYS_Tasks ( void )
 {
+    
+    LOG_Start();
+    
     /* Maintain system services */
         xTaskCreate( _SYS_CONSOLE_0_Tasks,
         "SYS_CONSOLE_0_TASKS",
