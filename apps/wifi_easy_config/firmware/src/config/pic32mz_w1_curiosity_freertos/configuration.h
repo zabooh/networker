@@ -101,7 +101,7 @@ extern "C" {
 #define SYS_CONSOLE_RTOS_TASK_PRIORITY_IDX0                     1
 
 /*** WSS Configuration ***/
-#define SYS_WSS_RTOS_STACK_SIZE     4096
+#define SYS_WSS_RTOS_STACK_SIZE     1024
 #define SYS_WSS_RTOS_TASK_PRIORITY  1
 #define SYS_WSS_RTOS_TASK_DELAY     1
 
@@ -470,7 +470,7 @@ extern "C" {
 #define NET_PRES_NUM_SOCKETS 10
 
 /* Net Pres RTOS Configurations*/
-#define NET_PRES_RTOS_STACK_SIZE                8192
+#define NET_PRES_RTOS_STACK_SIZE                1024
 #define NET_PRES_RTOS_TASK_PRIORITY             1
 	
 #define FREERTOS

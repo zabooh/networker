@@ -311,25 +311,25 @@ c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(strlen.o)
                               build/pic32mz_w1_curiosity_freertos/production/_ext/991598407/wdrv_pic32mzw.o (strlen)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o (_bootstrap_exception_handler)
+                              C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o (_bootstrap_exception_handler)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o (_on_reset)
+                              C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o (_on_reset)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o (_on_bootstrap)
+                              C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o (_on_bootstrap)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o (_nmi_handler)
+                              C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o (_nmi_handler)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(pic32_data_init.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o (__pic32_data_init)
+                              C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o (__pic32_data_init)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o (__pic32_init_cache)
+                              C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o (__pic32_init_cache)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(pic32_init_tlb_ebi_sqi.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o (__pic32_tlb_init_ebi_sqi)
+                              C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o (__pic32_tlb_init_ebi_sqi)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o (_cache_err_exception_context)
+                              C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o (_cache_err_exception_context)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(simple-tlb-refill-exception.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o (_simple_tlb_refill_exception_context)
+                              C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o (_simple_tlb_refill_exception_context)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
-                              C:\Users\m91221\AppData\Local\Temp\ccG3ggkG.o (_DefaultInterrupt)
+                              C:\Users\m91221\AppData\Local\Temp\ccqIBa3p.o (_DefaultInterrupt)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
                               c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o) (_cache_err_exception_handler)
 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libc.a(_iob.o)
@@ -11498,31 +11498,31 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(frame_11w.o)
  .bss           0x0000000000000000        0x0 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(frame_11w.o)
  .reginfo       0x0000000000000000       0x18 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(frame_11w.o)
- .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
- .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
- .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
- .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
+ .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
+ .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
+ .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
- .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cck8VeA9.o
- .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cck8VeA9.o
- .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\cck8VeA9.o
- .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cck8VeA9.o
+                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
+ .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccNvKkm3.o
+ .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccNvKkm3.o
+ .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccNvKkm3.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccNvKkm3.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\cck8VeA9.o
- .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
- .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
- .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
- .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccNvKkm3.o
+ .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
+ .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
+ .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
- .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccG3ggkG.o
- .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccG3ggkG.o
- .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccG3ggkG.o
- .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccG3ggkG.o
+                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
+ .text          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccqIBa3p.o
+ .data          0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccqIBa3p.o
+ .bss           0x0000000000000000        0x0 C:\Users\m91221\AppData\Local\Temp\ccqIBa3p.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccqIBa3p.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccG3ggkG.o
- .discard       0x0000000000000000        0x4 C:\Users\m91221\AppData\Local\Temp\ccG3ggkG.o
+                0x0000000000000000       0x18 C:\Users\m91221\AppData\Local\Temp\ccqIBa3p.o
+ .discard       0x0000000000000000        0x4 C:\Users\m91221\AppData\Local\Temp\ccqIBa3p.o
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
  .reginfo       0x0000000000000000       0x18 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
@@ -12841,16 +12841,16 @@ END GROUP
 
 .reset          0x00000000bfc00000      0x1b4
  *(.reset)
- .reset         0x00000000bfc00000       0x18 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
+ .reset         0x00000000bfc00000       0x18 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
                 0x00000000bfc00000                _reset
  *(.reset.startup)
  .reset.startup
-                0x00000000bfc00018      0x19c C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
+                0x00000000bfc00018      0x19c C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
                 0x00000000bfc00018                _startup
 
 .bev_excpt      0x00000000bfc00380       0x10
  *(.bev_handler)
- .bev_handler   0x00000000bfc00380       0x10 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
+ .bev_handler   0x00000000bfc00380       0x10 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
 
 .cache_init     0x00000000bfc004b0      0x1c0
  *(.cache_init)
@@ -12865,18 +12865,18 @@ END GROUP
                 0x0000000090000000       0x10
  *(.simple_tlb_refill_vector)
  .simple_tlb_refill_vector
-                0x0000000090000000       0x10 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
+                0x0000000090000000       0x10 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
 
 .cache_err_excpt
                 0x0000000090000100       0x10
  *(.cache_err_vector)
  .cache_err_vector
-                0x0000000090000100       0x10 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
+                0x0000000090000100       0x10 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
 
 .app_excpt      0x0000000090000180       0x24
  *(.gen_handler)
  .gen_handler   0x0000000090000180       0x14 build/pic32mz_w1_curiosity_freertos/production/_ext/500644711/exception_vector.o
- .gen_handler   0x0000000090000194       0x10 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
+ .gen_handler   0x0000000090000194       0x10 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
 
 .vectors        0x0000000090000200     0x23a4
                 0x0000000090000200                . = ALIGN (0x4)
@@ -20042,13 +20042,13 @@ END GROUP
  .gnu.attributes
                 0x00000000000017e0       0x10 ..\src\config\pic32mz_w1_curiosity_freertos\driver\wifi\pic32mzw1\lib\pic32mzw1.a(frame_11w.o)
  .gnu.attributes
-                0x00000000000017f0       0x10 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
+                0x00000000000017f0       0x10 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
  .gnu.attributes
-                0x0000000000001800       0x10 C:\Users\m91221\AppData\Local\Temp\cck8VeA9.o
+                0x0000000000001800       0x10 C:\Users\m91221\AppData\Local\Temp\ccNvKkm3.o
  .gnu.attributes
-                0x0000000000001810       0x10 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x0000000000001810       0x10 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
  .gnu.attributes
-                0x0000000000001820       0x10 C:\Users\m91221\AppData\Local\Temp\ccG3ggkG.o
+                0x0000000000001820       0x10 C:\Users\m91221\AppData\Local\Temp\ccqIBa3p.o
  .gnu.attributes
                 0x0000000000001830       0x10 c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
  .gnu.attributes
@@ -20256,10 +20256,10 @@ END GROUP
                 0x0000000090000000                PROVIDE (__pic32_init_cache_program_base_addr = 0x90000000)
                 0x0000000080000000                PROVIDE (__pic32_init_cache_data_base_addr = 0x80000000)
                 0x00000000000001f4                _min_heap_size = 0x1f4
-LOAD C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
-LOAD C:\Users\m91221\AppData\Local\Temp\cck8VeA9.o
-LOAD C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
-LOAD C:\Users\m91221\AppData\Local\Temp\ccG3ggkG.o
+LOAD C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
+LOAD C:\Users\m91221\AppData\Local\Temp\ccNvKkm3.o
+LOAD C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
+LOAD C:\Users\m91221\AppData\Local\Temp\ccqIBa3p.o
 LOAD c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
 LOAD c:/program files/microchip/xc32/v3.01/bin/bin/../../lib/gcc/pic32mx/8.3.1\libgcc.a
 START GROUP
@@ -20292,67 +20292,67 @@ __memory__wlan_mem@.bss.pic32mzwRsrvPkts.pic32mzwRsrvPkts
 .__vector_offset_BF810540_data
                 0x00000000bf810540       0x64
  .__vector_offset_BF810540_data
-                0x00000000bf810540       0x64 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf810540       0x64 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF8106E8_data
                 0x00000000bf8106e8       0x60
  .__vector_offset_BF8106E8_data
-                0x00000000bf8106e8       0x60 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf8106e8       0x60 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF8105B8_data
                 0x00000000bf8105b8       0x48
  .__vector_offset_BF8105B8_data
-                0x00000000bf8105b8       0x48 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf8105b8       0x48 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF810614_data
                 0x00000000bf810614       0x30
  .__vector_offset_BF810614_data
-                0x00000000bf810614       0x30 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf810614       0x30 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF81068C_data
                 0x00000000bf81068c       0x28
  .__vector_offset_BF81068C_data
-                0x00000000bf81068c       0x28 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf81068c       0x28 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF810650_data
                 0x00000000bf810650       0x24
  .__vector_offset_BF810650_data
-                0x00000000bf810650       0x24 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf810650       0x24 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF8107C8_data
                 0x00000000bf8107c8       0x1c
  .__vector_offset_BF8107C8_data
-                0x00000000bf8107c8       0x1c C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf8107c8       0x1c C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF8107A0_data
                 0x00000000bf8107a0       0x18
  .__vector_offset_BF8107A0_data
-                0x00000000bf8107a0       0x18 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf8107a0       0x18 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF8106D0_data
                 0x00000000bf8106d0       0x14
  .__vector_offset_BF8106D0_data
-                0x00000000bf8106d0       0x14 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf8106d0       0x14 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF8106B8_data
                 0x00000000bf8106b8       0x10
  .__vector_offset_BF8106B8_data
-                0x00000000bf8106b8       0x10 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf8106b8       0x10 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF810778_data
                 0x00000000bf810778       0x10
  .__vector_offset_BF810778_data
-                0x00000000bf810778       0x10 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf810778       0x10 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF810680_data
                 0x00000000bf810680        0x4
  .__vector_offset_BF810680_data
-                0x00000000bf810680        0x4 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf810680        0x4 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .__vector_offset_BF810798_data
                 0x00000000bf810798        0x4
  .__vector_offset_BF810798_data
-                0x00000000bf810798        0x4 C:\Users\m91221\AppData\Local\Temp\ccQPvHbB.o
+                0x00000000bf810798        0x4 C:\Users\m91221\AppData\Local\Temp\ccgY27n1.o
 
 .COHERENTDATA$  0x00000000a000af20      0x174
  .COHERENTDATA$
@@ -33203,7 +33203,7 @@ __memory__wlan_mem@.bss.pic32mzwRsrvPkts.pic32mzwRsrvPkts
 .text.main_entry
                 0x00000000900dea08       0x54
  .text.main_entry
-                0x00000000900dea08       0x54 C:\Users\m91221\AppData\Local\Temp\ccDgSZSd.o
+                0x00000000900dea08       0x54 C:\Users\m91221\AppData\Local\Temp\cc4S68IF.o
                 0x00000000900dea3c                __crt0_exit
 
 .text.strpbrk   0x00000000900dea5c       0x54

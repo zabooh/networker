@@ -8147,8 +8147,8 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;net_Pres&gt;
   &lt;net_Pres dnOrder=&quot;0&quot; id=&quot;NET_PRES_RTOS_STACK_SIZE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; value=&quot;20480&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;32768&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; value=&quot;32768&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;4096&quot;/&gt;
     &lt;/Values&gt;
   &lt;/net_Pres&gt;
 &lt;/net_Pres&gt;
@@ -9949,7 +9949,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysWssPic32mzw1" name="SYS_WSS_RTOS_STACK_SIZE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysWssPic32mzw1&gt;
   &lt;sysWssPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_WSS_RTOS_STACK_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1024&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysWssPic32mzw1&gt;
 &lt;/sysWssPic32mzw1&gt;
 </value>
@@ -14504,7 +14506,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\configuration.h</file>
-         <hash>887debc9c35c5234eb42d19c7b3775784c4f71dfeab99f672343051ef4041c8c</hash>
+         <hash>0c99aeb2e7960b5ee88a769dbfd09592132b9c08273720e7bd672dc90803ae24</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\driver\usb\usbfs\src\templates\usb_OTG_ASessionValid_Default.h</file>
