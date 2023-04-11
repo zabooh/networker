@@ -154,6 +154,7 @@ static void my_log(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     int cc;
     cc = LOG_GetLogSize();
 
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "Log Size:%d\n\r",cc);
     for(ix=0;ix<cc;ix++){
         LOG_GetData(ix,str);
         (*pCmdIO->pCmdApi->print)(cmdIoParam, "%s\n\r",str);

@@ -126,7 +126,7 @@ void _SYS_FS_Tasks(  void *pvParameters  )
     while(1)
     {
         SYS_FS_Tasks();
-        vTaskDelay(10 / portTICK_PERIOD_MS);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -144,7 +144,7 @@ void _USB_DEVICE_Tasks(  void *pvParameters  )
 {
     while(1)
     {
-        /* USB Device layer tasks routine */
+                /* USB Device layer tasks routine */
         USB_DEVICE_Tasks(sysObj.usbDevObject0);
         vTaskDelay(1 / portTICK_PERIOD_MS);
     }
@@ -166,7 +166,7 @@ void _TCPIP_STACK_Task(  void *pvParameters  )
     while(1)
     {
         TCPIP_STACK_Task(sysObj.tcpip);
-        vTaskDelay(4 / portTICK_PERIOD_MS);
+        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -193,7 +193,7 @@ static void _WDRV_PIC32MZW1_Tasks(  void *pvParameters  )
         if ((SYS_STATUS_ERROR == status) || (SYS_STATUS_UNINITIALIZED == status))
         {
             vTaskDelay(50 / portTICK_PERIOD_MS);
-    }
+        }
     }
 }
 
@@ -224,8 +224,6 @@ void _SYS_WIFI_Task(  void *pvParameters  )
 */
 void SYS_Tasks ( void )
 {
-    LOG_Start();
-    
     /* Maintain system services */
         xTaskCreate( _SYS_CONSOLE_0_Tasks,
         "SYS_CONSOLE_0_TASKS",
@@ -365,8 +363,7 @@ void SYS_Tasks ( void )
 
 
 
-    LOG_Stop();
-    
+
     /* Start RTOS Scheduler. */
     
      /**********************************************************************

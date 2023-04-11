@@ -145,7 +145,7 @@ extern "C" {
 
 
 #define SYS_NET_SUPP_INTF_WIFI_ETHERNET
-#define SYS_NET_SUPP_NUM_OF_SOCKS        		2
+#define SYS_NET_SUPP_NUM_OF_SOCKS        		3
 
 #define SYS_NET_INDEX0_INTF       				SYS_NET_INTF_WIFI
 #define SYS_NET_INDEX0_MODE       				SYS_NET_MODE_SERVER
@@ -255,7 +255,7 @@ extern "C" {
 /* Memory Driver Instance 0 RTOS Configurations*/
 #define DRV_MEMORY_STACK_SIZE_IDX0           1024
 #define DRV_MEMORY_PRIORITY_IDX0             1
-#define DRV_MEMORY_RTOS_DELAY_IDX0                         10
+#define DRV_MEMORY_RTOS_DELAY_IDX0                         1
 
 /* SST26 Driver Instance Configuration */
 #define DRV_SST26_INDEX                 0
@@ -634,7 +634,7 @@ extern "C" {
 #define TCPIP_HTTP_USE_COOKIES
 #define TCPIP_HTTP_USE_BASE64_DECODE
 #define TCPIP_HTTP_USE_AUTHENTICATION
-#define TCPIP_HTTP_TASK_RATE					33
+#define TCPIP_HTTP_TASK_RATE					1
 #define TCPIP_HTTP_MALLOC_FUNC                     malloc
 #define TCPIP_HTTP_FREE_FUNC                     free
 
@@ -824,7 +824,7 @@ extern "C" {
 /* Maximum instances of MSD function driver */
 #define USB_DEVICE_MSD_INSTANCES_NUMBER     1 
 
-#define USB_DEVICE_MSD_NUM_SECTOR_BUFFERS 1
+#define USB_DEVICE_MSD_NUM_SECTOR_BUFFERS 4
 
 
 /* Number of Logical Units */

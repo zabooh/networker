@@ -6632,6 +6632,17 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_memory_0" name="DRV_MEMORY_RTOS_DELAY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_memory_0&gt;
+  &lt;drv_memory_0 dnOrder=&quot;0&quot; id=&quot;DRV_MEMORY_RTOS_DELAY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/drv_memory_0&gt;
+&lt;/drv_memory_0&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drv_memory_0" name="DRV_MEMORY_RTOS_MENU"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drv_memory_0&gt;
   &lt;drv_memory_0 dnOrder=&quot;0&quot; id=&quot;DRV_MEMORY_RTOS_MENU&quot;&gt;
@@ -9596,7 +9607,10 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetPic32mzw1" name="SYS_NET_SUPP_NO_OF_SOCKS"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetPic32mzw1&gt;
   &lt;sysNetPic32mzw1 dnOrder=&quot;0&quot; id=&quot;SYS_NET_SUPP_NO_OF_SOCKS&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sysWssPic32mzw1&quot; value=&quot;2&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;3&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysNetPic32mzw1&gt;
 &lt;/sysNetPic32mzw1&gt;
 </value>
@@ -10013,6 +10027,17 @@
   &lt;sys_command dnOrder=&quot;0&quot; id=&quot;SYS_COMMAND_MAX_CMD_ARGS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sysWifiProvPic32mzw1&quot; value=&quot;10&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sys_command&gt;
+&lt;/sys_command&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_command" name="SYS_COMMAND_MAX_CMD_GROUPS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_command&gt;
+  &lt;sys_command dnOrder=&quot;0&quot; id=&quot;SYS_COMMAND_MAX_CMD_GROUPS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;16&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sys_command&gt;
 &lt;/sys_command&gt;
@@ -10698,6 +10723,17 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_fs" name="SYS_FS_RTOS_DELAY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_fs&gt;
+  &lt;sys_fs dnOrder=&quot;0&quot; id=&quot;SYS_FS_RTOS_DELAY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/sys_fs&gt;
+&lt;/sys_fs&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_time" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sys_time&gt;
   &lt;sys_time dnOrder=&quot;0&quot;&gt;
@@ -10922,6 +10958,17 @@
   &lt;tcpipHttp dnOrder=&quot;0&quot; id=&quot;TCPIP_HTTP_HEAP_SIZE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcpipHttp&quot; value=&quot;1840&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcpipHttp&gt;
+&lt;/tcpipHttp&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipHttp" name="TCPIP_HTTP_TASK_RATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipHttp&gt;
+  &lt;tcpipHttp dnOrder=&quot;0&quot; id=&quot;TCPIP_HTTP_TASK_RATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcpipHttp&gt;
 &lt;/tcpipHttp&gt;
@@ -11670,6 +11717,7 @@
   &lt;tcpipStack dnOrder=&quot;0&quot; id=&quot;TCPIP_STACK_RTOS_DELAY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;sysWifiPic32mzw1&quot; value=&quot;4&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcpipStack&gt;
 &lt;/tcpipStack&gt;
@@ -12965,7 +13013,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;usb_device_msd&gt;
   &lt;usb_device_msd dnOrder=&quot;0&quot; id=&quot;CONFIG_USB_DEVICE_FUNCTION_MSD_MAX_SECTORS_COMMON&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;4&quot;/&gt;
     &lt;/Values&gt;
   &lt;/usb_device_msd&gt;
 &lt;/usb_device_msd&gt;
@@ -14506,7 +14554,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\configuration.h</file>
-         <hash>0c99aeb2e7960b5ee88a769dbfd09592132b9c08273720e7bd672dc90803ae24</hash>
+         <hash>539e5a4618f6f62b33331764184ab293d8324e25f517aa710cffacb9ba625946</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\driver\usb\usbfs\src\templates\usb_OTG_ASessionValid_Default.h</file>
@@ -15774,7 +15822,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\tasks.c</file>
-         <hash>d59386ba2e933521cf9353ea5620fe7318849ed3526f98763874ba3cad46b8fb</hash>
+         <hash>891f6fceba90ab1645481ee177df141cf602bb821a14addf13efc1bef2973bb6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\driver\usb\usbfs\src\templates\usb_OTG_ASessionValid_Unsupported.h</file>
@@ -15794,7 +15842,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity_freertos\system\command\sys_command.h</file>
-         <hash>d1126012c8315c7520ac5b1f33980bd724d4f375cc7cc9bfd2d61f6fe89536ad</hash>
+         <hash>e63dfbb75b829ec2464bdaae10fb871567ec8852ca18872d91c3c0194db47310</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_sha_sam6156.h</file>
