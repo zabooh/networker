@@ -855,7 +855,7 @@ const SYS_NET_Config g_sSysNetConfig1 =
 
 
 
-const SYS_MQTT_Config g_sSysMqttConfig =
+SYS_MQTT_Config g_sSysMqttConfig =
 {
 	.intf = SYS_MQTT_INDEX0_MQTT_INTF,
 	.sBrokerConfig.brokerName = SYS_MQTT_INDEX0_BROKER_NAME, 
