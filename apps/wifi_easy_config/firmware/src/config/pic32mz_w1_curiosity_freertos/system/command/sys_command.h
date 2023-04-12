@@ -175,7 +175,7 @@
     None.
 
 */
-#define         COMMAND_HISTORY_DEPTH   16
+#define         COMMAND_HISTORY_DEPTH   4
 
 
 // *****************************************************************************

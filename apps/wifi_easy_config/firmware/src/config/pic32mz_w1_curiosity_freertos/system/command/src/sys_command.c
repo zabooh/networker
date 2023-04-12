@@ -1155,3 +1155,4 @@ static void CmdAdjustPointers(SYS_CMD_IO_DCPT* pCmdIO)
         pCmdIO->cmdEnd = pCmdIO->cmdPnt;
     }
 }
+

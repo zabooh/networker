@@ -751,7 +751,7 @@ static void prvAddNewTaskToReadyList( TCB_t * pxNewTCB ) PRIVILEGED_FUNCTION;
                      * The base of the stack memory stored in the TCB so the task can
                      * be deleted later if required. */
                     pxNewTCB->pxStack = ( StackType_t * ) pvPortMallocStack( ( ( ( size_t ) usStackDepth ) * sizeof( StackType_t ) ) ); /*lint !e961 MISRA exception as the casts are only redundant for some ports. */
-
+                    
                     if( pxNewTCB->pxStack == NULL )
                     {
                         /* Could not allocate the stack.  Delete the allocated TCB. */
@@ -767,13 +767,13 @@ static void prvAddNewTaskToReadyList( TCB_t * pxNewTCB ) PRIVILEGED_FUNCTION;
                 /* Allocate space for the stack used by the task being created. */
                 pxStack = pvPortMallocStack( ( ( ( size_t ) usStackDepth ) * sizeof( StackType_t ) ) ); /*lint !e9079 All values returned by pvPortMalloc() have at least the alignment required by the MCU's stack and this allocation is the stack. */
                 
-                LOG_log((char*)pcName,(uint32_t)pxStack,usStackDepth);
+                LOG_log((char*) pcName, (uint32_t) pxStack, (uint32_t) usStackDepth);
                 
                 if( pxStack != NULL )
                 {
                     /* Allocate space for the TCB. */
                     pxNewTCB = ( TCB_t * ) pvPortMalloc( sizeof( TCB_t ) ); /*lint !e9087 !e9079 All values returned by pvPortMalloc() have at least the alignment required by the MCU's stack, and the first member of TCB_t is always a pointer to the task's stack. */
-
+                                                          
                     if( pxNewTCB != NULL )
                     {
                         /* Store the stack location in the TCB. */

@@ -438,7 +438,7 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 
 
 
- const DRV_BA414E_INIT_DATA ba414eInitData = 
+static const DRV_BA414E_INIT_DATA ba414eInitData = 
 {
 };
   
@@ -523,6 +523,15 @@ const TCPIP_ARP_MODULE_CONFIG tcpipARPInitData =
     .purgeQuanta        = TCPIP_ARP_CACHE_PURGE_QUANTA, 
     .retries            = TCPIP_ARP_CACHE_ENTRY_RETRIES, 
     .gratProbeCount     = TCPIP_ARP_GRATUITOUS_PROBE_COUNT,
+};
+/*** telnet Server Initialization Data ***/
+const TCPIP_TELNET_MODULE_CONFIG tcpipTelnetInitData =
+{ 
+    .nConnections   = TCPIP_TELNET_MAX_CONNECTIONS,
+    .sktTxBuffSize  = TCPIP_TELNET_SKT_TX_BUFF_SIZE,
+    .sktRxBuffSize  = TCPIP_TELNET_SKT_RX_BUFF_SIZE,
+    .listenPort     = TCPIP_TELNET_LISTEN_PORT,
+    .configFlags    = TCPIP_TELNET_CONFIG_FLAGS,
 };
 
 
@@ -715,6 +724,7 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     {TCPIP_MODULE_SNTP,             &tcpipSNTPInitData},            // TCPIP_MODULE_SNTP
 
     {TCPIP_MODULE_HTTP_SERVER,      &tcpipHTTPInitData},            // TCPIP_MODULE_HTTP_SERVER
+    {TCPIP_MODULE_TELNET_SERVER,    &tcpipTelnetInitData},          // TCPIP_MODULE_TELNET_SERVER
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules
@@ -845,7 +855,7 @@ const SYS_NET_Config g_sSysNetConfig1 =
 
 
 
- SYS_MQTT_Config g_sSysMqttConfig =
+SYS_MQTT_Config g_sSysMqttConfig =
 {
 	.intf = SYS_MQTT_INDEX0_MQTT_INTF,
 	.sBrokerConfig.brokerName = SYS_MQTT_INDEX0_BROKER_NAME, 
@@ -971,7 +981,7 @@ void SYS_Initialize ( void* data )
     sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
 
     SYS_NET_Initialize();
-
+    
     /* WSS Service Initialization */
     sysObj.sysWSS = SYS_WSS_Initialize(NULL,NULL,NULL);
     SYS_ASSERT(sysObj.sysWSS  != SYS_MODULE_OBJ_INVALID, "SYS_WSS_Initialize Failed" );

@@ -70,7 +70,6 @@ typedef enum
 {
     /* Application's state machine's initial state. */
     MSD_APP_STATE_INIT=0,
-    MSD_APP_STATE_START,
     MSD_APP_STATE_CHECK_SWITCH,
     MSD_APP_STATE_CHECK_FS,
     MSD_APP_STATE_MOUNT_FS,

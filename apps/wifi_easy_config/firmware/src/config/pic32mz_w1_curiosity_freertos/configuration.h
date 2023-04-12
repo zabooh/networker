@@ -94,14 +94,14 @@ extern "C" {
 #define SYS_CONSOLE_USB_CDC_RD_BUFFER_SIZE_IDX0    129
 
 /* TX buffer size has one additional element for the empty spot needed in circular buffer */
-#define SYS_CONSOLE_USB_CDC_WR_BUFFER_SIZE_IDX0    512
-    
+#define SYS_CONSOLE_USB_CDC_WR_BUFFER_SIZE_IDX0    1025
+
 /* Console Driver Instance 0 RTOS Configurations*/
 #define SYS_CONSOLE_RTOS_STACK_SIZE_IDX0               256
 #define SYS_CONSOLE_RTOS_TASK_PRIORITY_IDX0                     1
 
 /*** WSS Configuration ***/
-#define SYS_WSS_RTOS_STACK_SIZE     2048
+#define SYS_WSS_RTOS_STACK_SIZE     1024
 #define SYS_WSS_RTOS_TASK_PRIORITY  1
 #define SYS_WSS_RTOS_TASK_DELAY     1
 
@@ -175,7 +175,7 @@ extern "C" {
 
 #define SYS_MQTT_PAHO
 
-#define SYS_MQTT_INDEX0_MQTT_PORT        				8883
+#define SYS_MQTT_INDEX0_MQTT_PORT        				1883
 #define SYS_MQTT_INDEX0_BROKER_NAME        				"test.mosquitto.org"
 #define SYS_MQTT_INDEX0_ENABLE_TLS        				true
 #define SYS_MQTT_INDEX0_RECONNECT        				true
@@ -215,7 +215,7 @@ extern "C" {
 
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			1
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			1
-#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		1
+#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		1   //MR: MCC overwrites with wrong value. set it to "1" by hand
 #define SYS_CONSOLE_PRINT_BUFFER_SIZE        		256
 
 #define SYS_CONSOLE_USB_CDC_READ_WRITE_BUFFER_SIZE 	64
@@ -255,7 +255,7 @@ extern "C" {
 /* Memory Driver Instance 0 RTOS Configurations*/
 #define DRV_MEMORY_STACK_SIZE_IDX0           1024
 #define DRV_MEMORY_PRIORITY_IDX0             1
-#define DRV_MEMORY_RTOS_DELAY_IDX0                         3
+#define DRV_MEMORY_RTOS_DELAY_IDX0                         1
 
 /* SST26 Driver Instance Configuration */
 #define DRV_SST26_INDEX                 0
@@ -293,7 +293,7 @@ extern "C" {
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUESTS         4
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_DELAY    1000
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_TIMEOUT          5000
-#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_BUFF_SIZE    1000
+#define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_BUFF_SIZE    2000
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_DATA_SIZE    100
 
 /******************************************************************************/
@@ -317,7 +317,6 @@ extern "C" {
 #define HAVE_TLS_EXTENSIONS
 #define WOLFSSL_TLS13
 #define HAVE_SUPPORTED_CURVES
-#define WOLFSSL_SMALL_STACK
 #define NO_OLD_TLS
 #define USE_FAST_MATH
 
@@ -338,7 +337,7 @@ extern "C" {
 #define TCPIP_TCP_AUTO_TRANSMIT_TIMEOUT_VAL			40
 #define TCPIP_TCP_WINDOW_UPDATE_TIMEOUT_VAL			200
 #define TCPIP_TCP_MAX_SOCKETS		                10
-#define TCPIP_TCP_TASK_TICK_RATE		        	1
+#define TCPIP_TCP_TASK_TICK_RATE		        	5
 #define TCPIP_TCP_MSL_TIMEOUT		        	    0
 #define TCPIP_TCP_QUIET_TIME		        	    0
 #define TCPIP_TCP_COMMANDS   false
@@ -378,8 +377,8 @@ extern "C" {
 #define TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX0			"0.0.0.0"
 #define TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX0			"full"
 #define TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX0			\
-													TCPIP_NETWORK_CONFIG_DHCP_SERVER_ON |\
-													TCPIP_NETWORK_CONFIG_DNS_SERVER_ON |\
+													TCPIP_NETWORK_CONFIG_DHCP_CLIENT_ON |\
+													TCPIP_NETWORK_CONFIG_DNS_CLIENT_ON |\
 													TCPIP_NETWORK_CONFIG_IP_STATIC
 													
 #define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0			WDRV_PIC32MZW1_MACObject
@@ -405,6 +404,24 @@ extern "C" {
 													TCPIP_NETWORK_CONFIG_IP_STATIC
 													
 #define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX1			DRV_ETHMAC_PIC32MACObject
+
+
+
+/*** telnet Configuration ***/
+#define TCPIP_STACK_USE_TELNET_SERVER
+#define TCPIP_TELNET_MAX_CONNECTIONS    2
+#define TCPIP_TELNET_TASK_TICK_RATE     100
+#define TCPIP_TELNET_SKT_TX_BUFF_SIZE   0
+#define TCPIP_TELNET_SKT_RX_BUFF_SIZE   0
+#define TCPIP_TELNET_LISTEN_PORT        23
+#define TCPIP_TELNET_PRINT_BUFF_SIZE    200
+#define TCPIP_TELNET_LINE_BUFF_SIZE     80
+#define TCPIP_TELNET_USERNAME_SIZE      15
+#define TCPIP_TELNET_CONFIG_FLAGS       \
+                                       TCPIP_TELNET_FLAG_NONE
+
+#define TCPIP_TELNET_OBSOLETE_AUTHENTICATION false
+#define TCPIP_TELNET_AUTHENTICATION_CONN_INFO true
 
 
 
@@ -469,7 +486,7 @@ extern "C" {
 #define TCPIP_DNSS_TTL_TIME						600
 #define TCPIP_DNSS_TASK_PROCESS_RATE			33
 #define TCPIP_DNSS_DELETE_OLD_LEASE				true
-#define TCPIP_DNSS_CONSOLE_CMD           true
+#define TCPIP_DNSS_CONSOLE_CMD           false
 /***Maximum DNS server Cache entries. It is the sum of TCPIP_DNSS_CACHE_PER_IPV4_ADDRESS and TCPIP_DNSS_CACHE_PER_IPV6_ADDRESS.***/
 #define TCPIP_DNSS_CACHE_MAX_SERVER_ENTRIES     (TCPIP_DNSS_CACHE_PER_IPV4_ADDRESS + TCPIP_DNSS_CACHE_PER_IPV6_ADDRESS)
 
@@ -607,7 +624,7 @@ extern "C" {
 #define TCPIP_HTTP_MAX_CONNECTIONS		    		4
 #define TCPIP_HTTP_DEFAULT_FILE		        		"index.htm"
 #define TCPIP_HTTP_DEFAULT_LEN		        		10
-#define TCPIP_HTTP_MAX_DATA_LEN		        		200
+#define TCPIP_HTTP_MAX_DATA_LEN		        		100
 #define TCPIP_HTTP_MIN_CALLBACK_FREE				16
 #define TCPIP_HTTP_SKT_TX_BUFF_SIZE		    		0
 #define TCPIP_HTTP_SKT_RX_BUFF_SIZE		    		0
@@ -705,7 +722,7 @@ extern "C" {
 #define TCPIP_STACK_USE_TCP
 #define TCPIP_STACK_USE_UDP
 
-#define TCPIP_STACK_TICK_RATE		        		1
+#define TCPIP_STACK_TICK_RATE		        		5
 #define TCPIP_STACK_SECURE_PORT_ENTRIES             10
 
 #define TCPIP_STACK_ALIAS_INTERFACE_SUPPORT   false

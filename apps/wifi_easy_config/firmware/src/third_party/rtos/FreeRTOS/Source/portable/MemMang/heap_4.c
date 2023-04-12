@@ -102,7 +102,6 @@ PRIVILEGED_DATA static BlockLink_t xStart, * pxEnd = NULL;
 /* Keeps track of the number of calls to allocate and free memory as well as the
  * number of free bytes remaining, but says nothing about fragmentation. */
 PRIVILEGED_DATA static size_t xFreeBytesRemaining = 0U;
-PRIVILEGED_DATA static size_t Min_xFreeBytesRemaining = configTOTAL_HEAP_SIZE;
 PRIVILEGED_DATA static size_t xMinimumEverFreeBytesRemaining = 0U;
 PRIVILEGED_DATA static size_t xNumberOfSuccessfulAllocations = 0;
 PRIVILEGED_DATA static size_t xNumberOfSuccessfulFrees = 0;
@@ -230,9 +229,6 @@ void * pvPortMalloc( size_t xWantedSize )
                     {
                         mtCOVERAGE_TEST_MARKER();
                     }
-                    
-                    if( xFreeBytesRemaining < Min_xFreeBytesRemaining)
-                        Min_xFreeBytesRemaining = xFreeBytesRemaining;
 
                     /* The block is being returned - it is allocated and owned
                      * by the application and has no "next" block. */
@@ -503,8 +499,6 @@ void vPortGetHeapStats( HeapStats_t * pxHeapStats )
         pxHeapStats->xNumberOfSuccessfulAllocations = xNumberOfSuccessfulAllocations;
         pxHeapStats->xNumberOfSuccessfulFrees = xNumberOfSuccessfulFrees;
         pxHeapStats->xMinimumEverFreeBytesRemaining = xMinimumEverFreeBytesRemaining;
-        pxHeapStats->Min_xFreeBytesRemaining = Min_xFreeBytesRemaining;
-        Min_xFreeBytesRemaining = xFreeBytesRemaining;
     }
     taskEXIT_CRITICAL();
 }

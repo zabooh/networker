@@ -148,7 +148,6 @@ typedef struct xHeapStats
     size_t xMinimumEverFreeBytesRemaining;  /* The minimum amount of total free memory (sum of all free blocks) there has been in the heap since the system booted. */
     size_t xNumberOfSuccessfulAllocations;  /* The number of calls to pvPortMalloc() that have returned a valid memory block. */
     size_t xNumberOfSuccessfulFrees;        /* The number of calls to vPortFree() that has successfully freed a block of memory. */
-    size_t Min_xFreeBytesRemaining;
 } HeapStats_t;
 
 /*

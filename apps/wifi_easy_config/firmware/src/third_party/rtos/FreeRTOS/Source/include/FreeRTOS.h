@@ -55,10 +55,7 @@
 #endif
 /* *INDENT-ON* */
 
-void LOG_Start(void);
-void LOG_log(char *str, uint32_t data_1, uint32_t data_2);
-uint32_t LOG_GetLogSize(void);
-void LOG_GetData(uint32_t ix, char *str);        
+#include "logger.h"
         
 /* Application specific configuration options. */
 #include "FreeRTOSConfig.h"

@@ -836,8 +836,9 @@
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/tcpip_notify.c</itemPath>
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/tcpip_packet.c</itemPath>
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/udp.c</itemPath>
-                <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/sntp.c</itemPath>
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/dnss.c</itemPath>
+                <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/sntp.c</itemPath>
+                <itemPath>../src/config/pic32mz_w1_curiosity_freertos/library/tcpip/src/telnet.c</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -895,6 +896,8 @@
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/command/src/sys_command.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="console" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_uart.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_uart_definitions.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console.c</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_local.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/system/console/src/sys_console_usb_cdc.c</itemPath>
@@ -993,7 +996,6 @@
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/event_groups.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
-        <itemPath>../src/main.c</itemPath>
       </logicalFolder>
       <logicalFolder name="paho.mqtt.embedded-c"
                      displayName="paho.mqtt.embedded-c"
@@ -1135,6 +1137,9 @@
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/msd_app.c</itemPath>
       <itemPath>../src/app_mqtt.c</itemPath>
+      <itemPath>../src/logger.c</itemPath>
+      <itemPath>../src/logger.h</itemPath>
+      <itemPath>../src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -1216,6 +1221,7 @@
       <itemPath>../src/config/pic32mz_w1_curiosity_freertos/harmony-manifest-success.yml</itemPath>
       <itemPath>../src/config/pic32mz_w1_curiosity_freertos/harmony-manifest-failure.yml</itemPath>
       <itemPath>wifi_easy_config_pic32mz_w1_curiosity_freertos.mc3</itemPath>
+      <itemPath>../../certs/gen_all.sh</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -2848,7 +2854,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="100"/>
+        <property key="heap-size" value="500"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>

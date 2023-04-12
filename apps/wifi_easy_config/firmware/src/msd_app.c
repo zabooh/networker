@@ -60,15 +60,6 @@ extern EXCEPT_MSG last_expt_msg;
 extern SYS_MODULE_OBJ g_sSysMqttHandle;
                 
 volatile bool print_delay_started = false;
-
-bool StartFlag = true;
-
-void LOG_Start(void);
-void LOG_Stop(void);
-void LOG_log(char *str, uint32_t data_1, uint32_t data_2);
-uint32_t LOG_GetLogSize(void);
-void LOG_GetData(uint32_t ix, char *str);
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -76,8 +67,6 @@ void LOG_GetData(uint32_t ix, char *str);
 // *****************************************************************************
 #define CMD_MSG(x) (*pCmdIO->pCmdApi->msg)(cmdIoParam, x) 
 #define CMD_PRINTF (*pCmdIO->pCmdApi->print)  // CMD_PRINTF(cmdIoParam, "%d", c );
-
-static void CommandscanWifi(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 
 static void my_pub(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     const void* cmdIoParam = pCmdIO->cmdIoParam;
@@ -100,21 +89,24 @@ static void my_connect(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else if (argc == 2) {
-        strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
+        strcpy((char*)g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
         CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s\n\r",argv[1]);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else if (argc == 3) {
-        strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
-        strcpy(g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
+        strcpy((char*)g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
+        strcpy((char*)g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
         CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s with topic: %s\n\r",argv[1],argv[2]);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else if (argc == 4) {
-        strcpy(g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
-        strcpy(g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
-        g_sSysMqttConfig.sBrokerConfig.tlsEnabled = (bool) atoi(argv[3]);
-        CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s with topic: %s tls =\n\r",argv[1],argv[2],argv[3]);
+        strcpy((char*)g_sSysMqttConfig.sBrokerConfig.brokerName, argv[1]);
+        strcpy((char*) g_sSysMqttConfig.sSubscribeConfig[0].topicName, argv[2]);
+        if (strcmp(argv[3], "1") == 0) {
+            g_sSysMqttConfig.sBrokerConfig.tlsEnabled = 1;
+            g_sSysMqttConfig.sBrokerConfig.serverPort = 8883;
+        }                
+        CMD_PRINTF(cmdIoParam, "Connect to MQTT Broker: %s with topic: %s tls =%s\n\r",argv[1],argv[2],argv[3]);
         APP_MQTT_Initialize();
         mqtt_init_flag = true;
     } else {
@@ -154,10 +146,7 @@ static void CommandHeap(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     CMD_PRINTF(cmdIoParam, "xMinimumEverFreeBytesRemaining  : %d\r\n", xHeapStats.xMinimumEverFreeBytesRemaining);
     CMD_PRINTF(cmdIoParam, "xNumberOfSuccessfulAllocations  : %d\r\n", xHeapStats.xNumberOfSuccessfulAllocations);
     CMD_PRINTF(cmdIoParam, "xNumberOfSuccessfulFrees        : %d\r\n", xHeapStats.xNumberOfSuccessfulFrees);
-    CMD_PRINTF(cmdIoParam, "xNumberOfCurrentAllocations     : %d\r\n", xHeapStats.xNumberOfSuccessfulAllocations - xHeapStats.xNumberOfSuccessfulFrees);
-    CMD_PRINTF(cmdIoParam, "Min_xFreeBytesRemaining         : %d\r\n", xHeapStats.Min_xFreeBytesRemaining);
-
-
+//    (*pCmdIO->pCmdApi->print)(cmdIoParam, "xNumberOfFaileddAllocations     : %d\r\n", xHeapStats.xNumberOfFaileddAllocations);
 }
 
 static void my_dump(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
@@ -201,39 +190,17 @@ static void my_dump(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
 static void my_log(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     const void* cmdIoParam = pCmdIO->cmdIoParam;    
     uint32_t ix;
-    char str[64];    
+    char str[128];    
     int cc;
     cc = LOG_GetLogSize();
 
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "Log Size:%d\n\r",cc);
     for(ix=0;ix<cc;ix++){
         LOG_GetData(ix,str);
         (*pCmdIO->pCmdApi->print)(cmdIoParam, "%s\n\r",str);
+        vTaskDelay(50 / portTICK_PERIOD_MS);
     }    
 }
-
-static void my_crash(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
-
-    volatile uint8_t data[10000];    
-    volatile uint8_t *ptr;
-    int ix;
-    
-    ptr = data;
-    for(ix=0;ix<10000;ix++){
-        *ptr++ = 0xAB;
-    }
-    
-}
-
-void StartNetworkApplication(void);
-
-static void my_start(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
-    const void* cmdIoParam = pCmdIO->cmdIoParam;    
-
-    (*pCmdIO->pCmdApi->print)(cmdIoParam, "Start Network and Application\n\r");
-    //StartNetworkApplication();
-    StartFlag = true;
-}
-
 
 const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
     {"pub", (SYS_CMD_FNC) my_pub, ": Publish MQTT Message: pub msg "},
@@ -241,19 +208,10 @@ const SYS_CMD_DESCRIPTOR msd_cmd_tbl[] = {
     {"con", (SYS_CMD_FNC) my_connect, ": Connect to MQTT Broker: con [host] [topic] [tls enabled]"},
     {"dis", (SYS_CMD_FNC) my_diconnect, ": Disconnect from MQTT Broker "},
     {"heap",(SYS_CMD_FNC) CommandHeap, ": heap statistics"},    
-    {"scan",(SYS_CMD_FNC) CommandscanWifi, ": scan wifi"},    
     {"log", (SYS_CMD_FNC) my_log, ": print log data"}, 
-    {"dump",(SYS_CMD_FNC) my_dump,    ": dump memory"},    
-    {"cra", (SYS_CMD_FNC) my_crash,    ": force crash"},    
-    {"sta", (SYS_CMD_FNC) my_start,    ": Start Network and Application"},    
+    {"dump",(SYS_CMD_FNC) my_dump,    ": dump memory"},   
 };
 
-
-
-
-
-    
-    
 static bool MSD_CMDInit(void) {
     bool ret = false;
 
@@ -387,8 +345,6 @@ void MSD_APP_Tasks(void) {
             switch (msd_appData.state) {
                 case MSD_APP_STATE_INIT: SYS_CONSOLE_PRINT("MSD_APP_STATE_INIT\r\n");
                     break;
-                case MSD_APP_STATE_START: SYS_CONSOLE_PRINT("MSD_APP_STATE_START\r\n");
-                    break;                
                 case MSD_APP_STATE_CHECK_SWITCH: SYS_CONSOLE_PRINT("MSD_APP_STATE_CHECK_SWITCH\r\n");
                     break;
                 case MSD_APP_STATE_CHECK_FS: SYS_CONSOLE_PRINT("MSD_APP_STATE_CHECK_FS\r\n");
@@ -416,7 +372,7 @@ void MSD_APP_Tasks(void) {
         case MSD_APP_STATE_INIT:
         {
             bool appInitialized = true;
-
+            SYS_WSS_RESULT result;
             vTaskDelay(2000 / portTICK_PERIOD_MS);
             print_delay_started = true;
             if (last_expt_msg.magic == MAGIC_CODE) {
@@ -435,28 +391,19 @@ void MSD_APP_Tasks(void) {
                 SYS_CONSOLE_PRINT("\n\r!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
                 last_expt_msg.magic = 0;
             }
-            
+
+            result = SYS_WSS_register_callback(wss_user_callback, 0);
+            if (SYS_WSS_SUCCESS == result) {
+                SYS_CONSOLE_PRINT("Registered call back with WSS service successfully\r\n");
+            }
 
             if (appInitialized) {
                 SYS_CONSOLE_PRINT("MSD_APP_Tasks Started\r\n");
-                msd_appData.state = MSD_APP_STATE_START;
-            }
-            break;
-        }
-
-        case MSD_APP_STATE_START:
-        {
-            SYS_WSS_RESULT result;
-            if (StartFlag == true) {
-                result = SYS_WSS_register_callback(wss_user_callback, 0);
-                if (SYS_WSS_SUCCESS == result) {
-                    SYS_CONSOLE_PRINT("Registered call back with WSS service successfully\r\n");
-                }
                 msd_appData.state = MSD_APP_STATE_MOUNT_FS;
             }
             break;
         }
-            
+
         case MSD_APP_STATE_MOUNT_FS:
             if (checkFSMount()) {
                 msd_appData.state = MSD_APP_STATE_CHECK_FS;
@@ -474,9 +421,7 @@ void MSD_APP_Tasks(void) {
                SYS_CONSOLE_PRINT("FS:Directory open is successful\r\n");               
             }
             
-            //LOG_Start();
             do {                
-                //LOG_log("Read Dir",0);
                 if (SYS_FS_DirRead(dirHandle, &stat) == SYS_FS_RES_FAILURE) {
                     SYS_CONSOLE_PRINT("FS:Directory read failed\r\n");
                 } else {
@@ -484,8 +429,7 @@ void MSD_APP_Tasks(void) {
                     SYS_CONSOLE_PRINT("FS:%s\n\r", stat.fname);             
                 }                
             } while (1);
-            //LOG_Stop();
-                    
+                   
             fileHandle = SYS_FS_FileOpen("/mnt/mchpSite1/index.htm", (SYS_FS_FILE_OPEN_READ));
             if (fileHandle != SYS_FS_HANDLE_INVALID) {
                 SYS_CONSOLE_PRINT("FS:File \"mnt/mchpSite1/index.htm\" open succeeded\r\n");
@@ -709,78 +653,6 @@ bool ParseData(uint8_t buffer[], int length) {
         }
     }
     return error;
-}
-
-#include "config/pic32mz_w1_curiosity_freertos/driver/wifi/pic32mzw1/include/wdrv_pic32mzw_bssfind.h"
-
-
-#define SYS_WIFI_MAX_SCAN_AP    16
-WDRV_PIC32MZW_BSS_INFO m_asScanBssInfo[SYS_WIFI_MAX_SCAN_AP];
-WDRV_PIC32MZW_BSS_INFO m_sTempScanBssInfo;
-int8_t m_u8BssCount = -2;
-uint8_t m_scanResultIsValid = 0;
-
-SYS_WIFI_SCAN_CONFIG m_scanConfig;
-
-bool MSD_APP_ScanHandler(DRV_HANDLE handle, uint8_t index, uint8_t ofTotal, WDRV_PIC32MZW_BSS_INFO *pBSSInfo) {
-    if (0 == ofTotal) {
-        SYS_CONSOLE_MESSAGE("No AP Found... Rescan\r\n");
-    }
-    else {
-        m_u8BssCount = 0;
-        if (index == 1) {
-            memset(m_asScanBssInfo, 0, sizeof (m_asScanBssInfo));
-            SYS_CONSOLE_PRINT("Scan Results: # %02d\r\n", ofTotal);
-        }
-        memcpy(&m_asScanBssInfo[index - 1], pBSSInfo, sizeof (WDRV_PIC32MZW_BSS_INFO));
-        SYS_CONSOLE_PRINT("[%02d] %0d %02x:%02x:%02x:%02x:%02x:%02x Sec:%02x %s\n\r", index, pBSSInfo->rssi,
-                pBSSInfo->ctx.bssid.addr[0], pBSSInfo->ctx.bssid.addr[1], pBSSInfo->ctx.bssid.addr[2],
-                pBSSInfo->ctx.bssid.addr[3], pBSSInfo->ctx.bssid.addr[4], pBSSInfo->ctx.bssid.addr[5],pBSSInfo->secCapabilities, pBSSInfo->ctx.ssid.name);
-        if (ofTotal == index) {
-            m_u8BssCount = ofTotal;
-            memcpy(&m_sTempScanBssInfo, &m_asScanBssInfo[0], sizeof (m_sTempScanBssInfo));
-            m_scanResultIsValid = 1;
-        }
-    }
-    // return true to receive further results; otherwise return false if desired
-    return true;
-}
-
-static void CommandscanWifi(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
-    const void* cmdIoParam = pCmdIO->cmdIoParam;
-    /*
-     * Display pre-scan results if pre-scan results are available,
-     * otherwise initiate a new scan.
-     */
-    SYS_WIFI_RESULT res;
-    SYS_WIFI_STATUS wifiStatus;
-    
-
-    wifiStatus = SYS_WIFI_GetStatus(sysObj.syswifi);
-    if (wifiStatus > SYS_WIFI_STATUS_WDRV_OPEN_REQ) {
-        memset(&m_scanConfig, 0, sizeof (m_scanConfig));
-        res = SYS_WIFI_CtrlMsg(sysObj.syswifi, SYS_WIFI_GETSCANCONFIG, &m_scanConfig, sizeof (SYS_WIFI_SCAN_CONFIG));
-        if (SYS_WIFI_SUCCESS == res) {
-            //Received the wifiSrvcScanConfig data
-            char myAPlist[] = ""; // e.g. "myAP*OPENAP*Hello World!"
-            char delimiter = '*';
-            m_scanConfig.channel = 0;
-            m_scanConfig.mode = SYS_WIFI_SCAN_MODE_ACTIVE;
-            m_scanConfig.pSsidList = myAPlist;
-            m_scanConfig.delimChar = delimiter;
-            m_scanConfig.pNotifyCallback = (void *) MSD_APP_ScanHandler;
-            m_scanConfig.matchMode = WDRV_PIC32MZW_SCAN_MATCH_MODE_FIND_ALL;
-
-            CMD_PRINTF(cmdIoParam, "\r\nStarting Custom Scan ...\r\n");
-
-            res = SYS_WIFI_CtrlMsg(sysObj.syswifi, SYS_WIFI_SCANREQ, &m_scanConfig, sizeof (SYS_WIFI_SCAN_CONFIG));
-            if (SYS_WIFI_SUCCESS != res) {
-                CMD_PRINTF(cmdIoParam, "Error Starting scan: %d\r\n", res);
-            }
-        }
-
-    }
-
 }
 
 void* APP_Calloc(size_t nElems, size_t elemSize) {

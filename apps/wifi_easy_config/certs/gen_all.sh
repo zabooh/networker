@@ -45,17 +45,16 @@
 #   mosquitto_pub -h 192.168.0.227 -t flat/bulb --cafile /etc/mosquitto/ca_certificates/ca.crt -m "Hello World!" -p 8883 -d
 #   mosquitto_sub -h 192.168.0.227 -t flat/bulb --cafile /etc/mosquitto/ca_certificates/ca.crt -p 8883 -d		
 #	
-#   wget http://192.168.0.32/check/assets/bootstrap/css/bootstrap.min.css
-#
 #   sysmqtt get info
-#   defnet set eth0
+#	defnet set eth
+#   con test.mosquitto.org flat/bulb 1	
 #   con 192.168.0.227 flat/bulb 1
-#   con test.mosquitto.org flat/bulb 1
 #   sub flat/bulb
 #   pub Hello_World
 #
-#   
-#   STA:   wifiprov set 0 1 GEN 0 1 4 MyWorld x3vbrjzW8hrd
+#   (ip.src == 192.168.0.227 && ip.dst == 192.168.0.32)  || (ip.src == 192.168.0.32 && ip.dst == 192.168.0.227) 
+#
+#   STA:   wifiprov set 0 1 GEN 0 1 3 MyWorld x3vbrjzW8hrd
 #   AP:    wifiprov set 1 1 GEN 1 1 1 DEMO_SOFTAP password
 #
 #                                   authtype (1-Open 2-WEP 3-Mixed mode(WPA/WPA2) 4-WPA2 5-Mixed mode 6-WPA3)

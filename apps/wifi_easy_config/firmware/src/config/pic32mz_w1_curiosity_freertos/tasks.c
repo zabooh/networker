@@ -53,11 +53,6 @@
 #include "configuration.h"
 #include "definitions.h"
 
-void LOG_Start(void);
-void LOG_Stop(void);
-void LOG_log(char *str, uint32_t data_1, uint32_t data_2);
-uint32_t LOG_GetLogSize(void);
-void LOG_GetData(uint32_t ix, char *str);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -93,7 +88,6 @@ void _MSD_APP_Tasks(  void *pvParameters  )
     while(1)
     {
         MSD_APP_Tasks();
-        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -143,7 +137,6 @@ void _DRV_BA414E_Tasks(  void *pvParameters  )
     while(1)
     {
         DRV_BA414E_Tasks(sysObj.ba414e);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }
 
@@ -151,7 +144,7 @@ void _USB_DEVICE_Tasks(  void *pvParameters  )
 {
     while(1)
     {
-        /* USB Device layer tasks routine */
+                /* USB Device layer tasks routine */
         USB_DEVICE_Tasks(sysObj.usbDevObject0);
         vTaskDelay(1 / portTICK_PERIOD_MS);
     }
@@ -182,7 +175,7 @@ void _SYS_CMD_Tasks(  void *pvParameters  )
     while(1)
     {
         SYS_CMD_Tasks();
-        vTaskDelay(1 / portTICK_PERIOD_MS);
+        vTaskDelay(10 / portTICK_PERIOD_MS);
     }
 }
 
@@ -199,8 +192,8 @@ static void _WDRV_PIC32MZW1_Tasks(  void *pvParameters  )
 
         if ((SYS_STATUS_ERROR == status) || (SYS_STATUS_UNINITIALIZED == status))
         {
-            vTaskDelay(1 / portTICK_PERIOD_MS);
-    }
+            vTaskDelay(50 / portTICK_PERIOD_MS);
+        }
     }
 }
 
@@ -209,7 +202,7 @@ void _SYS_WIFI_Task(  void *pvParameters  )
     while(1)
     {
         SYS_WIFI_Tasks(sysObj.syswifi);
-        vTaskDelay(1 / portTICK_PERIOD_MS);
+        vTaskDelay(4 / portTICK_PERIOD_MS);
     }
 }
 
@@ -235,7 +228,7 @@ void SYS_Tasks ( void )
     LOG_Start();
     
     /* Maintain system services */
-    xTaskCreate( _SYS_CONSOLE_0_Tasks,
+        xTaskCreate( _SYS_CONSOLE_0_Tasks,
         "SYS_CONSOLE_0_TASKS",
         SYS_CONSOLE_RTOS_STACK_SIZE_IDX0,
         (void*)NULL,
@@ -260,9 +253,9 @@ void SYS_Tasks ( void )
         SYS_CMD_RTOS_TASK_PRIORITY,
         (TaskHandle_t*)NULL
     );
-    
-    
-    
+
+
+
 
     /* Maintain Device Drivers */
         xTaskCreate( _DRV_MIIM_Task,
@@ -362,7 +355,7 @@ void SYS_Tasks ( void )
                 NULL,
                 1,
                 &xAPP_Tasks);
-    
+
     /* Create OS Thread for MSD_APP_Tasks. */
     xTaskCreate((TaskFunction_t) _MSD_APP_Tasks,
                 "MSD_APP_Tasks",
@@ -375,6 +368,7 @@ void SYS_Tasks ( void )
 
 
     /* Start RTOS Scheduler. */
+    
      /**********************************************************************
      * Create all Threads for APP Tasks before starting FreeRTOS Scheduler *
      ***********************************************************************/
