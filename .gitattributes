@@ -17,3 +17,5 @@
 *.bin binary
 *.a binary
 *.bsdesign binary
+*.gz binary
+
