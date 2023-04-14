@@ -49,6 +49,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 // *****************************************************************************
 #include "system/mqtt/sys_mqtt.h"
+#include"config/pic32mz_w1_curiosity_freertos/library/../peripheral/adchs/plib_adchs.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Declarations
@@ -77,6 +78,9 @@ char *sni_host_name;
 // *****************************************************************************
 // *****************************************************************************
 
+/*Temperature Sensor/ADC Variables*/
+uint16_t u16adcValue = 0;
+float fltTemp = 0;
 
 int32_t APP_MQTT_PublishMsg(char *message) {
 	SYS_MQTT_PublishTopicCfg	sMqttTopicCfg;
@@ -87,6 +91,12 @@ int32_t APP_MQTT_PublishMsg(char *message) {
 	sMqttTopicCfg.retain = false;
 	sMqttTopicCfg.qos = 1;    
     
+    /*Read ADC Channel*/
+    ADCHS_ChannelConversionStart(ADCHS_CH15);
+    u16adcValue = ADCHS_ChannelResultGet(ADCHS_CH15);
+    fltTemp = (float) ((u16adcValue / 4096.0 * 3.3 * 100.0) - 60.0);
+    sprintf(message, "Temperature: %2.1f\r\n",  fltTemp); 
+
 	retVal = SYS_MQTT_Publish(g_sSysMqttHandle,
 			&sMqttTopicCfg,
 			message,

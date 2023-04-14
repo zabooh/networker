@@ -368,6 +368,10 @@
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/osal/osal_freertos.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="adchs" displayName="adchs" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/adchs/plib_adchs_common.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/adchs/plib_adchs.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f6" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/cache/plib_cache.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/cache/plib_cache_pic32mz.h</itemPath>
@@ -855,6 +859,9 @@
             <itemPath>../src/config/pic32mz_w1_curiosity_freertos/osal/osal_freertos.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f5" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="adchs" displayName="adchs" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/adchs/plib_adchs.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f6" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/cache/plib_cache_local.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/cache/plib_cache.c</itemPath>

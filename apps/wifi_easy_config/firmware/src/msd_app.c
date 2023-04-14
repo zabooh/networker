@@ -538,7 +538,8 @@ void MSD_APP_Tasks(void) {
 }
 
 #include "config/pic32mz_w1_curiosity_freertos/system/wifiprov/sys_wifiprov_json.h"
-
+volatile uint8_t wssSocketIndex = 0;
+uint16_t Temperature = 25;
 bool ParseData(uint8_t buffer[], int length) {
     struct json_obj root, child; //, sub;
     bool error = false;
@@ -565,6 +566,12 @@ bool ParseData(uint8_t buffer[], int length) {
                 SYS_CONSOLE_PRINT("JSON: Found var3: %d type:%d\n\r", child.value.i,child.type);
             } 
 
+             if (!json_find(&root, "Control", &child)) {
+                SYS_CONSOLE_PRINT("JSON: Found Control: %s type:%d\n\r", child.value.s,child.type);
+                char str[50];
+                sprintf(str,"{\"Temperature\":%d}",Temperature);
+                SYS_WSS_sendMessage(1, SYS_WSS_FRAME_TEXT,(uint8_t*)str,strlen(str), wssSocketIndex);
+            } 
             //            if (!json_find(&root, "variable_set", &child)) {
             //                child.value.b;
             //            }

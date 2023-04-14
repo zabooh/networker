@@ -36,7 +36,7 @@
 #
 # - if for any reason the LINE FEED (0x0A) is replaced by CRLF (0x0D 0x0A), 
 #   then the following line deletes the 0x0D
-#       awk 'BEGIN {RS="\r\n";ORS="\n"} {print $0}' gen_all.sh > gen_all_.sh
+#       awk 'BEGIN {RS="\r\n";ORS="\n"} {prnt $0}' gen_all.sh > gen_all_.sh
 #
 ################################################################################
 #
@@ -53,7 +53,7 @@
 #   pub Hello_World
 #
 #   (ip.src == 192.168.0.227 && ip.dst == 192.168.0.32)  || (ip.src == 192.168.0.32 && ip.dst == 192.168.0.227) 
-#
+#   (ip.src == 192.168.1.1 && ip.dst == 192.168.1.113)  || (ip.src == 192.168.1.113 && ip.dst == 192.168.1.1) 
 #   STA:   wifiprov set 0 1 GEN 0 1 3 MyWorld x3vbrjzW8hrd
 #   AP:    wifiprov set 1 1 GEN 1 1 1 DEMO_SOFTAP password
 #
@@ -76,27 +76,27 @@
 
 
 ## Control Variables
-remove_old_files=0
-generate_CA_Certs=0
-generate_Server_Certs=0
-generate_Client_Certs=0
-copy_files=0
+remove_old_files=1
+generate_CA_Certs=1
+generate_Server_Certs=1
+generate_Client_Certs=1
+copy_files=1
 convert_files=1
 
 # === Certificate Authority Setup ===
-ca_common_name="192.168.0.227"
+ca_common_name="192.168.1.113"
 ca_org_name="Microchip"
 ca_country="DE"
 ca_st="Some-State"
 ca_pass="ca_passphrase"
 
 # === Server Setup ===
-sv_common_name="192.168.0.227"
+sv_common_name="192.168.1.113"
 sv_org_name="Microchip"
 sv_pass="sv_passphrase"
 
 # === Client Setup ===
-cl_common_name="192.168.0.227"
+cl_common_name="192.168.1.1"
 cl_org_name="Microchip"
 cl_pass="cl_passphrase"
 
@@ -162,10 +162,10 @@ fi
 if [ $copy_files -eq 1 ]
 then
 	echo === copy files to mosquitto folders ===
-	cp ca.crt /etc/mosquitto/ca_certificates/
-	cp server.crt /etc/mosquitto/certs/
-	cp server.key /etc/mosquitto/certs/
-	cp mosquitto.conf /etc/mosquitto/
+	cp ca.crt /home/eddy103/certificates/
+	cp server.crt /home/eddy103/certificates/
+	cp server.key /home/eddy103/certificates/
+	#cp mosquitto.conf /etc/mosquitto/
 fi 
 
 

@@ -83,10 +83,11 @@ void wss_user_callback(SYS_WSS_EVENTS event, void *data, int32_t clientIndex, vo
                 SYS_CONSOLE_PRINT("%c", ((SYS_WSS_RXDATA*) data)->data[i]);
             }
             SYS_CONSOLE_PRINT("\r\n");
-            
+            extern volatile uint8_t wssSocketIndex;
+            wssSocketIndex = clientIndex;
             ParseData( ((SYS_WSS_RXDATA *)data)->data, ((SYS_WSS_RXDATA *)data)->datalen );
             //echo server
-            SYS_WSS_sendMessage(1, SYS_WSS_FRAME_TEXT, ((SYS_WSS_RXDATA*) data)->data, ((SYS_WSS_RXDATA *) data)->datalen, clientIndex);
+//            SYS_WSS_sendMessage(1, SYS_WSS_FRAME_TEXT, ((SYS_WSS_RXDATA*) data)->data, ((SYS_WSS_RXDATA *) data)->datalen, clientIndex);
             break;
         }
         case SYS_WSS_EVENT_CLIENT_CLOSING:
