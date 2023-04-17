@@ -85,8 +85,10 @@
 #include "peripheral/uart/plib_uart3.h"
 #include "usb/usb_device_cdc.h"
 #include "usb/usb_cdc.h"
+#include "peripheral/adchs/plib_adchs.h"
 #include "system/mqtt/sys_mqtt.h"
 #include "peripheral/uart/plib_uart1.h"
+#include "peripheral/tmr/plib_tmr3.h"
 #include "driver/usb/usbfs/drv_usbfs.h"
 #include "library/tcpip/tcpip.h"
 #include "system/sys_time_h2_adapter.h"
@@ -107,7 +109,7 @@
 #include "task.h"
 #include "app.h"
 #include "msd_app.h"
-#include "logger.h"
+#include "sensor_app.h"
 
 
 // DOM-IGNORE-BEGIN

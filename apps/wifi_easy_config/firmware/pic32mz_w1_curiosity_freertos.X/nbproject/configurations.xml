@@ -397,6 +397,10 @@
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/spi/spi_master/plib_spi1_master.h</itemPath>
               </logicalFolder>
             </logicalFolder>
+            <logicalFolder name="tmr" displayName="tmr" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/tmr/plib_tmr_common.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/tmr/plib_tmr3.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f3" displayName="uart" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/uart/plib_uart_common.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/uart/plib_uart1.h</itemPath>
@@ -723,6 +727,7 @@
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/msd_app.h</itemPath>
       <itemPath>../src/app_mqtt.h</itemPath>
+      <itemPath>../src/sensor_app.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -886,6 +891,9 @@
               <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
                 <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/spi/spi_master/plib_spi1_master.c</itemPath>
               </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="tmr" displayName="tmr" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/tmr/plib_tmr3.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="uart" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity_freertos/peripheral/uart/plib_uart1.c</itemPath>
@@ -1147,6 +1155,7 @@
       <itemPath>../src/logger.c</itemPath>
       <itemPath>../src/logger.h</itemPath>
       <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/sensor_app.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

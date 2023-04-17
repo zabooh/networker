@@ -90,6 +90,17 @@ void _MSD_APP_Tasks(  void *pvParameters  )
         MSD_APP_Tasks();
     }
 }
+/* Handle for the SENSOR_APP_Tasks. */
+TaskHandle_t xSENSOR_APP_Tasks;
+
+void _SENSOR_APP_Tasks(  void *pvParameters  )
+{   
+    while(1)
+    {
+        SENSOR_APP_Tasks();
+        vTaskDelay(50 / portTICK_PERIOD_MS);
+    }
+}
 
 
 void _DRV_MIIM_Task(  void *pvParameters  )
@@ -363,6 +374,14 @@ void SYS_Tasks ( void )
                 NULL,
                 1,
                 &xMSD_APP_Tasks);
+
+    /* Create OS Thread for SENSOR_APP_Tasks. */
+    xTaskCreate((TaskFunction_t) _SENSOR_APP_Tasks,
+                "SENSOR_APP_Tasks",
+                1024,
+                NULL,
+                1,
+                &xSENSOR_APP_Tasks);
 
 
 

@@ -49,7 +49,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 // *****************************************************************************
 #include "system/mqtt/sys_mqtt.h"
-#include"config/pic32mz_w1_curiosity_freertos/library/../peripheral/adchs/plib_adchs.h"
+#include "app_mqtt.h"
+#include "sensor_app.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Declarations
@@ -78,33 +79,30 @@ char *sni_host_name;
 // *****************************************************************************
 // *****************************************************************************
 
-/*Temperature Sensor/ADC Variables*/
-uint16_t u16adcValue = 0;
-float fltTemp = 0;
-
 int32_t APP_MQTT_PublishMsg(char *message) {
-	SYS_MQTT_PublishTopicCfg	sMqttTopicCfg;
-	int32_t retVal = SYS_MQTT_FAILURE;
 
-	strcpy(sMqttTopicCfg.topicName, g_sSysMqttConfig.sSubscribeConfig[0].topicName);
-	sMqttTopicCfg.topicLength = strlen(sMqttTopicCfg.topicName);
-	sMqttTopicCfg.retain = false;
-	sMqttTopicCfg.qos = 1;    
-    
-    /*Read ADC Channel*/
-    ADCHS_ChannelConversionStart(ADCHS_CH15);
-    u16adcValue = ADCHS_ChannelResultGet(ADCHS_CH15);
-    fltTemp = (float) ((u16adcValue / 4096.0 * 3.3 * 100.0) - 60.0);
-    sprintf(message, "Temperature: %2.1f\r\n",  fltTemp); 
+    SYS_MQTT_PublishTopicCfg sMqttTopicCfg;
+    int32_t retVal = SYS_MQTT_FAILURE;
 
-	retVal = SYS_MQTT_Publish(g_sSysMqttHandle,
-			&sMqttTopicCfg,
-			message,
-			strlen(message));
-	if (retVal != SYS_MQTT_SUCCESS) {
-		SYS_CONSOLE_PRINT("\nPublish_PeriodicMsg(): Failed (%d)\r\n", retVal);
-	}
-	return retVal;
+    static float fltTemp = 0.0;
+    strcpy(sMqttTopicCfg.topicName, g_sSysMqttConfig.sSubscribeConfig[0].topicName);
+    sMqttTopicCfg.topicLength = strlen(sMqttTopicCfg.topicName);
+    sMqttTopicCfg.retain = false;
+    sMqttTopicCfg.qos = 1;
+
+    /*Receive the shared temperature data from the queue */
+    xQueueReceive(queueHandle, &fltTemp, portMAX_DELAY);
+    /* Format temperature value and switch status to message string */
+    sprintf(message, "Temperature: %.1f, Button: %d", fltTemp, sensor_appData.bSwitchStatus);
+
+    retVal = SYS_MQTT_Publish(g_sSysMqttHandle,
+            &sMqttTopicCfg,
+            message,
+            strlen(message));
+    if (retVal != SYS_MQTT_SUCCESS) {
+        SYS_CONSOLE_PRINT("\nPublish_PeriodicMsg(): Failed (%d)\r\n", retVal);
+    }
+    return retVal;
 }
 
 
@@ -120,18 +118,18 @@ int32_t APP_MQTT_PublishMsg(char *message) {
 
   Remarks:
     Callback function registered with the SYS_MQTT_Connect() API. For more details 
-	check https://microchip-mplab-harmony.github.io/wireless/system/mqtt/docs/interface.html
+    check https://microchip-mplab-harmony.github.io/wireless/system/mqtt/docs/interface.html
  */
 int32_t MqttCallback(SYS_MQTT_EVENT_TYPE eEventType, void *data, uint16_t len, void* cookie) {
     switch (eEventType) {
         case SYS_MQTT_EVENT_MSG_RCVD:
         {
-			/* Message received on Subscribed Topic */
-            SYS_MQTT_PublishConfig	*psMsg = (SYS_MQTT_PublishConfig	*)data;
+            /* Message received on Subscribed Topic */
+            SYS_MQTT_PublishConfig *psMsg = (SYS_MQTT_PublishConfig *) data;
             psMsg->message[psMsg->messageLength] = 0;
             psMsg->topicName[psMsg->topicLength] = 0;
-            SYS_CONSOLE_PRINT("\nMqttCallback(): Msg received on Topic: %s ; Msg: %s\r\n", 
-                psMsg->topicName, psMsg->message);
+            SYS_CONSOLE_PRINT("\nMqttCallback(): Msg received on Topic: %s ; Msg: %s\r\n",
+                    psMsg->topicName, psMsg->message);
         }
             break;
 
@@ -142,50 +140,51 @@ int32_t MqttCallback(SYS_MQTT_EVENT_TYPE eEventType, void *data, uint16_t len, v
 
         case SYS_MQTT_EVENT_MSG_CONNECTED:
         {
-			SYS_CONSOLE_PRINT("\nMqttCallback(): Connected\r\n");
+            SYS_CONSOLE_PRINT("\nMqttCallback(): Connected\r\n");
+
         }
             break;
 
         case SYS_MQTT_EVENT_MSG_SUBSCRIBED:
         {
-            SYS_MQTT_SubscribeConfig	*psMqttSubCfg = (SYS_MQTT_SubscribeConfig	*)data;
+            SYS_MQTT_SubscribeConfig *psMqttSubCfg = (SYS_MQTT_SubscribeConfig *) data;
             SYS_CONSOLE_PRINT("\nMqttCallback(): Subscribed to Topic '%s'\r\n", psMqttSubCfg->topicName);
         }
             break;
 
         case SYS_MQTT_EVENT_MSG_UNSUBSCRIBED:
         {
-			/* MQTT Topic Unsubscribed; Now the Client will not receive any messages for this Topic */
+            /* MQTT Topic Unsubscribed; Now the Client will not receive any messages for this Topic */
         }
             break;
 
         case SYS_MQTT_EVENT_MSG_PUBLISHED:
         {
-			/* MQTT Client Msg Published */
+            /* MQTT Client Msg Published */
         }
             break;
 
         case SYS_MQTT_EVENT_MSG_CONNACK_TO:
         {
-			/* MQTT Client ConnAck TimeOut; User will need to reconnect again */
+            /* MQTT Client ConnAck TimeOut; User will need to reconnect again */
         }
             break;
 
         case SYS_MQTT_EVENT_MSG_SUBACK_TO:
         {
-			/* MQTT Client SubAck TimeOut; User will need to subscribe again */
+            /* MQTT Client SubAck TimeOut; User will need to subscribe again */
         }
             break;
 
         case SYS_MQTT_EVENT_MSG_PUBACK_TO:
         {
-			/* MQTT Client PubAck TimeOut; User will need to publish again */
+            /* MQTT Client PubAck TimeOut; User will need to publish again */
         }
             break;
 
         case SYS_MQTT_EVENT_MSG_UNSUBACK_TO:
         {
-			/* MQTT Client UnSubAck TimeOut; User will need to Unsubscribe again */
+            /* MQTT Client UnSubAck TimeOut; User will need to Unsubscribe again */
         }
             break;
 
@@ -202,13 +201,13 @@ int32_t MqttCallback(SYS_MQTT_EVENT_TYPE eEventType, void *data, uint16_t len, v
  */
 void APP_MQTT_Initialize(void) {
 
-	/*
-	** For more details check https://microchip-mplab-harmony.github.io/wireless/system/mqtt/docs/interface.html
-	*/
+    /*
+     ** For more details check https://microchip-mplab-harmony.github.io/wireless/system/mqtt/docs/interface.html
+     */
 #ifdef APP_CFG_WITH_MQTT_API
 
-	/* In case the user does not want to use the configuration given in the MHC */
-	
+    /* In case the user does not want to use the configuration given in the MHC */
+
     SYS_MQTT_Config *psMqttCfg;
 
     memset(&g_sTmpSysMqttCfg, 0, sizeof (g_sTmpSysMqttCfg));
@@ -219,12 +218,12 @@ void APP_MQTT_Initialize(void) {
     psMqttCfg->sBrokerConfig.serverPort = 1883;
     psMqttCfg->sBrokerConfig.cleanSession = false;
     psMqttCfg->sBrokerConfig.keepAliveInterval = 60;
-    psMqttCfg->subscribeCount = 0; 
+    psMqttCfg->subscribeCount = 0;
     g_sSysMqttHandle = SYS_MQTT_Connect(&g_sTmpSysMqttCfg, MqttCallback, NULL);
 #else    
     g_sSysMqttHandle = SYS_MQTT_Connect(NULL, /* NULL value means that the MHC configuration should be used for this connection */
-										MqttCallback, 
-										NULL);
+            MqttCallback,
+            NULL);
 #endif    
 }
 
@@ -252,7 +251,6 @@ int32_t APP_MQTT_GetStatus(void *p) {
     return SYS_MQTT_GetStatus(g_sSysMqttHandle);
 }
 
- 
 void APP_MQTT_Disconnect(void) {
 
     SYS_MQTT_Disconnect(g_sSysMqttHandle);

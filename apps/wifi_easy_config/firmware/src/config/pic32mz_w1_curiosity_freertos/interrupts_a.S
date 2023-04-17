@@ -70,6 +70,24 @@ IntVectorCORE_TIMER_Handler:
     nop
     portRESTORE_CONTEXT
     .end   IntVectorCORE_TIMER_Handler
+    .extern  TIMER_3_Handler
+
+    .section   .vector_14,code, keep
+    .equ     __vector_dispatch_14, IntVectorTIMER_3_Handler
+    .global  __vector_dispatch_14
+    .set     nomicromips
+    .set     noreorder
+    .set     nomips16
+    .set     noat
+    .ent  IntVectorTIMER_3_Handler
+
+IntVectorTIMER_3_Handler:
+    portSAVE_CONTEXT
+    la    s6,  TIMER_3_Handler
+    jalr  s6
+    nop
+    portRESTORE_CONTEXT
+    .end   IntVectorTIMER_3_Handler
     .extern  FLASH_CONTROL_Handler
 
     .section   .vector_30,code, keep
@@ -250,6 +268,24 @@ IntVectorRFTM0_Handler:
     nop
     portRESTORE_CONTEXT
     .end   IntVectorRFTM0_Handler
+    .extern  ADC_DATA15_Handler
+
+    .section   .vector_121,code, keep
+    .equ     __vector_dispatch_121, IntVectorADC_DATA15_Handler
+    .global  __vector_dispatch_121
+    .set     nomicromips
+    .set     noreorder
+    .set     nomips16
+    .set     noat
+    .ent  IntVectorADC_DATA15_Handler
+
+IntVectorADC_DATA15_Handler:
+    portSAVE_CONTEXT
+    la    s6,  ADC_DATA15_Handler
+    jalr  s6
+    nop
+    portRESTORE_CONTEXT
+    .end   IntVectorADC_DATA15_Handler
     .extern  ETHERNET_Handler
 
     .section   .vector_165,code, keep

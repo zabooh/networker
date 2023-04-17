@@ -961,7 +961,11 @@ void SYS_Initialize ( void* data )
 
 	UART3_Initialize();
 
+    ADCHS_Initialize();
+
 	UART1_Initialize();
+
+    TMR3_Initialize();
 
 
 
@@ -1023,6 +1027,7 @@ SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
     APP_Initialize();
     MSD_APP_Initialize();
+    SENSOR_APP_Initialize();
 
 
     EVIC_Initialize();
