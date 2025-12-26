@@ -15,6 +15,12 @@ MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded
 
 This repository contains the MPLAB® Harmony 3 Wireless application example for PIC32MZ W1 family
 
+## 📚 Documentation
+
+**Detailed Project Analysis:**
+- 🇩🇪 [**Projektanalyse (Deutsch)**](docs/PROJEKTANALYSE.md) - Umfassende Analyse aller Komponenten und deren Zusammenhänge
+- 🇬🇧 [**Project Analysis (English)**](docs/PROJECT_ANALYSIS.md) - Comprehensive analysis of all components and their relationships
+
 ![2023-04-18 10_45_32-Networker_WFI32 - PowerPoint](https://github.com/zabooh/networker/blob/master/docs/2023-04-18%2010_45_32-Networker_WFI32%20-%20PowerPoint.png)
 
 The SPI Flash is automatically formatted with a FAT12 file system and displayed as a USB mass storage device on a connected PC as a separate hard drive.
